@@ -2,17 +2,17 @@
 # _______________________________________________________________________ #
 #
 # The transpops package displays popup messages.
-# The messages are read from a file and after pressing a hotkey are
+# The messages are read from a file and (after pressing a hotkey) are
 # shown one by one under the mouse pointer.
 #
 # Scripted by Alex Plotnikov.
 #
-# Lisense: MIT.
+# License: MIT.
 # _______________________________________________________________________ #
 
 package require Tk
 
-package provide transpops 1.2.1
+package provide transpops 1.2.3
 
 # _________________ Common data of transpops namespace __________________ #
 
@@ -22,7 +22,7 @@ namespace eval ::transpops {
     variable msgs [list] imsgs 0 wmsgs ".win.transpops" omsgs ""
     variable fg #000000 bg #FBFB95
     variable alpha 0.0 alphaincr 0.1
-    variable cntwait 0
+    variable cntwait 0 waitfactor 8.0
     variable geom ""
   }
 }
@@ -39,6 +39,7 @@ proc ::transpops::my::Show {win evn} {
   variable wmsgs
   variable alpha
   variable alphaincr
+  variable cntwait
   variable fg
   variable bg
   set wmsgs [string trimright $win .].transpops
@@ -56,10 +57,11 @@ proc ::transpops::my::Show {win evn} {
   pack $wmsgs.l -fill both -expand true
   set alpha 0.0
   set alphaincr 0.007
+  set cntwait 0
   bind $wmsgs <ButtonPress> {set ::transpops::my::cntwait 0}
   if {[regexp {^http[s]?://\S+$} $msg]} {
     catch {
-      ::apave::paveObj makeLabelLinked $wmsgs.l \
+      ::apave::obj makeLabelLinked $wmsgs.l \
         "::apave::openDoc $msg@@$msg@@" $fg $bg $fg yellow
     }
   }
@@ -68,7 +70,7 @@ proc ::transpops::my::Show {win evn} {
   if {$geom eq "" || $evn==2} {set geom +$x+$y}
   wm geometry $wmsgs $geom
   after 10 "wm deiconify $wmsgs; wm attributes $wmsgs -alpha 0.0 -topmost 1"
-  after 10 "::transpops::my::Popup {$msg}"
+  after 15 "::transpops::my::Popup {$msg}"
 }
 #_____
 
@@ -80,13 +82,14 @@ proc ::transpops::my::Popup {msg} {
   variable alpha
   variable alphaincr
   variable cntwait
+  variable waitfactor
   if {![winfo exists $wmsgs]} return
   if {$cntwait>0} {
     incr cntwait -1
   } else {
     set alpha [expr {$alpha+$alphaincr}]
     if {$alpha>1.0} {
-      set cntwait [expr {int(max(2,[string length $msg]/12.)/$alphaincr)}]
+      set cntwait [expr {int(max(2,[string length $msg]/$waitfactor)/$alphaincr)}]
       set alphaincr [expr {-$alphaincr}]
       set alpha 1.0
     } elseif {$alpha<0.0} {
@@ -98,12 +101,26 @@ proc ::transpops::my::Popup {msg} {
   after 10 "::transpops::my::Popup {$msg}"
 }
 
+proc ::transpops::my::Run {win ev scrp} {
+  # Binds an event on a window to a script.
+  #   win - the window's path
+  #   ev - event on the window
+  #   scrp - the bound script
+  # The binding is made only on an existing window.
+  # If the window doesn't exist, the binding is postponed for next 'after' cycle.
+
+  if {[winfo exists $win] && [string first $scrp [bind $win $ev]]==-1} {
+    bind $win $ev $scrp
+  }
+  after 100 [list ::transpops::my::Run $win $ev $scrp]
+}
+
 # _____________ Interface procedures of transpops namespace _____________ #
 
 proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
   # Initializes and runs the popup messages.
   #   fname - name of file containing the messages
-  #   events - events bound to the window to run popups
+  #   events - events on the window to run bound popups
   #   win - the window's path
   #   fg1 - foreground of popups
   #   bg1 - background of popups
@@ -116,7 +133,7 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
   close $chan
   set ::transpops::my::imsgs 0
   foreach ev $events {
-    bind $win $ev [list ::transpops::my::Show $win [incr evnnn]]
+    after 100 [list ::transpops::my::Run $win $ev [list ::transpops::my::Show $win [incr evnnn]]]
   }
 }
 # _________________________________ EOF _________________________________ #
@@ -124,7 +141,7 @@ if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info s
   pack [label .l -text "Press Ctrl+q" -padx 50 -pady 70]
   lassign $::argv fname hotk win
   if {$fname eq ""} {set fname ./.bak/transpops.txt}
-  if {$hotk eq ""} {set hotk <Control-q>}
+  if {$hotk eq ""} {set hotk "<Control-t> <Alt-t>"}
   if {$win eq ""} {set win .}
   ::transpops::run $fname $hotk $win
 }
