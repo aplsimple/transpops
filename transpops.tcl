@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 1.2.3
+package provide transpops 1.2.4
 
 # _________________ Common data of transpops namespace __________________ #
 
@@ -101,18 +101,18 @@ proc ::transpops::my::Popup {msg} {
   after 10 "::transpops::my::Popup {$msg}"
 }
 
-proc ::transpops::my::Run {win ev scrp} {
+proc ::transpops::my::Run {w ev scrp} {
   # Binds an event on a window to a script.
-  #   win - the window's path
+  #   w - the window's path
   #   ev - event on the window
   #   scrp - the bound script
   # The binding is made only on an existing window.
   # If the window doesn't exist, the binding is postponed for next 'after' cycle.
 
-  if {[winfo exists $win] && [string first $scrp [bind $win $ev]]==-1} {
-    bind $win $ev $scrp
+  if {[winfo exists $w] && [string first $scrp [bind $w $ev]]==-1} {
+    bind $w $ev $scrp
   }
-  after 100 [list ::transpops::my::Run $win $ev $scrp]
+  after 100 [list ::transpops::my::Run $w $ev $scrp]
 }
 
 # _____________ Interface procedures of transpops namespace _____________ #
@@ -132,8 +132,10 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
   set ::transpops::my::msgs [split [read $chan] \n]
   close $chan
   set ::transpops::my::imsgs 0
-  foreach ev $events {
-    after 100 [list ::transpops::my::Run $win $ev [list ::transpops::my::Show $win [incr evnnn]]]
+  foreach w $win {
+    foreach ev $events {
+      after 100 [list ::transpops::my::Run $w $ev [list ::transpops::my::Show $w [incr evnnn]]]
+    }
   }
 }
 # _________________________________ EOF _________________________________ #
