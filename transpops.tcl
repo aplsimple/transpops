@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 1.2.4
+package provide transpops 1.2.5
 
 # _________________ Common data of transpops namespace __________________ #
 
@@ -110,7 +110,7 @@ proc ::transpops::my::Run {w ev scrp} {
   # If the window doesn't exist, the binding is postponed for next 'after' cycle.
 
   if {[winfo exists $w] && [string first $scrp [bind $w $ev]]==-1} {
-    bind $w $ev $scrp
+    bind $w $ev "$scrp ; break"
   }
   after 100 [list ::transpops::my::Run $w $ev $scrp]
 }
@@ -138,7 +138,9 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
     }
   }
 }
-# _________________________________ EOF _________________________________ #
+
+# ________________________ main _________________________ #
+
 if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info script]]} {
   pack [label .l -text "Press Ctrl+q" -padx 50 -pady 70]
   lassign $::argv fname hotk win
@@ -147,3 +149,5 @@ if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info s
   if {$win eq ""} {set win .}
   ::transpops::run $fname $hotk $win
 }
+
+# _________________________________ EOF _________________________________ #
