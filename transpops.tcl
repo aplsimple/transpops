@@ -12,18 +12,18 @@
 
 package require Tk
 
-package provide transpops 1.2.5
+package provide transpops 1.2.6
 
 # _________________ Common data of transpops namespace __________________ #
 
 namespace eval ::transpops {
 
   namespace eval my {
-    variable msgs [list] imsgs 0 wmsgs ".win.transpops" omsgs ""
+    variable msgs [list] imsgs 0 wmsgs .win.transpops omsgs {}
     variable fg #000000 bg #FBFB95
     variable alpha 0.0 alphaincr 0.1
     variable cntwait 0 waitfactor 8.0
-    variable geom ""
+    variable geom {}
   }
 }
 # ______________ Private procedures of transpops namespace ______________ #
@@ -46,7 +46,7 @@ proc ::transpops::my::Show {win evn} {
   catch {destroy $wmsgs}
   if {[incr imsgs]>=[llength $msgs]} return
   set msg [string map {\\n \n} [lindex $msgs $imsgs-1]]
-  if {$msg eq ""} {set imsgs 99999999; return}
+  if {$msg eq {}} {set imsgs 99999999; return}
   toplevel $wmsgs
   wm withdraw $wmsgs
   wm overrideredirect $wmsgs 1
@@ -65,9 +65,9 @@ proc ::transpops::my::Show {win evn} {
         "::apave::openDoc $msg@@$msg@@" $fg $bg $fg yellow
     }
   }
-  set x [expr {[winfo pointerx .]+10}]
-  set y [expr {[winfo pointery .]+10}]
-  if {$geom eq "" || $evn==2} {set geom +$x+$y}
+  set x [expr {[winfo pointerx $win]+10}]
+  set y [expr {[winfo pointery $win]+10}]
+  if {$geom eq {} || $evn==2} {set geom +$x+$y}
   wm geometry $wmsgs $geom
   after 10 "wm deiconify $wmsgs; wm attributes $wmsgs -alpha 0.0 -topmost 1"
   after 15 "::transpops::my::Popup {$msg}"
@@ -133,8 +133,9 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
   close $chan
   set ::transpops::my::imsgs 0
   foreach w $win {
+    set ei 0
     foreach ev $events {
-      after 100 [list ::transpops::my::Run $w $ev [list ::transpops::my::Show $w [incr evnnn]]]
+      after 300 [list ::transpops::my::Run $w $ev [list ::transpops::my::Show $w [incr ei]]]
     }
   }
 }
@@ -142,11 +143,11 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
 # ________________________ main _________________________ #
 
 if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info script]]} {
-  pack [label .l -text "Press Ctrl+q" -padx 50 -pady 70]
+  pack [label .l -text {Press Ctrl+t, Alt-t} -padx 50 -pady 70]
   lassign $::argv fname hotk win
-  if {$fname eq ""} {set fname ./.bak/transpops.txt}
-  if {$hotk eq ""} {set hotk "<Control-t> <Alt-t>"}
-  if {$win eq ""} {set win .}
+  if {$fname eq {}} {set fname ./.bak/transpops.txt}
+  if {$hotk eq {}} {set hotk {<Control-t> <Alt-t>}}
+  if {$win eq {}} {set win .}
   ::transpops::run $fname $hotk $win
 }
 
