@@ -1,0 +1,20 @@
+The alited is a "project oriented" editor, not a general purpose one.\n\nThe alited provides nearly all the necessary to develop Tcl/Tk projects\nwithout ever quiting it till a machine's shutdown.
+The projects seen by alited are stored in\n~/.config directory chosen at the very first start of alited.\n\nYou can pass a config directory's name\nas an argument to the alited.\n\nThis allows you to have various types of projects\nat one machine: public/private, for work/fun...\n\n... configuring them properly, e.g. for fun projects\nyou might select "Florid" color scheme.
+The projects are listed in "Setup / Projects" menu item.\nAlso, you can click "Projects" icon of the tool bar.
+The default project refers to alited's\ninstallation directory, just for a start.
+Let's create a new project.\n\nWe must fill the appropriate data fields\n- most importantly a project directory.
+After filling the new project's fields\nwe should press "Add" button to create it.
+Let's open a project.\n\nJust selecting it in the list,\nthen hitting "Select" button.
+To open existing file(s) of our project\nwe can switch to the project file tree.\n\nThen, with double-clicking a file, we open it.\n\nTo open all Tcl files of a directory\nwe use the tree's popup menu. Let's do it.
+The open files are highlighted in the file tree.\n\nWhen a file is closed it's unhighlighted.
+A newly open file is placed to\nthe very beginning of the tab bar.\n\nThis is true even when you select a tab bar file\nwhich isn't among the visible tabs.
+If your currently edited file doesn't belong\nto the current project directory, you can move this file to it.\n\nFor this, use "Move File" buttons.\nThe buttons allow to move files in the project subdirectories.
+There are also "Create File/Directory"\noptions of the file tree available\nthrough the tree's popup menu.
+When projects are switched,\nthe alited saves and restores:\n\n  - a list of open files\n  - cursor positions in the files\n  - a currently open file\n  - a list of favorites\n  - a list of favorites' lists
+So, when you switch to another project,\nalited closes all files of the old project\nand open all files of the new project.\n\nIf you want some files of the old project\nto remain open in the new project\nselect them in the tab bar by Ctrl+click,\nthen switch to the new project.
+Last few words about an interesting project option.
+The "Unit lines per 1 red bar" option means that\neach N lines of a unit would add a red bar to its icon\nat the unit tree, up to 7th bar.\n\nWhen the icon becomes fully red, this is like\nsending you "a bit too long unit" message, i.e.\nthe unit probably needs a sort of reforming.\n\nThere are 8 grades of redness: 0, 1*N, 2*N, 3*N ... 7*N.\n\nSo, if N=20, then 141 lines would mean "a too long unit".\n\nJust look at the unit tree to find those horrible reds,\ncandidates for reforming.
+Welcome to\n\nhttps://aplsimple.github.io\n\nfor further details.\n\nThanks for your attention.
+
+#RUNF1: ../../../alited/src/alited.tcl DEBUG
+

@@ -1,0 +1,3 @@
+Welcome to "alited"!\n\nIt's a lite editor to develop Tcl/Tk applications.
+At first start, it offers some simple initial actions.\n\nLet's confirm the offered. It doesn't hurt:)
+#RUNF1: ../../../alited/src/alited.tcl DEBUG

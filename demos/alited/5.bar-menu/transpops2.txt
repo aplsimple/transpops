@@ -1,0 +1,4 @@
+#RUNF1: ../../../alited/src/alited.tcl DEBUG
+Well, now that's our changes:\n\n    - Git menu is gone\n    - GoldenDict is added\n    - Test menu is substituted by Misc menu
+These changes are seen in "Tools / bar/menu" item as well.
+Welcome to\n\nhttps://aplsimple.github.io\n\nfor further details.\n\nThanks for your attention.

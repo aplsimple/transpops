@@ -1,0 +1,3 @@
+Welcome to https://aplsimple.github.io\nfor further details.\n\nThanks for your attention.
+
+#RUNF1: ../../../alited/src/alited.tcl DEBUG

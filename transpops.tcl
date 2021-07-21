@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 1.2.6
+package provide transpops 1.2.8
 
 # _________________ Common data of transpops namespace __________________ #
 
@@ -44,9 +44,15 @@ proc ::transpops::my::Show {win evn} {
   variable bg
   set wmsgs [string trimright $win .].transpops
   catch {destroy $wmsgs}
-  if {[incr imsgs]>=[llength $msgs]} return
-  set msg [string map {\\n \n} [lindex $msgs $imsgs-1]]
-  if {$msg eq {}} {set imsgs 99999999; return}
+  while {1} {
+    if {[incr imsgs]>=[llength $msgs]} return
+    set msg [string map {\\n \n} [lindex $msgs $imsgs-1]]
+    if {[string index $msg 0] ni {{} {#}}} break
+  }
+  catch {
+    # when used within apave theme, disable theming transpops
+    ::apave::obj untouchWidgets *.transpops*
+  }
   toplevel $wmsgs
   wm withdraw $wmsgs
   wm overrideredirect $wmsgs 1

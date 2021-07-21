@@ -1,0 +1,21 @@
+Along with the unit facilities, alited provides\nother tools for a navigation around a project.\n\nOne of them is "Find/Replace" tool, called with:\n    - Ctrl+F keys\n    - "Edit / Find/Replace" in menu\n    - "Find/Replace" in toolbar
+The "Find/Replace" dialogue contains two sections:\n    - Find\n    - Replace\n\nBoth contain 3 buttons:\n    - do once\n    - do in text\n    - do in session\n\nThe alited has the find and replace functions\nunited in this dialogue.
+The dialogue provides standard options of such type.\nProbably, except for one of them.\n\nThe "Replace by blank" option means that you can replace\nthe found strings by the blank string which means just\ndeleting the found strings!\n\nAs the blank replacements are rarely required,\n"Replace by blank" option allows to avoid mistakes.\nUse it accordingly.
+Well, let's find something:\n    - once\n    - in text\n    - in session
+All of the found instances in text / session\nare presented in the info listbox.
+As you see, the info listbox allows\nto enter a found instance's line.\n\nAt that, "Find / Replace" dialogue\nmay or may not be closed.
+While "Find / Replace" dialogue is open\nthe found strings are highlighted.\n\nWhen you close the dialogue\nthe highlighting disappears.
+The info listbox has a popup menu\nallowing to navigate through its items\njust with keys (Up/Down/Ctrl+Home/Ctrl+End).
+"Find / Replace" dialogue allows to replace\nthe found strings with a new one.\n\nAt single replacements, next found strings\nare presented one by one.
+Other find facilities of alited are:\n    - Find a unit\n    - Find a declaration\n    - Find a word\n    - Find in a directory
+Press Ctrl+Shift+F or hit "Edit / Find Unit" menu item to find\nunit(s) by case insensitive glob patterns.\n\nIt's VERY helpful when you remember a part of a unit's name,\nso just enter this part to find the unit.\n\nThe part to find can include glob's characters:  *,   ?,   [abc]
+To look for a proc/method declaration, you can try:\n\n    - Ctrl+click on its name\n\n    - press Ctrl+L, when the cursor is on its name\n\n    - hit "Edit / Look for Declaration" menu item
+To complete a command, press Tab key while\nthe cursor is on initial characters of a command\n- this will offer you to select from a list of\ncommands available in alited session's files.\n\nThe Tab key of this option is changeable\n(like other keys) in "Setup / Preferences / Keys".
+At the completion, the commands:\n\n    - are not qualified for a current file\n\n    - are qualified for others
+For a quick search of a word, there is a nice\nCtrl+Shift+click applied to the word.\n\nIt means a search throughout alited's session\nand is VERY helpful in some cases.\n\nThough, the very first Ctrl+Shift+click\nmay take 1-2 seconds of your life. Excuse me.
+To find a word or a selection in a directory\nhit the appropriate button of the toolbar.\n\nThe search will be performed\nby "grep" command with options:\n    - recursively in a chosen directory\n    - case insensible
+Other "grep" facilities are available in "e_menu".\n\nFor example, you can search in selected files.\nThe selection is set by Ctrl+clicking the tabs.
+Welcome to\n    https://aplsimple.github.io\nfor further details.\n\nThanks for your attention.
+
+#RUNF1: ../../../alited/src/alited.tcl DEBUG
+
