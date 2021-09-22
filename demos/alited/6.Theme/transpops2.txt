@@ -1,0 +1,34 @@
+The "Setup / Tint" allows to change a tint
+of a current color scheme.
+
+It's per a session only.
+
+When all of sudden you get a feeling that
+too much of light / darkness is around,
+this option might help.
+---
+Let's return to Preferences again.
+---
+For azure, forest, sun-valley themes
+there are their appropriate color schemes:
+  - AzureLight / AzureDark
+  - ForestLight / ForestDark
+  - SunValleyLight / SunValleyDark
+
+These are most fit to each other,
+still for any light / dark theme there is
+a nice appropriate light / dark color scheme.
+---
+Let's try "azure-dark" theme.
+It needs a dark color scheme.
+
+"AzureDark" is probably a best choice.
+
+But we might try another dark theme, say, "MildDark".
+The difference will be in:
+  - color of context menu
+  - color of gutter
+  - color of line's highlight
+---
+#RUNF1: ../../../alited/src/alited.tcl DEBUG
+

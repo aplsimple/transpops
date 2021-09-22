@@ -1,15 +1,103 @@
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
-Tools of alited are presented\nby its tool bar and menu.\n\nThus, they are called "bar/menu" actions.
-Some of tools are provided by alited staticly\ni.e. they cannot be removed:\n\n    - Run\n    - e_menu\n    - tkcon\n    - Check of Tcl\n    - Color Picker\n    - Screen Loupe\n    - Tcl/Tk help (in "Help" menu)
-Other tools are collected in "Tools / bar/menu" submenu.\n\nThese are provided by e_menu application.\n\nAll of them (even installed by default) can be removed\nor substituted with other tools.
-In fact, "Run" and "Tcl/Tk help" are both\nprovided by e_menu application.\n\nNamely:\n    "Run" is "Run me..." item of menu.mnu\n    "Tcl/Tk help" is one of e_menu's "ornamental items"
-Let's try to run some of these "standard" tools\nprovided be alited.
-"Run" tries to run an application choosen\nas default for the currently edited file.\n\nFor Tcl files, it is "tclsh".\n\nBut e_menu recognizes special comments like:\n    #RUNF1: file.tcl args\nwhich mean running "tclsh file.tcl args".\n\nSo, it's possible to run a main Tcl script\nat editing any Tcl script of an application.
-"Tcl/Tk help" shows Tcl/Tk man page\nfor a word the cursor is on.\n\nOr for a selected text.
-Still, this context help is available only if\nTcl/Tk help pages are downloaded and copied\nto ~/DOC/www.tcl.tk/man/tcl8.6 directory.\n\nOr when Internet is accessible.\n\nIn such case, e_menu tries to get a help page from\n    https://www.tcl.tk/man/tcl8.6/\nwhich might be not what you want.
-In alited, tkcon tool is customizable a little.\n\nTo do this, open from alited's menu\n"Setup / Preferences / Tools / tkcon".\n\n"Test" button allows to preview your settings.
-Some tools, though default, can be changed or removed.\n\nThese tools are listed in "Tools / bar/menu" submenu\nand are customized in "Setup / Preferences / Tools".\n\nThis settings are also available through a popup menu\ncalled by right click on the toolbar.
-In this dialogue, we can:\n    - add new actions and separators\n    - change actions or their icons\n    - remove actions and separators\n\nNew items are added by [+] button.\nOr you can use empty rows at the bottom.\n\nItems are removed by [x] button.\n\nEmpty items are ignored.\n\nThe list of items is scrollable.
-To choose a tool, click its button at the right.\n\nAny non-menu items can be chosen directly\nwhile navigating through menus.\n\nIf you want to choose a whole submenu,\nright click on this submenu and choose\n"Select" from a popup menu.\n\nNote: the main menu is run by "e_menu" tool.
-To change a tool's icon, click its drop-down list.\n\nThere are available icon-pictures and icon-characters.\n\nHighly likely, there is an icon expressing the tool's action.
+---
+Tools of alited are presented
+by its tool bar and menu.
+
+Thus, they are called "bar/menu" actions.
+---
+Some of tools are provided by alited staticly
+i.e. they cannot be removed:
+
+    - Run
+    - e_menu
+    - tkcon
+    - Check of Tcl
+    - Color Picker
+    - Screen Loupe
+    - Tcl/Tk help (in "Help" menu)
+---
+Other tools are collected in "Tools / bar/menu" submenu.
+
+These are provided by e_menu application.
+
+All of them (even installed by default) can be removed
+or substituted with other tools.
+---
+In fact, "Run" and "Tcl/Tk help" are both
+provided by e_menu application.
+
+Namely:
+    "Run" is "Run me..." item of menu.mnu
+    "Tcl/Tk help" is one of e_menu's "ornamental items"
+---
+"Run" tries to run an application chosen
+as default for the currently edited file.
+
+For Tcl files, it is "tclsh".
+
+But e_menu recognizes special comments like:
+    #ARGS1: args
+    #RUNF1: file.tcl args
+which mean running "tclsh file.tcl args".
+
+So, it's possible to run a main Tcl script
+at editing any Tcl script of an application.
+---
+"Tcl/Tk help" shows Tcl/Tk man page
+for a word the cursor is on.
+
+Or for a selected text.
+---
+Still, this context help is available if
+Tcl/Tk help pages are downloaded and copied
+to ~/DOC/www.tcl.tk/man/tcl8.6 directory.
+
+Or when Internet is accessible.
+---
+In alited, tkcon tool is customizable a little.
+
+To do this, open from alited's menu
+"Setup / Preferences / Tools / tkcon".
+
+"Test" button allows to preview your settings.
+---
+Some tools, though default, can be changed or removed.
+
+These tools are listed in "Tools / bar/menu" submenu
+and are customized in "Setup / Preferences / Tools".
+
+This settings are also available through a popup menu
+called by right click on the toolbar.
+---
+In this dialogue, we can:
+    - add new actions and separators
+    - change actions or their icons
+    - remove actions and separators
+---
+New items are added by [+] button.
+Or we can use empty rows at the bottom.
+
+Items are removed by [x] button.
+
+Empty items are ignored.
+
+The list of items is scrollable.
+---
+To choose a tool, click its button at the right.
+
+Any non-menu items can be chosen directly
+while navigating through menus.
+
+If you want to choose a whole submenu,
+right click on this submenu and choose
+"Select" from a popup menu.
+
+Note: the main menu is run by "e_menu" tool.
+---
+To change a tool's icon, click its drop-down list.
+
+There are available icon-pictures and icon-characters.
+
+Highly likely, you'll find an icon expressing a tool's action.
+---
 Let's make some changes and restart alited.

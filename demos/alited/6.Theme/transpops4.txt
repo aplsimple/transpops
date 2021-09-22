@@ -1,0 +1,18 @@
+The colors of Tcl syntax have been changed.
+---
+And it's the same awdark theme
+just with "Oscuro3" colors.
+---
+The default syntax colors can be restored
+using "Default" button.
+---
+Welcome to
+
+https://aplsimple.github.io
+
+for further details.
+
+Thanks for your attention.
+---
+#RUNF1: ../../../alited/src/alited.tcl DEBUG
+

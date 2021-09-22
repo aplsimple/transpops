@@ -1,0 +1,62 @@
+Welcome to "apave"!
+
+It's a Tcl/Tk package for GUI development.
+
+Its theming facilities will be presented here.
+---
+This test is test2_pave.tcl
+that provides the widgets to theme:
+ - a list of themes
+ - a list of color schemes
+ - a spinbox of font sizes
+ - a list of icon sets
+ - a tab of color schemes.
+---
+The themes of this test are:
+  - default
+  - clam
+  - classic
+  - alt
+  - awlight (if installed)
+  - awdark (if installed)
+
+For awlight and awdark themes
+a color scheme must be accordingly:
+light or dark.
+---
+The color schemes are collected in:
+ - tk_optionCascade widget
+ -  "Color schemes" tab
+---
+There are 50 color schemes of "apave".
+They are indexed from -2 to 47.
+
+The index -2 corresponds to the default ttk theme.
+In fact, it means "no apave color scheme".
+---
+We'll try "awdark" theme and "AwDark" color scheme (CS).
+
+The theme and the CS are made for each other.
+
+Also, we'll set Zoom=12 which is actually a font size.
+---
+This message warned us that the preferable way of theming
+is to set a theme / color scheme at starting the application.
+
+This will set "normal" dimensions and backgrounds of widgets.
+---
+If we are theming "on fly", there would be some issues:
+ - some widgets aren't well painted
+ - some widgets aren't well sized
+---
+Now, let's try to theme "on fly" to see what happens.
+
+To theme "on fly" let's switch "Restart" off.
+---
+At changing font sizes we get some widgets distorted
+i.e. too big or too small.
+---
+Thus, let's restart test2_pave.tcl
+with the new theme, colors and sizes.
+---
+#RUNF1: tclsh ../../pave/tests/test2_pave.tcl

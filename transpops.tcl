@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 1.2.8
+package provide transpops 1.3
 
 # _________________ Common data of transpops namespace __________________ #
 
@@ -45,9 +45,9 @@ proc ::transpops::my::Show {win evn} {
   set wmsgs [string trimright $win .].transpops
   catch {destroy $wmsgs}
   while {1} {
-    if {[incr imsgs]>=[llength $msgs]} return
-    set msg [string map {\\n \n} [lindex $msgs $imsgs-1]]
-    if {[string index $msg 0] ni {{} {#}}} break
+    if {[incr imsgs]>[llength $msgs]} return
+    set msg [string trim [lindex $msgs $imsgs-1]]
+    if {$msg ne {}} break
   }
   catch {
     # when used within apave theme, disable theming transpops
@@ -135,7 +135,24 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
   set ::transpops::my::bg $bg1
   set chan [open $fname]
   chan configure $chan -encoding utf-8
-  set ::transpops::my::msgs [split [read $chan] \n]
+  set ::transpops::my::msgs [list]
+  set merge no
+  foreach line [split [read $chan] \n] {
+    # if line has "\" at its end, it continues a message
+    if {[string index $line 0] eq {#}} continue
+    set line2 [string map {{ } {} - {} + {} / {} \\ {} * {} = {}} $line]
+    set continued [expr {$line2 ne {} || $line eq {}}]
+    if {$continued} {
+      if {$merge} {
+        set last [lindex $::transpops::my::msgs end]
+        append last \n $line
+        set ::transpops::my::msgs [lreplace $::transpops::my::msgs end end $last]
+      } else {
+        lappend ::transpops::my::msgs $line
+      }
+    }
+    set merge $continued
+  }
   close $chan
   set ::transpops::my::imsgs 0
   foreach w $win {
@@ -149,12 +166,13 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
 # ________________________ main _________________________ #
 
 if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info script]]} {
-  pack [label .l -text {Press Ctrl+t, Alt-t} -padx 50 -pady 70]
+  pack [label .l -text {Press Alt+t, Alt-t} -padx 50 -pady 70]
   lassign $::argv fname hotk win
   if {$fname eq {}} {set fname ./.bak/transpops.txt}
-  if {$hotk eq {}} {set hotk {<Control-t> <Alt-t>}}
+  if {$hotk eq {}} {set hotk {<Alt-t> <Alt-y>}}
   if {$win eq {}} {set win .}
   ::transpops::run $fname $hotk $win
 }
 
 # _________________________________ EOF _________________________________ #
+#RUNF1: ../alited/src/alited.tcl DEBUG

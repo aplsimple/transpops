@@ -1,0 +1,22 @@
+The colors of Tcl syntax can be set as well.
+
+These settings are located in
+Setup / Preferences / Editor.
+---
+Let's change some colors.
+---
+There is a small restriction:
+    If a color scheme is changed from light to dark
+    and vice versa, the syntax colors become disabled,
+    as they are specific for a light / dark background.
+
+In such cases, alited should be restarted for
+the syntax colors to be accessible.
+---
+Also, we might try "awdark" theme by Brad Lanam
+with a dark color scheme, for example "Oscuro3".
+---
+Well, let's save settings and restart alited.
+---
+#RUNF1: ../../../alited/src/alited.tcl DEBUG
+

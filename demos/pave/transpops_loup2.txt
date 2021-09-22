@@ -1,0 +1,15 @@
+So, let's try the themed "aloupe" package.
+---
+Let's turn to the color picker.
+---
+At last, the date picker.
+---
+Welcome to
+
+https://aplsimple.github.io
+
+for further details.
+
+Thanks for your attention.
+---
+#RUNF1: tclsh ../../pave/tests/test2_pave.tcl

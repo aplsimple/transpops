@@ -1,28 +1,137 @@
-The alited is "unit oriented".\n\nThis means making a unit tree of Tcl code\n- branches and leaves.\n\nThe branches are created with special comments.\n\nThe leaves are Tcl procedures and methods.
-To add a branch, use the key combinations:\n  - Shift+F1 for 1st level\n  - Shift+F2 for 2nd level\n  - Shift+F3 for 3rd level\n\nYou can add branches' levels,\nas well as change the default keys.\n\nThe branches' comments are customized,\nsay, "-" might be used instead of "_".
-To add a procedure / method, use:\n  - Alt+P to add a procedure\n  - Alt+M to add a method
-The unit tree has its own toolbar\nallowing to arrange the tree.
-The Up / Down buttons allow to move\nunit(s) through the tree.\n\nIn fact, they are moved through a code,\nso that you can arrange your code\nwithout cut/copy/paste. Only moving units.
-To move a group of units,\nselect them with Ctrl+click.
-Also, you can drag-and-drop\na unit before a target location.
-Note: the visited units are highlighted\nin the unit tree by a color.
-When you navigate through the unit tree\nthe cursor positions are saved/restored\nin visited units.\n\nYou can continue with units\nin the same positions you left them.
-There is "Last Visited" list of units as well.\n\nLet's see how it is populated.
-Some of units may be considered as favorite.\n\nIf so, mark them as such by means of\n"Favorites" toolbar.
-A current unit (proc / method / branch)\nis proposed to be placed into "Favorites".
-The "Favorites" list can be easily populated or cleared.
-The "Favorites" lists are project sensitive\ni.e. they are kept per a project.\n\nBut when you create a new project\ncurrent favorites are passed to it.\n\nYou can rearrange them for the new project.
-If some favorites' list is valuable for you\nyou can save it by its own name\nto return to these favorites afterwards.
-Two search modes might be very useful\nwhile you are dealing with the units:\n\n  - Search Units\n  - Go to Line
-After pressing Ctrl+Shift+F you get "Search Units" bar\nwhere you can search units by their case insensitive\nglob patterns.\n\nVery useful.
-After searching just click an info listbox\nto enter a found unit.
-You can also set "Don't focus a text" mode\nin order to scan the found units with keys.\n\nOnce called, "Search Units" bar might remain.
-After pressing Ctrl+G you get "Go to Line" dialogue\nwhere you can go inside a unit by its relative\nnumber of line.\n\nUseful when you get a Tcl error message with\na proc / method name and a line number.
-The alited provides a tool to check Tcl code\nfor consistencies of brackets.\n\nIn fact, it allows to find "problem" units.\n\nUseful when you get a peculiar error message.
-At checking Tcl code, please, pay attention\nto a whole content of a unit, i.e. all lines\nbetween its start and a next unit's.\n\nSome "errors" are natural and eliminated\nby "END of namespace" or similar branches.
-The tree of units and the tree project files\nare switched to/from by appropriate buttons.\n\nThe file tree is considered in "3. Projects" demo.
-Welcome to\n    https://aplsimple.github.io\nfor further details.\n\nThanks for your attention.
+The alited editor is "unit oriented".
 
+This means making a unit tree of Tcl code
+- branches and leaves.
 
+The branches are created with special comments.
+
+The leaves are Tcl procedures and methods.
+---
+To add a branch, the key combinations are used:
+  - Shift+F1 for 1st level
+  - Shift+F2 for 2nd level
+  - Shift+F3 for 3rd level
+
+New levels of branches can be added,
+as well as the default keys changed
+and branches' comments customized.
+---
+To add a procedure / method, the keys are used:
+  - Alt+P to add a procedure
+  - Alt+M to add a method
+---
+The unit tree has its own toolbar
+allowing to arrange the tree.
+---
+The Up / Down buttons allow to move
+unit(s) through the tree.
+
+In fact, they are moved through a code,
+so that a code can be rearranged
+without cut/copy/paste. Only moving units.
+---
+A unit can be drag-and-dropped,
+a target being before a drop point.
+---
+To move a group of units,
+we select them with Ctrl+click.
+---
+If a selected unit group needs to be moved
+to some far location, "Drop selected..."
+menu item might be helpful.
+
+The group units may be selected
+without any order / sequence.
+---
+The visited units are highlighted
+in the unit tree by a color.
+---
+At navigating through the unit tree,
+the cursor positions are saved/restored
+in visited units.
+
+We can continue with units
+in the same positions we left them.
+---
+There is "Last Visited" list of units as well.
+
+Let's see how it is populated.
+---
+Alt+Backspace switches between last two visited units.
+---
+Some of units may be considered as favorite.
+
+If so, they are appointed favorites by means of
+"Favorites" toolbar.
+
+A current unit (proc / method / branch)
+is proposed to become favorite.
+---
+The "Favorites" lists are project sensitive
+i.e. they are kept per a project.
+
+But when a new project is created
+current favorites are passed to it.
+---
+If some favorites' list is considered valuable,
+the list can be saved by its own name
+to return to these favorites afterwards.
+---
+After pressing Ctrl+Shift+F, "Search Units" bar
+is shown, allowing to search units by their case
+insensitive glob patterns.
+
+Very useful.
+---
+After searching, we can click an info listbox
+to enter a found unit.
+---
+The info listbox' context menu allows
+to set "Don't focus a text" mode
+in order to scan the found units with keys.
+
+Once called, "Search Units" bar might remain.
+---
+After pressing Ctrl+G, "Go to Line" dialogue
+is shown, allowing to go inside a unit by its
+relative number of line.
+
+Useful at getting a Tcl error message with
+a proc / method name and a line number.
+---
+The alited provides a tool to check Tcl code
+for consistencies of brackets.
+
+In fact, it allows to find "problem" units.
+
+Useful at getting an obscure error message.
+---
+At checking Tcl code, a whole content
+of a unit should be checked, i.e. all lines
+between its start and a next unit's.
+
+Some "errors" are natural and eliminated
+by "END of namespace" or similar branches.
+---
+By the way, did you notice the red bar icons
+at the items of the unit tree?
+
+They mean "the more red the more long".
+
+Thus, the redness is like a message:
+Beware, this unit needs to be refactored!
+---
+The tree of units and the tree project files
+are switched to/from by appropriate buttons.
+
+The file tree is considered in "3. Projects" demo.
+---
+Welcome to
+
+https://aplsimple.github.io
+
+for further details.
+
+Thanks for your attention.
+---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
-

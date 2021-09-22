@@ -1,0 +1,81 @@
+Welcome to "apave"!
+
+It's a Tcl/Tk package for GUI development.
+
+Its "link" facilities will be presented here.
+---
+The links can be assigned to:
+   "lab" - ttk::label widget
+   "tex" - text widget
+---
+Let's consider a label with the link.
+---
+The linked labels are located in "View/First" tab.
+---
+There are three labels with links:
+  two simple links
+  one link with a sequence of images
+---
+The simple links do the same: open "Misc" tab.
+---
+The image link opens a bird's wiki to browse.
+---
+We have the code of this test
+right now open in "test2_pave.tcl" tab.
+
+Thus, let's find the appropriate code.
+---
+The link option can be find by "-link".
+---
+The "-link" option of the simple link contains:
+   command(s) to execute at clicking it
+   an optional tip
+
+The tip is separated by "@@" from the command(s).
+---
+The image link is more complex. It consists of two labels:
+   a label for image(s)
+   a (optional) label for a bottom description
+---
+The images are birds. The descriptions are their names.
+---
+The images and descriptions are filled by
+t::labelImaged procedure that runs
+in "after idle" event handler.
+
+It deals with the following data:
+   path to the image label
+   path to the description label
+   -files (or -data) for images
+   -label for descriptions
+---
+See details in the apave description.
+---
+The "About" dialog of this test contains
+the links for a text widget.
+---
+The links of a text widget are made
+with -tags argument.
+
+The "link*" tags refer to the linked labels in the text.
+---
+The "link*" tag contains a handler and a tip
+divided by "@@".
+
+The wildcards used in "link*" tag:
+   %l is the label's text
+   %t is the tip
+just to avoid repetitions.
+---
+The t::textImaged procedure fills the Tcl image
+in the same manner as the mentioned t::labelImaged.
+---
+Welcome to
+
+https://aplsimple.github.io
+
+for further details.
+
+Thanks for your attention.
+---
+#RUNF1: tclsh ../../pave/tests/test2_pave.tcl -1 10 0 'small icons'

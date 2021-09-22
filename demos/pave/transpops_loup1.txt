@@ -1,0 +1,83 @@
+Welcome to "apave"!
+
+It's a Tcl/Tk package for GUI development.
+---
+Now, there will be presented:
+   - "aloupe" package
+   - color chooser
+   - date chooser
+---
+The screen loupe is called by two widgets:
+   - a toolbar button
+   - a color picker
+
+Let's try the button.
+---
+The loupe by itself is a small moveable window.
+
+It is moved by drag-and-drop.
+---
+At dropping, the loupe's view is magnified
+in the displaying window.
+---
+We can magnify the magnified as well.
+---
+The loupe's size and zoom can be set
+at calling "aloupe".
+
+Or changed "on fly".
+---
+Other options can be set at calling "aloupe":
+   - opacity of the loupe
+   - background color
+   - the display's geometry (+X+Y)
+   - "-ontop" (sets the display above others)
+---
+Some options can be used at running "aloupe" from a Tcl code:
+   - a command to be run by "To clipboard" button
+   - a parent window's path (to destroy "aloupe" by its parent)
+---
+Let's call the color chooser of "apave" package.
+---
+It's a bit modified Tk color chooser used in Linux.
+
+The enhancements of Tk color chooser are:
+   - the panel of color buttons
+   - "Move all" option
+   - "Tone moves" option
+   - "From clipboard" button
+   - "Loupe" button
+   - better dimensions
+   - ability to be themed
+---
+The "Move all" and "Tone moves" options
+can be set at calling the chooser.
+
+They are good for smooth tuning of color hues.
+---
+The "Loupe" button allows to choose colors
+from the magnified screen image.
+---
+Let's look at the date picker of "apave" package.
+---
+The date picker has the following features:
+   - good keyboard management
+   - setting 1st day of week (Mon/Sun)
+   - setting the input/output date format
+   - geometry options
+   - "variable" option
+   - ability to be localized
+   - ability to be themed
+---
+Let's go through the calendar,
+using the keyboard only.
+---
+To show the guys' abilities to be themed
+let's change the current theme.
+---
+Thus, let's restart this test
+with the new colors, sizes, icons...
+
+... and with "ru" locale.
+---
+#RUNF1: tclsh ../../pave/tests/test2_pave.tcl

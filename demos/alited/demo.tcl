@@ -29,6 +29,10 @@ proc TRANSPOPS_DEMO {} {
     file delete $DEMODIR/STEP5
   } elseif {[set step6 [file exists $DEMODIR/STEP6]]} {
     file delete $DEMODIR/STEP6
+  } elseif {[set step7 [file exists $DEMODIR/STEP7]]} {
+    file delete $DEMODIR/STEP7
+  } elseif {[set step8 [file exists $DEMODIR/STEP8]]} {
+    file delete $DEMODIR/STEP8
   } else {
     set step1 1
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP2
@@ -36,6 +40,8 @@ proc TRANSPOPS_DEMO {} {
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP4
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP5
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP6
+    file copy -force $TRANSPOPS_SRC $DEMODIR/STEP7
+    file copy -force $TRANSPOPS_SRC $DEMODIR/STEP8
   }
 
   ## ________________________ 1. Start _________________________ ##
@@ -54,43 +60,55 @@ proc TRANSPOPS_DEMO {} {
       set fname transpops3.txt ;# just to welcome
     }
   }
-  
+
   ## ________________________ 2. Units _________________________ ##
-  
+
   if 0 {
     set dir 2.Units
   }
-  
+
   ## ________________________ 3. Projects _________________________ ##
-  
+
   if 0 {
     set dir 3.Projects
     set win {.alwin.diaPrj .alwin}
   }
-  
+
   ## ________________________ 4. Find _________________________ ##
-  
+
   if 0 {
     set dir 4.Find
-    set win {.alwin.winFind .alwin}
+    set win {.alwin.diaPref .alwin.winFind .alwin}
   }
-  
+
   ## ________________________ 5. bar-menu _________________________ ##
-  
-  if 1 {
+
+  if 0 {
     set dir 5.bar-menu
+    set win {.alwin.diaPref .alwin}
     if {$step1 || $step2} {
       set fname transpops1.txt  ;# 1st start
-      set win {.alwin.diaPref .alwin}
     } elseif {$step4} {
       set fname transpops2.txt  ;# 2nd start
-      set win {.alwin.diaPref .alwin}
-    } else {
-      set fname transpops3.txt  ;# 3rd start
-      set win {.alwin.diaPref .alwin}
     }
   }
-  
+
+  ## ________________________ 6. Theme _________________________ ##
+
+  if 1 {
+    set dir 6.Theme
+    set win {.alwin.diaPref .alwin.winFind .alwin}
+    if {$step1 || $step2} {
+      set fname transpops1.txt  ;# 1st start
+    } elseif {$step4} {
+      set fname transpops2.txt  ;# 2nd start
+    } elseif {$step6} {
+      set fname transpops3.txt  ;# 3rd start
+    } else {
+      set fname transpops4.txt  ;# 4th start
+    }
+  }
+
   if {[file exists [set fname [file normalize [file join $DEMODIR $dir $fname]]]]} {
     #set ::transpops::my::perchars 1.0 ;# for popups to be 12 times longer
     ::transpops::run $fname {<Alt-t> <Alt-y>} $win
@@ -101,4 +119,3 @@ proc TRANSPOPS_DEMO {} {
 catch {TRANSPOPS_DEMO}
 
 #RUNF1: ../../alited/src/alited.tcl DEBUG
-

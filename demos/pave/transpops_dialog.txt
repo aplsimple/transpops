@@ -1,0 +1,94 @@
+Welcome to "apave"!
+-
+It's a Tcl/Tk package for GUI development.
+-
+Its dialog facilities will be presented here.
+The apave dialogs are available through two classes:
+   apave::APaveDialog
+   apave::APaveInput
+-
+The first one provides "simple" dialogs:
+   ok, yesno, okcancel, yesnocancel,
+   retrycancel, abortretrycancel and "misc".
+-
+These dialogs have the appropriate buttons
+and return the selected button's number or 0.
+This is "ok" dialog.
+Its function is just a message.
+-
+Plus, this specific dialog has a text message.
+-
+At need, a user can select and copy the text.
+-
+Also, if the text is supposedly large,
+(e.g. taken from a variable)
+the dialog can be scrollable and sizeable.
+We'll see a scrollable text in a while.
+-
+We can resize this window. Note at that
+how the window's sizes will be limited.
+This is "yesno" dialog.
+-
+It is supplied with "-ch" option
+titled "Don't show this again".
+-
+With the checkbutton checked,
+the dialog would return 11 at choosing OK
+(10 + index of the button) or 0 otherwise.
+-
+This manner of resulting will act
+in any dialog with "-ch" option.
+This is "okcancel" dialog.
+-
+It provides a small editor
+(for the first presentation of it, though).
+-
+Another feature of it is a scroll bar
+allowing to view hidden parts of the text.
+This is "yesnocancel" dialog.
+-
+It is supplied with "-timeout" option
+that sets a timeout for the user's response.
+This is "retrycancel" dialog.
+-
+It is also supplied with "-timeout" option.
+-
+The widget to display it is the label.
+Besides, the label contains the Internet link.
+This is "abortretrycancel" dialog.
+-
+It's supplied with "err" (error) icon.
+This is "misc" dialog.
+-
+The "misc" dialogs can have
+as much various buttons as you need.
+-
+The buttons can have non-standard
+titles and various icons.
+-
+The button names define the icons.
+This is "input" dialog. It's of apave::APaveInput class.
+-
+The "input" dialog can include various widgets, e.g.
+here we can test these ones:
+   entry
+   6 choosers
+   checkbutton
+   radiobuttons
+   spinbox
+   listbox
+   combobox
+   option cascade
+   combobox of filtered lines of file
+   text
+This is a login dialog.
+The test will go in another cycle.
+-
+Each cycle will set a new color scheme.
+-
+Also, some dialogs' appearance will be changed.
+Welcome to https://aplsimple.github.io
+for further details.
+
+#RUNF1: tclsh ../../pave/tests/test_pavedialog.tcl
+
