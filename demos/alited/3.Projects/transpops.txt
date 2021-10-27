@@ -19,6 +19,7 @@ Also, there is "Projects" icon of the tool bar.
 ---
 The default project refers to alited's
 installation directory, just for a start.
+---
 Let's create a new project.
 
 We must fill the appropriate data fields
@@ -117,7 +118,7 @@ specifically when SCM is helpless.
 ---
 Last few words about another interesting option.
 
-Its default value is set in "Preferences
+Its default value is set in "Preferences"
 but in "Project" settings it can be reset.
 ---
 The "Unit lines per 1 red bar" option means that

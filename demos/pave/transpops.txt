@@ -14,11 +14,11 @@ Its main features:
  - providing 'mega-attributes', incl. user-defined ones
  - providing 'mega-widgets'
 ---
-This test is test2_pave.tcl
-that opens its own code at starting.
+This demo test is test2_pave.tcl
 
-It demonstrates most features of "apave"
-and is a collection of its useful samples.
+test2_pave.tcl is the crucial test of "apave".
+
+It opens its own code at starting.
 ---
 Let's consider e.g. 1st tab of the notebook.
 
@@ -38,11 +38,15 @@ Prompts and fields of choosers:
  - font
  - color
  - date
+
+All, except the date, may be
+combobox. Here, the directory is.
 ---
 The text field to edit/view a text file.
 ---
 The "tk_optionCascade" widget
 presented in https://wiki.tcl-lang.org
+by Richard Suchenwirth.
 ---
 The tablelist widget by Csaba Nemethi.
 ---
@@ -55,15 +59,25 @@ passed to the "grid" geometry manager.
 
 The "pack" geometry manager is mostly used inside frames.
 ---
+At that, frames may be scrollable.
+
+Thanks to Paul Walton for his "sframe".
+---
 Some other tasty things are:
  - button with timeout
+---
  - tips & balloons
+---
  - links & changing images
- - highlighted tcl code
+---
  - tab bar
+---
  - tool bar
+---
  - status bar
+---
  - listbox / combobox of file content
+---
  - popup menus for appropriate widgets
 ---
 Welcome to

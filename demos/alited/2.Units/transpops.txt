@@ -12,9 +12,8 @@ To add a branch, the key combinations are used:
   - Shift+F2 for 2nd level
   - Shift+F3 for 3rd level
 
-New levels of branches can be added,
-as well as the default keys changed
-and branches' comments customized.
+New levels of branches can be added, and
+the keys and comments are customizable too.
 ---
 To add a procedure / method, the keys are used:
   - Alt+P to add a procedure
@@ -22,13 +21,10 @@ To add a procedure / method, the keys are used:
 ---
 The unit tree has its own toolbar
 allowing to arrange the tree.
----
-The Up / Down buttons allow to move
-unit(s) through the tree.
 
-In fact, they are moved through a code,
-so that a code can be rearranged
-without cut/copy/paste. Only moving units.
+The Up / Down buttons allow to move
+unit(s) through the tree, so a code
+can be rearranged without cut & paste.
 ---
 A unit can be drag-and-dropped,
 a target being before a drop point.
@@ -36,12 +32,11 @@ a target being before a drop point.
 To move a group of units,
 we select them with Ctrl+click.
 ---
-If a selected unit group needs to be moved
-to some far location, "Drop selected..."
-menu item might be helpful.
+If a selected unit group needs to be moved to
+some far location, "Drop selected..." menu item
+might be helpful.
 
-The group units may be selected
-without any order / sequence.
+The group units are selected without any order.
 ---
 The visited units are highlighted
 in the unit tree by a color.
@@ -50,32 +45,45 @@ At navigating through the unit tree,
 the cursor positions are saved/restored
 in visited units.
 
-We can continue with units
-in the same positions we left them.
+We can continue with units in the same
+positions we left them.
 ---
 There is "Last Visited" list of units as well.
 
 Let's see how it is populated.
----
-Alt+Backspace switches between last two visited units.
----
-Some of units may be considered as favorite.
 
-If so, they are appointed favorites by means of
-"Favorites" toolbar.
-
-A current unit (proc / method / branch)
-is proposed to become favorite.
+The following actions fill "Last Visited" list:
+  - click on a unit
 ---
-The "Favorites" lists are project sensitive
-i.e. they are kept per a project.
+  - change a unit's content
+---
+  - switch tabs of edited files
+---
+  - choose the unit tree's item
+---
+  - choose the infobar's item
+---
+  - choose the Favorites/Last Visited's item
+---
+  - press Alt+Backspace ("To Last Visited")
+---
+  - press Alt+B ("To Matched Bracket")
+---
+  - press Ctrl+L ("Look for Declaration")
+---
+  - press F3, Alt+Q, Alt+W, Alt+Left, Alt+Right
+---
+  - undo / redo changes
+---
+Some of units may be considered as favorite. If so,
+they are appointed favorites with "Favorites" toolbar.
 
-But when a new project is created
-current favorites are passed to it.
+Any current unit (leaf / branch) can be favorite.
+
+The "Favorites" list is per a project.
 ---
 If some favorites' list is considered valuable,
-the list can be saved by its own name
-to return to these favorites afterwards.
+the list can be saved by its own name.
 ---
 After pressing Ctrl+Shift+F, "Search Units" bar
 is shown, allowing to search units by their case
@@ -83,14 +91,9 @@ insensitive glob patterns.
 
 Very useful.
 ---
-After searching, we can click an info listbox
-to enter a found unit.
----
 The info listbox' context menu allows
 to set "Don't focus a text" mode
 in order to scan the found units with keys.
-
-Once called, "Search Units" bar might remain.
 ---
 After pressing Ctrl+G, "Go to Line" dialogue
 is shown, allowing to go inside a unit by its
@@ -102,16 +105,13 @@ a proc / method name and a line number.
 The alited provides a tool to check Tcl code
 for consistencies of brackets.
 
-In fact, it allows to find "problem" units.
-
 Useful at getting an obscure error message.
 ---
-At checking Tcl code, a whole content
-of a unit should be checked, i.e. all lines
-between its start and a next unit's.
+At checking Tcl code, a whole content of a unit
+has to be checked from its start to a next unit's.
 
-Some "errors" are natural and eliminated
-by "END of namespace" or similar branches.
+Some "errors" are natural and eliminated by
+"END of namespace" or similar branches.
 ---
 By the way, did you notice the red bar icons
 at the items of the unit tree?
@@ -121,7 +121,7 @@ They mean "the more red the more long".
 Thus, the redness is like a message:
 Beware, this unit needs to be refactored!
 ---
-The tree of units and the tree project files
+The tree of units and the tree of project files
 are switched to/from by appropriate buttons.
 
 The file tree is considered in "3. Projects" demo.

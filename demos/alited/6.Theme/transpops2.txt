@@ -1,5 +1,5 @@
-The "Setup / Tint" allows to change a tint
-of a current color scheme.
+The "Setup / Tint" allows you to tint
+a current color scheme.
 
 It's per a session only.
 
@@ -9,8 +9,9 @@ this option might help.
 ---
 Let's return to Preferences again.
 ---
-For azure, forest, sun-valley themes
+For aw*, azure, forest, sun-valley themes
 there are their appropriate color schemes:
+  - AwLight / AwDark
   - AzureLight / AzureDark
   - ForestLight / ForestDark
   - SunValleyLight / SunValleyDark

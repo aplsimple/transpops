@@ -26,7 +26,7 @@ The standard Ttk themes are:
 
 These themes are most recommended for their stability.
 ---
-The standard Ttk themes allow to tint
+The standard Ttk themes allow tinting
 their colors with "Tint" option.
 
 The negative values mean "darker",

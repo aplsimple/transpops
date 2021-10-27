@@ -1,10 +1,12 @@
-The colors of Tcl syntax have been changed.
+Here comes alited localized.
 ---
-And it's the same awdark theme
+The colors of Tcl syntax have been changed too.
+---
+And it's the same awdark theme,
 just with "Oscuro3" colors.
 ---
-The default syntax colors can be restored
-using "Default" button.
+The default syntax colors can be restored with
+"Default" button of "Setup / Editor / Syntax".
 ---
 Welcome to
 

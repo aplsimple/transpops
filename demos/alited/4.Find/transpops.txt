@@ -49,16 +49,6 @@ the found strings are highlighted.
 When you close the dialogue
 the highlighting disappears.
 ---
-The info listbox has a popup menu
-allowing to navigate through its items
-just with keys (Up/Down/Ctrl+Home/Ctrl+End).
----
-"Find / Replace" dialogue allows to replace
-the found strings with a new one.
-
-At single replacements, next found strings
-are presented one by one.
----
 Other find facilities of alited are:
     - Find a unit
     - Find a declaration
@@ -71,8 +61,6 @@ unit(s) by case insensitive glob patterns.
 
 It's VERY helpful when you remember a part of a unit's name,
 so just enter this part to find the unit.
-
-The part to find can include glob's characters:  *,   ?,   [abc]
 ---
 To look for a proc/method declaration, you can try:
 
@@ -87,8 +75,8 @@ the cursor is on initial characters of a command
 - this will offer you to select from a list of
 commands available in alited session's files.
 
-The Tab key of this option is changeable
-(like other keys) in "Setup / Preferences / Keys".
+The Tab key of this option may be changed to
+other key(s) in "Setup / Preferences / Keys".
 ---
 At the completion, the commands:
 
@@ -99,6 +87,24 @@ At the completion, the commands:
 Double clicking a word would highlight
 all of its occurences (if red) or only one
 otherwise.
+
+This allows, for example, quick overview of
+a variable's usage in a procedure/method.
+
+If you want to highlight a selection, call
+a context menu and select "Highlight All".
+---
+"Highlight" items of the context menu are
+very helpful in many cases.
+
+For example, we need to see which of left
+braces has no its paired right brace. In
+this case we select a first brace and press
+Alt+Right - and next braces are highlighted.
+
+We use F3 to repeat this search. The F3 key
+goes around: after finding a last occurence
+it finds a first one.
 ---
 For a quick search of a word, there is a nice
 Ctrl+Shift+click applied to the word.
@@ -125,6 +131,11 @@ Other "grep" facilities are available in "e_menu".
 
 For example, you can search in selected files.
 The selection is set by Ctrl+clicking the tabs.
+---
+Just for fun.
+
+The same search in the selected files
+is available in "Find/Replace" dialogue.
 ---
 Welcome to
 
