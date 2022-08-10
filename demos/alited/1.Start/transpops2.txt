@@ -1,29 +1,27 @@
 Thus, the alited is successfully initialized.
 ---
-Let's open some files
-for alited being tested with them.
+Let's open some files for testing alited.
 
 An efficient way to open Tcl files is
 "Open All Tcl Files" popup menu item
-run on a directory of alited's files tree.
+applied to a directory of the file tree.
 ---
 The files are open in a current project.
----
+
 The default project refers to alited's source.
 
-It's just to start. And alited can't do without projects.
+The alited can't do without projects.
 
 The "3.Projects" demo is more detailed on this.
 ---
-The project files will be open
-in the rest sessions of this project.
+The project files will be open in next sessions
+of this project.
 
-The list of open files and
-their cursor positions are saved
-from one alited's session to other.
+The list of open files and their cursor positions
+are saved from one alited's session to another.
 
 Nothing special yet.
----
+
 Let's restart alited once more just to check this.
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG

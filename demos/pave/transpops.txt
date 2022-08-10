@@ -14,9 +14,8 @@ Its main features:
  - providing 'mega-attributes', incl. user-defined ones
  - providing 'mega-widgets'
 ---
-This demo test is test2_pave.tcl
-
-test2_pave.tcl is the crucial test of "apave".
+This demo is played by test2_pave.tcl
+that is a crucial test of "apave".
 
 It opens its own code at starting.
 ---
@@ -50,6 +49,18 @@ by Richard Suchenwirth.
 ---
 The tablelist widget by Csaba Nemethi.
 ---
+The date picker can be "popup" or "embedded".
+---
+The embedded calendars can be multiple.
+
+Selected (highlighted) days can be set/get.
+
+Commands can be bound to calendar events of
+left click ("selection") & right click ("menu").
+---
+The embedded calendars can be united
+(2, 3 ... up to 12).
+---
 The widgets' layout is constructed
 with "grid" and "pack" united.
 ---
@@ -57,26 +68,33 @@ The natural tab order of widgets is set
 by their L/T (left/top) relations
 passed to the "grid" geometry manager.
 
-The "pack" geometry manager is mostly used inside frames.
+The "pack" geometry manager is mostly used
+inside frames.
 ---
 At that, frames may be scrollable.
 
 Thanks to Paul Walton for his "sframe".
 ---
 Some other tasty things are:
- - button with timeout
+ - splash screen with progress bar
+   (shown at starting the test)
+---
+ - listbox / combobox of file content
+---
+ - links & changing images
 ---
  - tips & balloons
 ---
- - links & changing images
+ - widgets blinking
+   to draw attention
+---
+ - button with timeout
 ---
  - tab bar
 ---
  - tool bar
 ---
  - status bar
----
- - listbox / combobox of file content
 ---
  - popup menus for appropriate widgets
 ---

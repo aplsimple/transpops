@@ -11,20 +11,26 @@ To add a branch, the key combinations are used:
   - Shift+F1 for 1st level
   - Shift+F2 for 2nd level
   - Shift+F3 for 3rd level
+---
+The keys and comments are customizable.
+For example, new levels of branches can be added.
 
-New levels of branches can be added, and
-the keys and comments are customizable too.
+At first presentation, the "List of Templates"
+dialogue shows its help. Some dialogues of alited
+do the same. These help shows are cancelled with
+"Don't show anymore" check button.
 ---
 To add a procedure / method, the keys are used:
   - Alt+P to add a procedure
   - Alt+M to add a method
 ---
-The unit tree has its own toolbar
-allowing to arrange the tree.
+The unit tree has its own toolbar allowing
+to arrange the tree.
 
-The Up / Down buttons allow to move
-unit(s) through the tree, so a code
-can be rearranged without cut & paste.
+The Up / Down buttons allow to move unit(s)
+through the tree.
+
+A code can be rearranged without cut'n'paste.
 ---
 A unit can be drag-and-dropped,
 a target being before a drop point.
@@ -36,10 +42,26 @@ If a selected unit group needs to be moved to
 some far location, "Drop selected..." menu item
 might be helpful.
 
-The group units are selected without any order.
+The group's units are selected without any order.
+
+They are dropped in the order of their sequence.
 ---
-The visited units are highlighted
-in the unit tree by a color.
+The visited units are highlighted in the unit tree
+by a color (the same as proc/method/return/yield).
+
+This rule doesn't relate to branches.
+---
+However, if a unit contains "TODO comments",
+it is highlighted with red color, no matter it's
+a leaf or a branch.
+
+TODO comments begin with #! so that Unix shebangs
+are highlighted in the same manner as TODOs.
+---
+Alternatively, we can set TODO comments with
+"# TODO <...>" patterns.
+
+The TODOs are also seen in the tree's tooltips.
 ---
 At navigating through the unit tree,
 the cursor positions are saved/restored
@@ -51,29 +73,24 @@ positions we left them.
 There is "Last Visited" list of units as well.
 
 Let's see how it is populated.
-
+---
 The following actions fill "Last Visited" list:
+
   - click on a unit
----
   - change a unit's content
----
   - switch tabs of edited files
----
   - choose the unit tree's item
----
   - choose the infobar's item
----
   - choose the Favorites/Last Visited's item
----
   - press Alt+Backspace ("To Last Visited")
----
   - press Alt+B ("To Matched Bracket")
----
   - press Ctrl+L ("Look for Declaration")
----
   - press F3, Alt+Q, Alt+W, Alt+Left, Alt+Right
----
   - undo / redo changes
+
+Nearly all actions with a text lead to updating
+"Last Visited" list, excepting mostly a simple
+navigation with Up/Down/PageUp/PageDown keys.
 ---
 Some of units may be considered as favorite. If so,
 they are appointed favorites with "Favorites" toolbar.
@@ -85,11 +102,21 @@ The "Favorites" list is per a project.
 If some favorites' list is considered valuable,
 the list can be saved by its own name.
 ---
+While navigating in the saved favorites, we can
+see their contents in the below listbox.
+
+Still, we can use "Current favorites" button to
+fill the listbox with the current list of favorites
+and create a new list or update an old one.
+
+Also, we can use "Back" button to restore a list
+of favorites that was active at opening a project.
+---
 After pressing Ctrl+Shift+F, "Search Units" bar
 is shown, allowing to search units by their case
 insensitive glob patterns.
 
-Very useful.
+VERY useful.
 ---
 The info listbox' context menu allows
 to set "Don't focus a text" mode
@@ -103,18 +130,32 @@ Useful at getting a Tcl error message with
 a proc / method name and a line number.
 ---
 The alited provides a tool to check Tcl code
-for consistencies of brackets.
+for some consistencies.
 
-Useful at getting an obscure error message.
+Every proc/method is checked for consistencies
+of braces, brackets and quotes as well as for
+duplicate unit names. Also a whole of the file
+is checked for the consistencies.
+
+VERY useful at getting an obscure error message.
 ---
 At checking Tcl code, a whole content of a unit
 has to be checked from its start to a next unit's.
 
 Some "errors" are natural and eliminated by
-"END of namespace" or similar branches.
+"END of namespace" or similar branches which
+are good for documentation / visibility as well.
+---
+If a unit contains inconsistent braces,
+it cannot be moved by means of the tree,
+because obviously it's either incomplete
+or somehow related to the unit structure.
+
+In such cases, only the cut-and-paste can
+help with moving units.
 ---
 By the way, did you notice the red bar icons
-at the items of the unit tree?
+at the leaves of the unit tree?
 
 They mean "the more red the more long".
 

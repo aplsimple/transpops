@@ -1,44 +1,59 @@
 If the theme is set at starting the application
 those mentioned issues are gone.
+---
 Now, we'd note the following:
  - theming the not-ttk widgets
  - theming the menus
  - theming the standard Tk choosers
+---
 The not-ttk widgets got the theming
 as well as their ttk counterparts.
+---
 The apave package at creating popup menus
 cares also for their theming.
--
+
 As well as with the main menu of the application.
+---
 The Tk core choosers are themed as well.
+---
 Ironically, the color chooser of Tk core
 is not ttk themed.
--
+
 To resolve this issue, visit https://aplsimple.github.io
 and download the updated color chooser.
+---
 This color chooser provides a few of tasty features.
+---
 If you want to have some widgets not themed by apave
 you can use "untouchWidgets" method
 to not touch the widgets at the theming.
--
+
 Here, the labels of "Color schemes" tab
 are untouched at theming.
+---
 Few notes about icons.
--
+
 The apave package provides two sets of icons
-as of September 2021: the small and the middle.
+as of December 2021: the small and the middle.
+
 The large icons are the same as the middle.
--
+
 Also, the icons of menus are small by default.
+---
 The alited editor uses themes made by rdbende
 and presented in https://wiki.tlc-lang.org.
--
+
 Let's glance at the forest theme (a bit modified)
-in a localized version of alited.
-Welcome to https://aplsimple.github.io
+in alited v1.0.6.
+---
+Welcome to
+
+https://aplsimple.github.io
+
 for further details.
--
+
 Thanks for your attention.
+---
 
 #RUNF1: tclsh ../../pave/tests/test2_pave.tcl
 

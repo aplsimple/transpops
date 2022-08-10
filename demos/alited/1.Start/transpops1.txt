@@ -1,10 +1,7 @@
 Let's set some basic options of alited,
 mostly dimensions and colors.
----
-The dimensions of alited's window
-are usually set by mouse.
 
-Let's resize the four panes by their sizers.
+We resize the four panes by their sizers.
 ---
 A little bit of efforts need to size
 "Row" column of the unit tree.
@@ -13,10 +10,6 @@ Not too much, though.
 ---
 The alited's colors and fonts are set
 by means of "Setup / Preferences" menu item.
----
-Notice "Help" button at the left bottom corner.
-
-All of alited's essential dialogues are supplied with it.
 ---
 With the new options set, let's restart alited.
 ---

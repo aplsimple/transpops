@@ -3,8 +3,12 @@ Well, our changes are:
     - Git menu is substituted with GoldenDict application
 
     - Test menu is substituted with Misc menu
+
+    - screenshooter is added
 ---
 These changes are seen in "Tools / bar/menu" item as well.
+
+Let's try and explore these things.
 ---
 Welcome to
 

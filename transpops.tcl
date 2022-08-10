@@ -56,6 +56,7 @@ proc ::transpops::my::Show {win evn} {
   toplevel $wmsgs
   wm withdraw $wmsgs
   wm overrideredirect $wmsgs 1
+  wm attributes $wmsgs -topmost yes
   label $wmsgs.l -padx 30 -pady 30 -foreground $fg -background $bg \
     -font {-weight bold -size 20 -family Quicksand} -relief solid -text $msg -justify left
   set alpha 0.0

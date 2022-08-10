@@ -1,24 +1,47 @@
-The alited is a "project oriented" editor, not a general purpose one.
+The alited is a "project oriented" editor,
+not a general purpose one.
 
-The alited provides nearly all the necessary to develop Tcl/Tk projects
-without ever quitting it till a machine's shutdown.
+The alited editor provides nearly all of
+the necessary to develop Tcl/Tk projects.
+
+In fact, alited project has been developed
+by its own version 0.2 since 24 April 2021.
+
+Inspite of permanent overheads of this way,
+it turned out to be amazingly productive,
+more and more in the course of time.
 ---
 The projects seen by alited are stored in
-~/.config directory chosen at the very first start of alited.
+~/.config or a directory chosen at the very
+first start of alited.
 
-You can copy it and pass the copy's name
-as an argument to the alited.
+You can have as many "config" directories
+as you want, passing their names to alited
+as the first argument. Or choose it "on fly".
 
-This allows keeping various types of projects
-at one machine: public/private, for work/fun...
-
-... configuring them accordingly.
+This allows keeping various TYPES of projects
+at one machine: public/private, work/fun etc.
 ---
-The projects are listed in "Setup / Projects" menu item.
+The projects are listed in "Setup/Projects" menu item.
+
 Also, there is "Projects" icon of the tool bar.
+
+Let's open "Projects".
 ---
-The default project refers to alited's
+We can resize Projects' window, more or less.
+
+At that, the text fields are most important:
+"Notes" seems to be larger, "TODO" smaller.
+---
+The "default" project refers to alited's
 installation directory, just for a start.
+
+Plus, the alited's code may be used
+as a source of code snippets viewed at
+their work immediately in the alited!
+
+Especially so, if you use "apave" package
+the alited is based on.
 ---
 Let's create a new project.
 
@@ -43,12 +66,12 @@ we use the tree's popup menu. Let's do it.
 ---
 The open files are highlighted in the file tree.
 
-When a file is closed it's unhighlighted.
+After closing a file, it is unhighlighted.
 ---
 A newly open file is placed to
 the beginning of the tab bar.
 
-This is true even when a  selected tab
+This is true even when a selected tab
 isn't visible in the tab bar.
 ---
 The alited provides basic facilities
@@ -60,7 +83,7 @@ for arranging a project's directory:
 These facilities are very basic, for example
 directories aren't moved in alited's file tree.
 
-Still, the file tree can help with little actions.
+Still, the file tree can help with little things.
 ---
 Let's try "Create File/Directory"
 actions on the file tree.
@@ -80,15 +103,11 @@ There is no facility to drag-and-drop a group.
 ---
 Though, if a selected group needs
 to be moved to some far location
-"Drop selected..." menu item might be helpful.
+"Drop selected..." menu item might
+be helpful. Like with the unit tree.
 
 The group files may be selected
 without any order / sequence.
----
-If a currently edited file does NOT belong
-to the current project directory, we can move this file to it.
-
-For this, use "Move File" buttons.
 ---
 When projects are switched,
 the alited saves and restores:
@@ -108,13 +127,60 @@ to remain open in the new project,
 we select them in the tab bar by Ctrl+click,
 then we switch to the new project.
 ---
-There is an option in "Preferences"
-allowing to save an edited file's copies.
+Another way to open files of a project
+inside a current one is a file list of
+"Projects / Options" dialogue.
 
-The number of saved copies is 1 through 99.
+The files to be open are selected with
+simple clicking them. After that, we
+open them from the list's context menu.
 
-Sometimes this option can be VERY HELPFUL,
-specifically when SCM is helpless.
+Or we open a file with a double-click.
+---
+This "Projects / Options" dialogue can
+be nicely used for a sort of clearance.
+
+It's when a lot of files are (not open,
+still annoying) in the tab bar's list.
+
+I.e. when a lot of files need to be
+closed / ignored in the project's list
+and the lot are very selective.
+---
+The currently edited files are listed in
+the file list available through:
+
+  - right-clicking the tab bar of files
+  - choosing "Tools/File List" menu item
+  - pressing F9 key (it's customizable)
+---
+Note that the file list has two separators,
+just to see:
+
+  - files of currently visible tabs of the bar
+  - left "invisible" files
+  - right "invisible" files
+---
+The "Projects" dialogue contains "Notes" and
+"Reminder" fields to support a development.
+
+The "Notes" are very good for projects that
+are developed unsteadily, from time to time,
+allowing to keep a list of ideas.
+
+The "Reminder" is very good for all of projects,
+allowing to keep deadlines of TODOs.
+
+At last, "Notes" and "Reminder" are both good
+at maintaining.
+---
+The reminders are bound to dates (deadlines).
+
+When a reminder became out-dated, there will
+be blinkings and whistlings!
+---
+If a TODO needs to be postponed, you can
+shift it on a day / week with "move" buttons.
 ---
 Last few words about another interesting option.
 
@@ -122,26 +188,27 @@ Its default value is set in "Preferences"
 but in "Project" settings it can be reset.
 ---
 The "Unit lines per 1 red bar" option means that
-each N lines of a unit would add a red bar to its icon
-at the unit tree, up to 7th bar.
+N lines of a unit are considered normal, while
+each N additional lines of a unit would add
+a red bar to its icon at the unit tree, up to 7th bar.
 
-When the icon becomes fully red, this is like
-sending "a bit too long unit" message, i.e.
-the unit probably needs a sort of reforming.
+When the icon becomes fully red, this is like sending
+"too long unit" message, i.e. the unit probably needs
+some reforming.
 
 There are 8 grades of redness: 0, 1*N, 2*N, 3*N ... 7*N.
 
-So, if N=20, then 141 lines would mean "a too long unit".
+If N=10, then 80 (8*10) or more lines mean "too long".
 
 Just look at the unit tree to find those horrible reds,
 candidates for reforming.
 ---
-Let's set this option to 10
-which would mean a procedure/method
-of >= 71 lines will be fully red marked.
+Let's set this option to 5 which would mean
+a procedure/method of 40 or more lines will be
+fully red marked.
 ---
-This thing is too long, so it's "fully red".
-Even not rosy.
+This thing is too long, so it's "too red".
+Even not too rosy.
 ---
 Welcome to
 

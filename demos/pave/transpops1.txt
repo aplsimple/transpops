@@ -8,6 +8,7 @@ This test is test2_pave.tcl
 that provides the widgets to theme:
  - a list of themes
  - a list of color schemes
+ - a spinbox of hues
  - a spinbox of font sizes
  - a list of icon sets
  - a tab of color schemes.

@@ -1,0 +1,108 @@
+Welcome to "baltip"!
+
+It's Tcl/Tk balloon tip package.
+
+Its features will be presented
+here, with demo widgets:
+  - button
+  - label
+  - text
+  - menu
+  - checkbutton
+  - listbox
+  - treeview
+---
+The "Hello" button has a tip
+positioned just under it.
+
+The text's tip is under the text as well.
+
+This feature is well fit for widgets
+positioned in a row, e.g. in a toolbar.
+---
+Other widgets' tips are positioned
+under the mouse pointer.
+
+This default behavior can be changed
+with "-under" option.
+---
+Any tip can be supplied with an icon,
+as the "Hello" button here.
+
+The "Hello" button switches its tip on/off
+and changes the tip font size globally.
+
+Also, it resets the label's tip
+switching it to-alert-to-message.
+---
+The checkbutton disables/enables all tips.
+
+At enabling the tips, it changes its own
+options: -fg, -padding, -padx, -pady.
+---
+The text has two tags with their own tips.
+---
+The main menu's items have their tips as well.
+
+The tips are shown in the status bar
+due to -command option.
+---
+The label has its own tip too.
+
+When right-clicked, it calls a popup menu.
+---
+The popup menu has "tear-off" option. But
+only the non-tearoff menu can have tips.
+
+The menu tips are useful e.g. when the items
+are displayed as short names of files, while
+the tips are wanted to be their full names.
+---
+Here, the popup menu's items
+set new tip options globally.
+---
+The listbox can have tips per its items
+(its indices) and per a whole widget.
+
+Here, the button "Hello" switches these modes.
+---
+The treeview can have tips per its items
+(its ID and columns) and per a whole widget.
+
+Here, the button "Hello" resets these modes.
+---
+The balloon feature is available
+due to "-geometry" option.
+
+This option means that a tip is unrelated to
+a widget and as such is a balloon message.
+
+The balloon message is faded after a while
+... or destroyed with hovering over it.
+---
+More examples of baltip usage
+can be found in "apave" package,
+available through these links:
+
+  https://chiselapp.com/user/aplsimple
+
+  https://github.com/aplsimple
+---
+Let's glance at test2_pave.tcl of
+"apave" package where we can see:
+
+  - tips on menu list of files
+  - tips on tabs of ttk::notebook
+  - tips on labels with links
+  - tips on text tags
+  - tips on canvas tags
+---
+Welcome to
+
+https://aplsimple.github.io
+
+for further details.
+
+Thanks for your attention.
+---
+#RUNF1: tclsh ../test.tcl

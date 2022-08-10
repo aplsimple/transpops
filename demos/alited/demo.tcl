@@ -50,7 +50,7 @@ proc TRANSPOPS_DEMO {} {
     set dir 1.Start
     if {$step1} {
       set fname transpops0.txt  ;# the very first start
-      set win {.diapobj1 .alwin}
+      set win {.diaalitedObjToDel1 .alwin}
     } elseif {$step2} {
       set fname transpops1.txt  ;# after creation of ./config/alited
       set win {.alwin.diaPref .alwin}
@@ -90,12 +90,14 @@ proc TRANSPOPS_DEMO {} {
       set fname transpops1.txt  ;# 1st start
     } elseif {$step4} {
       set fname transpops2.txt  ;# 2nd start
+    } else {
+      set fname transpops3.txt  ;# 3rd start
     }
   }
 
   ## ________________________ 6. Theme _________________________ ##
 
-  if 1 {
+  if 6 {
     set dir 6.Theme
     set win {.alwin.diaPref .alwin.winFind .alwin}
     if {$step1 || $step2} {
@@ -119,3 +121,4 @@ proc TRANSPOPS_DEMO {} {
 catch {TRANSPOPS_DEMO}
 
 #RUNF1: ../../alited/src/alited.tcl DEBUG
+# ~/.config2

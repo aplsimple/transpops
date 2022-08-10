@@ -3,8 +3,8 @@ other tools for a navigation around a project.
 
 One of them is "Find/Replace" tool, called with:
     - Ctrl+F keys
-    - "Edit / Find/Replace" in menu
-    - "Find/Replace" in toolbar
+    - "Search / Find/Replace" menu item
+    - "Find/Replace" toolbar icon
 ---
 The "Find/Replace" dialogue contains two sections:
     - Find
@@ -56,7 +56,7 @@ Other find facilities of alited are:
     - Find words by a list
     - Find in a directory
 ---
-Press Ctrl+Shift+F or hit "Edit / Find Unit" menu item to find
+Press Ctrl+Shift+F or hit "Search / Find Unit" menu item to find
 unit(s) by case insensitive glob patterns.
 
 It's VERY helpful when you remember a part of a unit's name,
@@ -68,7 +68,7 @@ To look for a proc/method declaration, you can try:
 
     - press Ctrl+L, when the cursor is on its name
 
-    - hit "Edit / Look for Declaration" menu item
+    - hit "Search / Look for Declaration" menu item
 ---
 To complete a command, press Tab key while
 the cursor is on initial characters of a command
@@ -83,6 +83,9 @@ At the completion, the commands:
     - are not qualified for a current file
 
     - are qualified for others
+
+Also, a completed command may be followed by
+its arguments (default ones in braces).
 ---
 Double clicking a word would highlight
 all of its occurences (if red) or only one
@@ -107,13 +110,24 @@ goes around: after finding a last occurence
 it finds a first one.
 ---
 For a quick search of a word, there is a nice
-Ctrl+Shift+click applied to the word.
+Ctrl+Shift+click applied to the word the caret
+is set on.
+
+Also, we can SELECT an arbitrary piece of text
+(not just a word) and run the quick search.
 
 It means a search throughout alited's session
 and is VERY helpful in many cases.
 ---
 Sometimes, a whole list of words
 should be sought in a file.
+
+For example, you have some names
+or tags and want to know where
+they are mentioned and where not.
+At that you want to be able to copy
+the found and the non-found lists
+for further processing.
 
 Let's try this method.
 ---
@@ -128,14 +142,16 @@ command with options:
     - case insensible
 ---
 Other "grep" facilities are available in "e_menu".
-
-For example, you can search in selected files.
-The selection is set by Ctrl+clicking the tabs.
 ---
-Just for fun.
+We can search in selected files.
+The selection is set by Ctrl+clicking the tabs.
 
-The same search in the selected files
-is available in "Find/Replace" dialogue.
+The number of selected files is shown in the status bar.
+
+The search in the selected files is available
+in "Find/Replace" dialogue.
+
+It takes place of "All in Session".
 ---
 Welcome to
 

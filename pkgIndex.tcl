@@ -13,6 +13,10 @@ shown one by one, in transparent mode.
 
 First called, the popup message is displayed under the mouse pointer. The following messages will be displayed at the same screen coordinates if not reset with an *alternative hotkey*.
 
+The popup messages will be hidden at clicking them.
+
+*Note for apave package*. The apave's showModal method includes a specific bind of Ctrl-Alt-0 keys to hide the transpops messages with these keys (because a modal window captures any clicks).
+
 <hr>
 
 Runs this way:

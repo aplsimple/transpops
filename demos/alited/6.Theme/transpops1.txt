@@ -32,9 +32,9 @@ their colors with "Tint" option.
 The negative values mean "darker",
 the positive values mean "lighter".
 ---
-Let's try "default" theme with a dark color scheme.
+Let's try "clam" theme with a color scheme.
 
-Also, let's set a bit lighter tint.
+Also, let's set a tint.
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 

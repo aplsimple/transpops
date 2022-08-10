@@ -1,12 +1,16 @@
 Here comes alited localized.
 ---
-The colors of Tcl syntax have been changed too.
+The colors of Tcl syntax have changed too.
 ---
-And it's the same awdark theme,
-just with "Oscuro3" colors.
+And it's the same aw theme,
+just with "SunValley" colors.
+---
+The color scheme of e_menu has changed too.
 ---
 The default syntax colors can be restored with
-"Default" button of "Setup / Editor / Syntax".
+"Default" buttons of "Setup / Editor / Syntax".
+
+And there are a nice set of African color shemes.
 ---
 Welcome to
 

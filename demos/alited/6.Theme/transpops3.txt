@@ -4,26 +4,27 @@ These settings are located in
 Setup / Preferences / Editor.
 ---
 Let's change some colors.
----
-There is a small restriction:
-    If a color scheme is changed from light to dark
-    and vice versa, the syntax colors become disabled,
-    as they are specific for a light / dark background.
 
-In such cases, alited should be restarted for
-the syntax colors to be accessible.
+At that we view and test them in "Code snippet"
+field.
+
+If we want some specific commands be highlighted
+(in the same color as Tk), we enter them in "Your
+commands" field.
 ---
 Due to msgcat, alited is easily localized, with
 locale .msg files being in data/msgs directory.
 
 Let's try this feature.
 
-(As for flags: alited uses the Stars and Stripes
+As for flags: alited uses the Stars and Stripes
 instead of the Union Jack just because of the
-origin of computers and words like 'color'.)
+origin of computers and words like 'color'.
 ---
-Also, we might try "awdark" theme by Brad Lanam
-with a dark color scheme, for example "Oscuro3".
+Also, we might try "aw" theme by Brad Lanam
+with a color scheme, for example "SunValley".
+---
+At last, we'll change a color scheme of e_menu.
 ---
 Well, let's save settings and restart alited.
 ---

@@ -20,12 +20,12 @@ These are most fit to each other,
 still for any light / dark theme there is
 a nice appropriate light / dark color scheme.
 ---
-Let's try "azure-dark" theme.
-It needs a dark color scheme.
+Let's try "azure" theme.
+It needs an appropriate color scheme.
 
-"AzureDark" is probably a best choice.
+"Azure" is probably a best choice.
 
-But we might try another dark theme, say, "MildDark".
+But we might try another scheme.
 The difference will be in:
   - color of context menu
   - color of gutter

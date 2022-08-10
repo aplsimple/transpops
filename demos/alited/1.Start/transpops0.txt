@@ -1,8 +1,29 @@
 Welcome to "alited"!
 
 It's a lite editor to develop Tcl/Tk applications.
-At first start, it offers some simple initial actions.
 
-Let's confirm the offered. It doesn't hurt:)
+At first start, it needs a simple initialization.
+---
+This starting message means that we can have
+as many configuration directories as we want.
+
+Passing a configuration directory's name to alited
+as the first argument, we supply it with the appropriate
+preferences, such as ttk themes, color schemes, projects,
+editor's preferences etc.
+
+For example, to distinguish between our private
+and public projects, work and fun etc.
+---
+Please, notice "Help" button at the left bottom corner.
+
+All of alited's essential dialogues are supplied with it.
+
+Moreover, even tabs of dialogues provide their own helps.
+---
+If we don't plan to have several types of
+configurations, we just use this ~/.config
+
+So, we confirm the offered. It doesn't hurt:)
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
