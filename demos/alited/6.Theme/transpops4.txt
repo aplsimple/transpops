@@ -2,10 +2,10 @@ Here comes alited localized.
 ---
 The colors of Tcl syntax have changed too.
 ---
-And it's the same aw theme,
-just with "SunValley" colors.
----
+And it is "aw" theme by Brad Lanam.
+
 The color scheme of e_menu has changed too.
+As well as Tkcon's.
 ---
 The default syntax colors can be restored with
 "Default" buttons of "Setup / Editor / Syntax".

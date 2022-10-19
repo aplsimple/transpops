@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 1.3
+package provide transpops 1.4
 
 # _________________ Common data of transpops namespace __________________ #
 
@@ -57,7 +57,19 @@ proc ::transpops::my::Show {win evn} {
   wm withdraw $wmsgs
   wm overrideredirect $wmsgs 1
   wm attributes $wmsgs -topmost yes
-  label $wmsgs.l -padx 30 -pady 30 -foreground $fg -background $bg \
+  set varFG [ColorVar fg $imsgs]
+  set varBG [ColorVar bg $imsgs]
+  if {[info exists $varFG]} {
+    set fg2 [set $varFG]
+  } else {
+    set fg2 $fg
+  }
+  if {[info exists $varBG]} {
+    set bg2 [set $varBG]
+  } else {
+    set bg2 $bg
+  }
+  label $wmsgs.l -padx 30 -pady 30 -foreground $fg2 -background $bg2 \
     -font {-weight bold -size 20 -family Quicksand} -relief solid -text $msg -justify left
   set alpha 0.0
   set alphaincr [expr {abs($alphaincr)}]
@@ -107,6 +119,7 @@ proc ::transpops::my::Popup {msg} {
   }
   after 10 "::transpops::my::Popup {$msg}"
 }
+#_____
 
 proc ::transpops::my::Run {w ev scrp} {
   # Binds an event on a window to a script.
@@ -120,6 +133,15 @@ proc ::transpops::my::Run {w ev scrp} {
     bind $w $ev "$scrp ; break"
   }
   after 100 [list ::transpops::my::Run $w $ev $scrp]
+}
+#_____
+
+proc ::transpops::my::ColorVar {nam idx} {
+  # Name of color variable for a message
+  #   nam - color's name
+  #   idx - message's index
+
+  return "::transpops::my::${nam}_$idx"
 }
 
 # _____________ Interface procedures of transpops namespace _____________ #
@@ -139,8 +161,21 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
   set ::transpops::my::msgs [list]
   set merge no
   foreach line [split [read $chan] \n] {
+    # skip comments
+    if {[string index $line 0] eq {#}} {
+      # comments may be valuable
+      catch {
+        lassign [split [string trim [string range $line 1 end]]] o v
+        if {$o in {fg bg}} {
+          # reset colors of transpops e.g.
+          #   by this line: # fg #000
+          #   or this line: # bg #fff
+          set [my::ColorVar $o [llength $::transpops::my::msgs]] $v
+        }
+      }
+      continue
+    }
     # if line has "\" at its end, it continues a message
-    if {[string index $line 0] eq {#}} continue
     set line2 [string map {{ } {} - {} + {} / {} \\ {} * {} = {}} $line]
     set continued [expr {$line2 ne {} || $line eq {}}]
     if {$continued} {

@@ -59,7 +59,7 @@ TODO comments begin with #! so that Unix shebangs
 are highlighted in the same manner as TODOs.
 ---
 Alternatively, we can set TODO comments with
-"# TODO <...>" patterns.
+"# TODO <...>".
 
 The TODOs are also seen in the tree's tooltips.
 ---
@@ -101,16 +101,10 @@ The "Favorites" list is per a project.
 ---
 If some favorites' list is considered valuable,
 the list can be saved by its own name.
----
-While navigating in the saved favorites, we can
-see their contents in the below listbox.
 
-Still, we can use "Current favorites" button to
-fill the listbox with the current list of favorites
-and create a new list or update an old one.
-
-Also, we can use "Back" button to restore a list
-of favorites that was active at opening a project.
+Then, the saved lists can be used as a sort of
+"subprojects inside projects" to solve their
+appropriate tasks.
 ---
 After pressing Ctrl+Shift+F, "Search Units" bar
 is shown, allowing to search units by their case
@@ -118,9 +112,9 @@ insensitive glob patterns.
 
 VERY useful.
 ---
-The info listbox' context menu allows
-to set "Don't focus a text" mode
-in order to scan the found units with keys.
+The info listbox' context menu allows to
+set "Don't focus a text" mode in order to
+scan the found units with keys.
 ---
 After pressing Ctrl+G, "Go to Line" dialogue
 is shown, allowing to go inside a unit by its
@@ -148,7 +142,7 @@ are good for documentation / visibility as well.
 ---
 If a unit contains inconsistent braces,
 it cannot be moved by means of the tree,
-because obviously it's either incomplete
+because it is obviously either incomplete
 or somehow related to the unit structure.
 
 In such cases, only the cut-and-paste can

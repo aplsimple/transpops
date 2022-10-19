@@ -1,4 +1,4 @@
-package ifneeded transpops 1.3 [list source [file join $dir transpops.tcl]]
+package ifneeded transpops 1.4 [list source [file join $dir transpops.tcl]]
 
 # A short intro (for Ruff! docs generator:)
 
@@ -9,7 +9,8 @@ The Tcl/Tk *transpops* package displays popup messages.
 Fit for demos, though may be used otherwise.
 
 The messages are read from a *text file* and after pressing a *hotkey* are
-shown one by one, in transparent mode.
+shown one by one, in transparent mode. The most representative examples of
+the *text files* are in demos/alited/ subdirectories.
 
 First called, the popup message is displayed under the mouse pointer. The following messages will be displayed at the same screen coordinates if not reset with an *alternative hotkey*.
 
@@ -38,7 +39,6 @@ Of course, those `<Alt-t>` and `<Alt-y>` may be substituted with other events sp
 
 License: MIT.
   }
-
 }
 
 namespace eval ::transpops::my {

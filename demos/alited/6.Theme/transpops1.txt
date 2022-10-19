@@ -1,4 +1,9 @@
-There are a few of theming options for alited.
+Updating this demo 20 Sep 2022, we see the warning
+about an old TODO not closed.
+
+The "closing" means that we just delete them.
+---
+OK. There are a few of theming options for alited.
 
 All are located in Setup menu:
   - Setup / Preferences
@@ -26,11 +31,14 @@ The standard Ttk themes are:
 
 These themes are most recommended for their stability.
 ---
-The standard Ttk themes allow tinting
-their colors with "Tint" option.
+The color schemes can be tinted with "Tint" option,
+their colors being darker or lighter.
 
-The negative values mean "darker",
-the positive values mean "lighter".
+The negative values mean "darker", the positive values
+mean "lighter", 0 means "original tint at start".
+
+The range of tints is rather wide: -50 through 50,
+though the reasonable one is often -25 through 25.
 ---
 Let's try "clam" theme with a color scheme.
 

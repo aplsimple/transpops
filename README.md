@@ -2,7 +2,8 @@ The Tcl/Tk *transpops* package displays popup messages.
 Fit for demos, though may be used otherwise.
 
 The messages are read from a *text file* and after pressing a *hotkey* are
-shown one by one, in transparent mode.
+shown one by one, in transparent mode. The most representative examples of
+the *text files* are in demos/alited/ subdirectories.
 
 First called, the popup message is displayed under the mouse pointer. The following messages will be displayed at the same screen coordinates if not reset with an *alternative hotkey*.
 

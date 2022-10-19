@@ -6,22 +6,11 @@ by its tool bar and menu.
 Thus, they are called "bar/menu" actions.
 ---
 Some of tools are provided by alited staticly,
-i.e. they cannot be removed:
+i.e. they cannot be removed.
 
-    - Run
-    - e_menu
-    - tkcon
-    - Check of Tcl
-    - Color Picker
-    - Screen Loupe
-    - Tcl/Tk help
----
-Other tools are collected in "Tools / bar/menu" submenu.
-
-These are provided by e_menu application.
-
-All of them (even installed by default) can be removed
-or substituted with other tools.
+Other tools are collected in "Tools / bar/menu"
+submenu. These are provided by e_menu and can
+be removed or substituted for other tools.
 ---
 In fact, "Run" and "Tcl/Tk help" are both
 provided by e_menu application.
@@ -35,7 +24,8 @@ associated with a currently edited file.
 
 For Tcl files, it is "tclsh".
 ---
-But alited recognizes special comments like:
+But for a convenience of testing Tcl code,
+alited recognizes special comments like:
     #RUNF: file.tcl args
     #RUNF1: file.tcl args
     #RUNF2: file.tcl args
@@ -48,9 +38,6 @@ and comments like:
     ...
 
 The very first of them is used to run its stuff.
-
-So, it's possible to run a main Tcl script
-at editing any Tcl script of an application.
 ---
 "Run" executes Tcl script either of two ways:
     - running a file inside a console
@@ -79,18 +66,15 @@ either in console or in Tkcon.
 It's good to have both of these modes with their
 pros and contras.
 ---
-But the most radical way to run applications
-from alited is "Setup / For Run..." forced command.
+The most radical way to run applications from alited
+is "Setup / For Run..." forced command.
 
 When setting a command in this dialogue, we overcome
 all other possibilities to run applications: all these
 file associations, #RUNF:, #EXEC: are totally ignored.
 
-The command of "Setup / For Run..." dialogue will be
-run for any file currently edited.
-
 However, calling e_menu and choosing "Run me" item
-or pressing F4 key twice will run a current file
+(or pressing F4 key twice) will run a current file
 in its associated app - e_menu runs it independently.
 ---
 "Tcl/Tk help" shows Tcl/Tk man page
@@ -98,30 +82,12 @@ for a word the cursor is on.
 
 Or for a selected text.
 
-Still, this context help is available if
-Tcl/Tk help pages are downloaded and copied to
-a directory of "Preferences/Tools/Path to man".
-
-Or when Internet is accessible.
----
-As we've seen, Tkcon tool is customizable a bit.
-
-"Test" button allows to preview Tkcon with new
-settings made.
-
-"Default" button restores Tkcon's defaults.
----
-The e_menu tool is customizable as well.
+Details are in "Help / alited" menu item.
 ---
 Some tools, though default, can be changed or removed.
 
 These tools are listed in "Tools / bar/menu" submenu
 and are customized in "Setup / Preferences / Tools".
----
-In this dialogue, we can:
-    - add new actions and separators
-    - change actions or their icons
-    - remove actions and separators
 ---
 New items are added by [+] button.
 Or we can use empty rows at the bottom.
@@ -141,23 +107,26 @@ If you want to choose a whole submenu, just
 right click on this submenu and choose "Select"
 from a popup menu.
 
-NOTE: the main menu is run by "e_menu" tool.
+The main menu is run by "e_menu" tool.
 ---
 To change a tool's icon, click its drop-down list.
 
 There are available icon-pictures and icon-characters.
+---
+Also, we'll change a geometry of
 
-Highly likely, you'll find an icon expressing a tool's action.
+  - e_menu tool
+  - Tkcon tool
 ---
 One notice more: when calling alited's tools
 (excepting Tcl/Tk help and Tkcon) all of unsaved
 changes are saved according to the setting
 "Preferences/Saving/Save before bar/menu runs".
 
-It's good to set it to "All files" which means
-saving all of unsaved files before running tools.
+It's good to set it to "All files".
 ---
-After changes done, we should save them.
+After changes done, we should save the new
+preferences.
 
 This will restart alited.
 ---

@@ -22,11 +22,12 @@ instead of the Union Jack just because of the
 origin of computers and words like 'color'.
 ---
 Also, we might try "aw" theme by Brad Lanam
-with a color scheme, for example "SunValley".
+with the "Aw" appropriate color scheme.
 ---
-At last, we'll change a color scheme of e_menu.
----
-Well, let's save settings and restart alited.
+At last, we'll change a color scheme of
+
+  - e_menu
+  - Tkcon
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 

@@ -7,6 +7,14 @@ When all of sudden you get a feeling that
 too much of light / darkness is around,
 this option might help.
 ---
+All of submenus of alited have "tear-off"
+feature which is quite convenient for
+multiple choices.
+
+For example, we might switch some tips off,
+keeping Projects' and Last Visited's ones
+(still, TODOs are shown all the same).
+---
 Let's return to Preferences again.
 ---
 For aw*, azure, forest, sun-valley themes

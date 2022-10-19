@@ -1,23 +1,16 @@
 The alited is a "project oriented" editor,
 not a general purpose one.
 
-The alited editor provides nearly all of
-the necessary to develop Tcl/Tk projects.
+It provides nearly all of the necessary
+to develop Tcl/Tk projects.
 
-In fact, alited project has been developed
-by its own version 0.2 since 24 April 2021.
-
-Inspite of permanent overheads of this way,
-it turned out to be amazingly productive,
-more and more in the course of time.
+And alited project has been developed
+by its own v0.2 since 24 April 2021.
 ---
 The projects seen by alited are stored in
 ~/.config or a directory chosen at the very
-first start of alited.
-
-You can have as many "config" directories
-as you want, passing their names to alited
-as the first argument. Or choose it "on fly".
+first start of alited. Or passed as the first
+argument to alited.
 
 This allows keeping various TYPES of projects
 at one machine: public/private, work/fun etc.
@@ -27,11 +20,6 @@ The projects are listed in "Setup/Projects" menu item.
 Also, there is "Projects" icon of the tool bar.
 
 Let's open "Projects".
----
-We can resize Projects' window, more or less.
-
-At that, the text fields are most important:
-"Notes" seems to be larger, "TODO" smaller.
 ---
 The "default" project refers to alited's
 installation directory, just for a start.
@@ -50,6 +38,21 @@ We must fill the appropriate data fields
 ---
 After filling the new project's fields
 we press "Add" button to create it.
+---
+Another method to create a project is
+"Create a project by template" button.
+
+This method is based on the template of
+directory / file tree, in Templates tab.
+---
+There may be up to 16 templates, all their
+names being collected in the combobox.
+
+Let's create a template. After its use,
+it is saved in the combobox's values.
+
+To view the result, we can hit "Project
+directory" button.
 ---
 Let's open a project.
 
@@ -88,26 +91,11 @@ Still, the file tree can help with little things.
 Let's try "Create File/Directory"
 actions on the file tree.
 ---
-To move files, we can use:
-  - "Move Up/Down" buttons
-  - the tree's popup menu
-  - drag-and-drop
----
-For moving files, we can select
-a whole group of them with Ctrl+click.
+To move files in the file tree,
+we use nearly the same actions
+as in the unit tree.
 
-Then, with "Move Up/Down" buttons
-we move them to an upper/lower directory.
-
-There is no facility to drag-and-drop a group.
----
-Though, if a selected group needs
-to be moved to some far location
-"Drop selected..." menu item might
-be helpful. Like with the unit tree.
-
-The group files may be selected
-without any order / sequence.
+The alited is rather consistent!
 ---
 When projects are switched,
 the alited saves and restores:
@@ -160,6 +148,15 @@ just to see:
   - files of currently visible tabs of the bar
   - left "invisible" files
   - right "invisible" files
+---
+The detailed info of files can be switched
+on/off by "Setup/Tip File Info" menu item.
+
+The file info is available in:
+
+  - the tab bar
+  - the file list
+  - the file tree
 ---
 The "Projects" dialogue contains "Notes" and
 "Reminder" fields to support a development.

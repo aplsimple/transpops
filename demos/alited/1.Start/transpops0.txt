@@ -9,21 +9,26 @@ as many configuration directories as we want.
 
 Passing a configuration directory's name to alited
 as the first argument, we supply it with the appropriate
-preferences, such as ttk themes, color schemes, projects,
-editor's preferences etc.
+preferences: ttk themes, color schemes, projects etc.
 
-For example, to distinguish between our private
-and public projects, work and fun etc.
+Here, this is just a useful information about where
+alited keeps its settings. E.g., in Windows, you can
+direct them to C:\Users\me\AppData\Local.
 ---
 Please, notice "Help" button at the left bottom corner.
 
-All of alited's essential dialogues are supplied with it.
+All of alited's essential dialogues are supplied with it,
+some of them show the help at start, like "Did you know".
 
-Moreover, even tabs of dialogues provide their own helps.
+All of the tabs of dialogues provide their own helps.
 ---
-If we don't plan to have several types of
-configurations, we just use this ~/.config
+If we are not going to have several configurations,
+we use this ~/.config which is in no way harmful.
 
-So, we confirm the offered. It doesn't hurt:)
+Also we change Tcl/Tk core directory chooser's geometry,
+to test the geometry will be active in the next sessions
+and applied to Tcl/Tk file chooser as well.
+
+Now then, we confirm the offered. It doesn't hurt:)
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
