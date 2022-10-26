@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 1.4
+package provide transpops 1.5
 
 # _________________ Common data of transpops namespace __________________ #
 
@@ -32,7 +32,7 @@ proc ::transpops::my::Show {win evn} {
   # Makes the popup toplevel window and starts popups.
   #   win - parent window's path
   #   evn - index of event (2nd sets the geometry)
- 
+
   variable geom
   variable msgs
   variable imsgs
@@ -57,20 +57,15 @@ proc ::transpops::my::Show {win evn} {
   wm withdraw $wmsgs
   wm overrideredirect $wmsgs 1
   wm attributes $wmsgs -topmost yes
-  set varFG [ColorVar fg $imsgs]
-  set varBG [ColorVar bg $imsgs]
-  if {[info exists $varFG]} {
-    set fg2 [set $varFG]
+  set varOPTS [OptionVar $imsgs]
+  if {[info exists $varOPTS]} {
+    set opts [set $varOPTS]
   } else {
-    set fg2 $fg
+    set opts {}
   }
-  if {[info exists $varBG]} {
-    set bg2 [set $varBG]
-  } else {
-    set bg2 $bg
-  }
-  label $wmsgs.l -padx 30 -pady 30 -foreground $fg2 -background $bg2 \
-    -font {-weight bold -size 20 -family Quicksand} -relief solid -text $msg -justify left
+  label $wmsgs.l -padx 30 -pady 30 -foreground $fg -background $bg \
+    -font {-weight bold -size 20 -family Quicksand} \
+    -relief solid -text $msg -justify left {*}$opts
   set alpha 0.0
   set alphaincr [expr {abs($alphaincr)}]
   pack $wmsgs.l -fill both -expand true
@@ -136,12 +131,11 @@ proc ::transpops::my::Run {w ev scrp} {
 }
 #_____
 
-proc ::transpops::my::ColorVar {nam idx} {
-  # Name of color variable for a message
-  #   nam - color's name
-  #   idx - message's index
+proc ::transpops::my::OptionVar {tag} {
+  # Name of variable for transpops options.
+  #   tag - options' tag (common name or message's index)
 
-  return "::transpops::my::${nam}_$idx"
+  return "::transpops::my::_TP_OPTIONS_$tag"
 }
 
 # _____________ Interface procedures of transpops namespace _____________ #
@@ -164,16 +158,33 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
     # skip comments
     if {[string index $line 0] eq {#}} {
       # comments may be valuable
-      catch {
-        lassign [split [string trim [string range $line 1 end]]] o v
-        if {$o in {fg bg}} {
-          # reset colors of transpops e.g.
-          #   by this line: # fg #000
-          #   or this line: # bg #fff
-          set [my::ColorVar $o [llength $::transpops::my::msgs]] $v
+      set ov [split [string trim [string range $line 1 end]]]
+      lassign $ov o v
+      if {[string match TRANSPOP* $o]} {
+        # set/use options of transpops
+        # e.g.
+        #   # TRANSPOPred -foreground #000 -background red
+        #   # TRANSPOP2   -foreground #fff -background black
+        # then using them:
+        #   # TRANSPOP2
+        #   # TRANSPOPred
+        set varOPTS [my::OptionVar $o]
+        if {$v ne {}} {
+          # setting options
+          set $varOPTS [lrange $ov 1 end]
+        } elseif {[info exists $varOPTS]} {
+          # using options
+          set llen [llength $::transpops::my::msgs]
+          if {!$merge} {incr llen}
+          set [my::OptionVar $llen] [set $varOPTS]
         }
       }
       continue
+    }
+    # if it's a list of items, mark them accordingly
+    if {[regexp {^\s*[*]\s+} $line]} {
+      set i [string first * $line]
+      set line [string range $line 0 $i-1]\u2022[string range $line $i+1 end]
     }
     # if line has "\" at its end, it continues a message
     set line2 [string map {{ } {} - {} + {} / {} \\ {} * {} = {}} $line]

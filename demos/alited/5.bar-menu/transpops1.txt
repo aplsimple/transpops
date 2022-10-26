@@ -40,8 +40,9 @@ and comments like:
 The very first of them is used to run its stuff.
 ---
 "Run" executes Tcl script either of two ways:
-    - running a file inside a console
-    - running a file inside Tkcon
+
+  * running a file inside a console
+  * running a file inside Tkcon
 
 This is customized in "Preferences / Tools".
 ---
@@ -115,8 +116,8 @@ There are available icon-pictures and icon-characters.
 ---
 Also, we'll change a geometry of
 
-  - e_menu tool
-  - Tkcon tool
+  * e_menu tool
+  * Tkcon tool
 ---
 One notice more: when calling alited's tools
 (excepting Tcl/Tk help and Tkcon) all of unsaved

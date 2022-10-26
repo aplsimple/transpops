@@ -1,4 +1,4 @@
-package ifneeded transpops 1.4 [list source [file join $dir transpops.tcl]]
+package ifneeded transpops 1.5 [list source [file join $dir transpops.tcl]]
 
 # A short intro (for Ruff! docs generator:)
 

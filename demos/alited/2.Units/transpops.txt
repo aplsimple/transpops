@@ -1,3 +1,5 @@
+# TRANSPOPS_green -foreground white -background #276727
+# TRANSPOPS_red -background #ffb8b8
 The alited editor is "unit oriented".
 
 This means making a unit tree of Tcl code
@@ -7,10 +9,27 @@ The branches are created with special comments.
 
 The leaves are Tcl procedures and methods.
 ---
+It's the main of alited's profits, because of
+
+  * viewing Tcl/Tk code as a structured stuff
+
+  * navigating the code in the best (structured) way
+
+  * saving the structured items as favorites to
+    be open afterwards
+
+  * saving lists of favorites as tasks / subprojects
+
+  * documenting the code by the structured comments
+# TRANSPOPS_green
+---
 To add a branch, the key combinations are used:
-  - Shift+F1 for 1st level
-  - Shift+F2 for 2nd level
-  - Shift+F3 for 3rd level
+
+  * Shift+F1 for 1st level
+
+  * Shift+F2 for 2nd level
+
+  * Shift+F3 for 3rd level
 ---
 The keys and comments are customizable.
 For example, new levels of branches can be added.
@@ -21,8 +40,10 @@ do the same. These help shows are cancelled with
 "Don't show anymore" check button.
 ---
 To add a procedure / method, the keys are used:
-  - Alt+P to add a procedure
-  - Alt+M to add a method
+
+  * Alt+P to add a procedure
+
+  * Alt+M to add a method
 ---
 The unit tree has its own toolbar allowing
 to arrange the tree.
@@ -35,8 +56,15 @@ A code can be rearranged without cut'n'paste.
 A unit can be drag-and-dropped,
 a target being before a drop point.
 ---
-To move a group of units,
-we select them with Ctrl+click.
+To move a group of units, they are
+selected with Ctrl+click (one by one).
+
+Also, Shift key can be used to select
+a range of units, this way:
+
+  * click a first unit of the range
+
+  * press Shift and click a last unit
 ---
 If a selected unit group needs to be moved to
 some far location, "Drop selected..." menu item
@@ -45,6 +73,16 @@ might be helpful.
 The group's units are selected without any order.
 
 They are dropped in the order of their sequence.
+---
+With moving units there and here, we can arrange
+Tcl code so that it will be orderly and consistent.
+
+We can even move selected units from one Tcl file
+to another, due to alited's features to set and
+then to cut / to copy multiple selections of units.
+
+We press Ctrl or Shift key and click the unit tree
+to select units in Tcl scripts.
 ---
 The visited units are highlighted in the unit tree
 by a color (the same as proc/method/return/yield).
@@ -63,6 +101,19 @@ Alternatively, we can set TODO comments with
 
 The TODOs are also seen in the tree's tooltips.
 ---
+By the way, when some lines are commented out
+with Edit/Comment menu item, they are marked
+as TODO comments which is good:
+
+  * to see the comments as quickly as possible
+
+  * to search them in a session by #! pattern
+
+  * to solve them as they are the real TODOs
+
+Edit/Uncomment menu item restores the lines.
+# TRANSPOPS_red
+---
 At navigating through the unit tree,
 the cursor positions are saved/restored
 in visited units.
@@ -76,17 +127,17 @@ Let's see how it is populated.
 ---
 The following actions fill "Last Visited" list:
 
-  - click on a unit
-  - change a unit's content
-  - switch tabs of edited files
-  - choose the unit tree's item
-  - choose the infobar's item
-  - choose the Favorites/Last Visited's item
-  - press Alt+Backspace ("To Last Visited")
-  - press Alt+B ("To Matched Bracket")
-  - press Ctrl+L ("Look for Declaration")
-  - press F3, Alt+Q, Alt+W, Alt+Left, Alt+Right
-  - undo / redo changes
+  * click on a unit
+  * change a unit's content
+  * switch tabs of edited files
+  * choose the unit tree's item
+  * choose the infobar's item
+  * choose the Favorites/Last Visited's item
+  * press Alt+Backspace ("To Last Visited")
+  * press Alt+B ("To Matched Bracket")
+  * press Ctrl+L ("Look for Declaration")
+  * press F3, Alt+Q, Alt+W, Alt+Left, Alt+Right
+  * undo / redo changes
 
 Nearly all actions with a text lead to updating
 "Last Visited" list, excepting mostly a simple
@@ -106,6 +157,7 @@ Then, the saved lists can be used as a sort of
 "subprojects inside projects" to solve their
 appropriate tasks.
 ---
+# TRANSPOPS_green
 After pressing Ctrl+Shift+F, "Search Units" bar
 is shown, allowing to search units by their case
 insensitive glob patterns.
@@ -123,6 +175,7 @@ relative number of line.
 Useful at getting a Tcl error message with
 a proc / method name and a line number.
 ---
+# TRANSPOPS_green
 The alited provides a tool to check Tcl code
 for some consistencies.
 
@@ -147,6 +200,7 @@ or somehow related to the unit structure.
 
 In such cases, only the cut-and-paste can
 help with moving units.
+# TRANSPOPS_red
 ---
 By the way, did you notice the red bar icons
 at the leaves of the unit tree?

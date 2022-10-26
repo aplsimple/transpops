@@ -1,3 +1,5 @@
+# TRANSPOPS_green -foreground white -background #276727
+# TRANSPOPS_red -background #ffb8b8
 The alited is a "project oriented" editor,
 not a general purpose one.
 
@@ -5,22 +7,29 @@ It provides nearly all of the necessary
 to develop Tcl/Tk projects.
 
 And alited project has been developed
-by its own v0.2 since 24 April 2021.
+by its own version 0.2 since 24 April 2021.
 ---
 The projects seen by alited are stored in
 ~/.config or a directory chosen at the very
 first start of alited. Or passed as the first
 argument to alited.
 
-This allows keeping various TYPES of projects
-at one machine: public/private, work/fun etc.
+The name of config directory is shown in the
+title of "Preferences" dialogue.
 ---
-The projects are listed in "Setup/Projects" menu item.
+The "Projects" tab contains options that
+can be set for new projects if the appropriate
+checkbox is set ON.
 
-Also, there is "Projects" icon of the tool bar.
-
-Let's open "Projects".
+If the checkbox is set OFF, options for new
+projects are taken from a current project.
 ---
+The projects are available in "Setup" menu
+and in the tool bar.
+
+Let's open "Projects" dialogue.
+---
+# TRANSPOPS_green
 The "default" project refers to alited's
 installation directory, just for a start.
 
@@ -64,9 +73,6 @@ we can switch to the project file tree.
 
 Then, with double-clicking a file, we open it.
 
-To open all Tcl files of a directory
-we use the tree's popup menu. Let's do it.
----
 The open files are highlighted in the file tree.
 
 After closing a file, it is unhighlighted.
@@ -79,14 +85,13 @@ isn't visible in the tab bar.
 ---
 The alited provides basic facilities
 for arranging a project's directory:
-  - create a file / directory
-  - delete a file / directory
-  - move file(s) to other directory
+  * create / delete / move files
 
-These facilities are very basic, for example
-directories aren't moved in alited's file tree.
+These facilities are very basic, e.g.
+directories aren't moved.
 
-Still, the file tree can help with little things.
+All of "file managers" of such type
+help with little things, sometimes.
 ---
 Let's try "Create File/Directory"
 actions on the file tree.
@@ -100,24 +105,23 @@ The alited is rather consistent!
 When projects are switched,
 the alited saves and restores:
 
-  - a list of open files
-  - cursor positions in the files
-  - a currently open file
-  - a list of favorites
-  - a list of favorites' lists
+  * a list of open files
+  * cursor positions in the files
+  * a currently open file
+  * a list of favorites
+  * a list of favorites' lists
 ---
 So, when we switch to another project,
 alited closes all files of the old project
 and open all files of the new project.
 
 If we want some files of the old project
-to remain open in the new project,
-we select them in the tab bar by Ctrl+click,
-then we switch to the new project.
+to remain open, we select their tabs with
+Ctrl+click and switch to a new project.
 ---
 Another way to open files of a project
-inside a current one is a file list of
-"Projects / Options" dialogue.
+inside the current one is the file list
+of "Projects / Options" dialogue.
 
 The files to be open are selected with
 simple clicking them. After that, we
@@ -128,35 +132,31 @@ Or we open a file with a double-click.
 This "Projects / Options" dialogue can
 be nicely used for a sort of clearance.
 
-It's when a lot of files are (not open,
-still annoying) in the tab bar's list.
-
-I.e. when a lot of files need to be
-closed / ignored in the project's list
-and the lot are very selective.
+It's when a lot of files need to be
+closed in the project's list, selectively.
 ---
 The currently edited files are listed in
 the file list available through:
 
-  - right-clicking the tab bar of files
-  - choosing "Tools/File List" menu item
-  - pressing F9 key (it's customizable)
+  * right-clicking the tab bar of files
+  * choosing "Tools/File List" menu item
+  * pressing F9 key (it's customizable)
 ---
 Note that the file list has two separators,
 just to see:
 
-  - files of currently visible tabs of the bar
-  - left "invisible" files
-  - right "invisible" files
+  * files of currently visible tabs of the bar
+  * left "invisible" files
+  * right "invisible" files
 ---
 The detailed info of files can be switched
 on/off by "Setup/Tip File Info" menu item.
 
 The file info is available in:
 
-  - the tab bar
-  - the file list
-  - the file tree
+  * the tab bar
+  * the file list
+  * the file tree
 ---
 The "Projects" dialogue contains "Notes" and
 "Reminder" fields to support a development.
@@ -168,16 +168,17 @@ allowing to keep a list of ideas.
 The "Reminder" is very good for all of projects,
 allowing to keep deadlines of TODOs.
 
-At last, "Notes" and "Reminder" are both good
-at maintaining.
+Both "Notes" and "Reminder" are good at
+maintaining projects.
 ---
 The reminders are bound to dates (deadlines).
 
 When a reminder became out-dated, there will
 be blinkings and whistlings!
+# TRANSPOPS_red
 ---
-If a TODO needs to be postponed, you can
-shift it on a day / week with "move" buttons.
+If a TODO needs to be postponed, it can be
+moved on a day / week with "move" buttons.
 ---
 Last few words about another interesting option.
 
@@ -192,13 +193,6 @@ a red bar to its icon at the unit tree, up to 7th bar.
 When the icon becomes fully red, this is like sending
 "too long unit" message, i.e. the unit probably needs
 some reforming.
-
-There are 8 grades of redness: 0, 1*N, 2*N, 3*N ... 7*N.
-
-If N=10, then 80 (8*10) or more lines mean "too long".
-
-Just look at the unit tree to find those horrible reds,
-candidates for reforming.
 ---
 Let's set this option to 5 which would mean
 a procedure/method of 40 or more lines will be
@@ -206,6 +200,7 @@ fully red marked.
 ---
 This thing is too long, so it's "too red".
 Even not too rosy.
+# TRANSPOPS_red
 ---
 Welcome to
 

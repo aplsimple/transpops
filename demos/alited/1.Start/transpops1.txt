@@ -9,8 +9,8 @@ A little bit of efforts may be made to size
 In particular, this needs some attention after
 changing alited's Ttk theme!
 
-At changing Ttk themes, the geometry of widgets
-inside alited would be affected too.
+At changing Ttk themes, the geometry of
+widgets inside alited are affected too.
 ---
 The alited's theme, colors and fonts are set
 by means of "Setup / Preferences" menu item.
@@ -19,13 +19,13 @@ In General/View tab, we set a Ttk theme and
 a color scheme. Also, we set a size of the
 middle font (of menu, labels, buttons).
 ---
-In Editor tab, we can choose a font for the
-editing.
+In Editor tab, we choose the editor's font.
 
-We might change the syntax highlighting of
-Tcl/Tk code, still not now. Later, in "Themes".
+We might change the colors of Tcl/Tk syntax.
+Still not now. Later, in "6.Themes" demo.
 ---
-With the new options set, let's restart alited.
+With the new options set, let's save them
+and restart alited.
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 

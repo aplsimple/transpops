@@ -1,19 +1,21 @@
+# TRANSPOPS_green -foreground white -background #276727
+# TRANSPOPS_red -background #ffb8b8
 Along with the unit facilities, alited provides
 other tools for a navigation around a project.
 
 One of them is "Find/Replace" tool, called with:
-    - Ctrl+F keys
-    - "Search / Find/Replace" menu item
-    - "Find/Replace" toolbar icon
+  * Ctrl+F keys
+  * "Search / Find/Replace" menu item
+  * "Find/Replace" toolbar icon
 ---
 The "Find/Replace" dialogue contains two sections:
-    - Find
-    - Replace
+  * Find
+  * Replace
 
 Both contain 3 buttons:
-    - do once
-    - do in text
-    - do in session
+  * do once
+  * do in text
+  * do in session
 
 The alited has the find and replace functions
 united in this dialogue.
@@ -30,9 +32,9 @@ As the blank replacements are rarely required,
 Use it accordingly.
 ---
 Well, let's find something:
-    - once
-    - in text
-    - in session
+  * once
+  * in text
+  * in session
 ---
 All of the found instances in text / session
 are presented in the info listbox.
@@ -49,12 +51,35 @@ the found strings are highlighted.
 When you close the dialogue
 the highlighting disappears.
 ---
+"Find/Replace" dialogue allows to
+find and replace multiple lines.
+
+To set the lines in "Find" field, we
+select them in the text and call
+"Find/Replace" dialogue.
+
+Let's try and do the multiple lines'
+replacements.
+---
+# TRANSPOPS_green
+"Find / Replace" dialogue contains
+a checkbox that allows (when it's ON)
+to set default geometry of the dialogue.
+
+Sometimes you need to use other geometries
+of the dialogue, e.g. to view more of
+of "Find" / "Replace" fields. Or to shrink
+the dialogue.
+
+Those geometries would be temporary, being
+active while the dialogue is seen.
+---
 Other find facilities of alited are:
-    - Find a unit
-    - Find a declaration
-    - Find a word
-    - Find words by a list
-    - Find in a directory
+  * Find a unit
+  * Find a declaration
+  * Find a word
+  * Find words by a list
+  * Find in a directory
 ---
 Press Ctrl+Shift+F or hit "Search / Find Unit" menu item to find
 unit(s) by case insensitive glob patterns.
@@ -64,11 +89,11 @@ so just enter this part to find the unit.
 ---
 To look for a proc/method declaration, you can try:
 
-    - Ctrl+click on its name
+  * Ctrl+click on its name
 
-    - press Ctrl+L, when the cursor is on its name
+  * press Ctrl+L, when the cursor is on its name
 
-    - hit "Search / Look for Declaration" menu item
+  * hit "Search / Look for Declaration" menu item
 ---
 To complete a command, press Tab key while
 the cursor is on initial characters of a command
@@ -80,9 +105,9 @@ other key(s) in "Setup / Preferences / Keys".
 ---
 At the completion, the commands:
 
-    - are not qualified for a current file
+  * are not qualified for a current file
 
-    - are qualified for others
+  * are qualified for others
 
 Also, a completed command may be followed by
 its arguments (default ones in braces).
@@ -137,9 +162,9 @@ hit the appropriate button of the toolbar.
 The search will be performed by "grep"
 command with options:
 
-    - recursively in a chosen directory
+  * recursively in a chosen directory
 
-    - case insensible
+  * case insensible
 ---
 Other "grep" facilities are available in "e_menu".
 ---

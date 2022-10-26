@@ -46,7 +46,7 @@ proc TRANSPOPS_DEMO {} {
 
   ## ________________________ 1. Start _________________________ ##
 
-  if 1 {
+  if 0 {
     set dir 1.Start
     if {$step1} {
       set fname transpops0.txt  ;# the very first start
@@ -71,12 +71,12 @@ proc TRANSPOPS_DEMO {} {
 
   if 0 {
     set dir 3.Projects
-    set win {.alwin.diaPrj .alwin}
+    set win {.alwin.diaPrj .alwin.diaPref .alwin}
   }
 
   ## ________________________ 4. Find _________________________ ##
 
-  if 0 {
+  if 1 {
     set dir 4.Find
     set win {.alwin.diaPref .alwin.winFind .alwin}
   }

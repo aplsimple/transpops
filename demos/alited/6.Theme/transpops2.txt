@@ -19,14 +19,22 @@ Let's return to Preferences again.
 ---
 For aw*, azure, forest, sun-valley themes
 there are their appropriate color schemes:
-  - AwLight / AwDark
-  - AzureLight / AzureDark
-  - ForestLight / ForestDark
-  - SunValleyLight / SunValleyDark
+  * AwLight / AwDark
+  * AzureLight / AzureDark
+  * ForestLight / ForestDark
+  * SunValleyLight / SunValleyDark
 
-These are most fit to each other,
-still for any light / dark theme there is
+Still, for any light / dark theme there is
 a nice appropriate light / dark color scheme.
+---
+For example, nice dark theme / CS pairs are:
+  * awdark / MildDark1
+  * azure-dark / Quiverly
+  * forest-dark / Dusk
+  * sun-valley-dark / AwDark (favorite!)
+
+Plus, "Tint" option and 4 defaults of Tcl
+syntax... Uff, so much good combinations!
 ---
 Let's try "azure" theme.
 It needs an appropriate color scheme.
@@ -35,9 +43,9 @@ It needs an appropriate color scheme.
 
 But we might try another scheme.
 The difference will be in:
-  - color of context menu
-  - color of gutter
-  - color of line's highlight
+  * color of context menu
+  * color of gutter
+  * color of line's highlight
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 

@@ -26,8 +26,8 @@ with the "Aw" appropriate color scheme.
 ---
 At last, we'll change a color scheme of
 
-  - e_menu
-  - Tkcon
+  * e_menu
+  * Tkcon
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 

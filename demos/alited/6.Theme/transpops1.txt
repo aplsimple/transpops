@@ -6,14 +6,16 @@ The "closing" means that we just delete them.
 OK. There are a few of theming options for alited.
 
 All are located in Setup menu:
-  - Setup / Preferences
-  - Setup / Tint
+
+  * Setup / Preferences
+  * Setup / Tint
 
 Let's try Preferences.
 ---
 Two options of General tab work together:
-  - Ttk theme
-  - Color scheme
+
+  * Ttk theme
+  * Color scheme
 
 It's only for default, clam, classic and alt themes
 that the color scheme can be chosen freely.
@@ -22,12 +24,13 @@ For other themes, a color scheme should be chosen
 according to their dark/light background.
 ---
 The standard Ttk themes are:
-  - default
-  - clam
-  - classic
-  - alt
-  - awlight
-  - awdark
+
+  * default
+  * clam
+  * classic
+  * alt
+  * awlight
+  * awdark
 
 These themes are most recommended for their stability.
 ---
