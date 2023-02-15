@@ -69,14 +69,14 @@ proc TRANSPOPS_DEMO {} {
 
   ## ________________________ 3. Projects _________________________ ##
 
-  if 0 {
+  if 1 {
     set dir 3.Projects
     set win {.alwin.diaPrj .alwin.diaPref .alwin}
   }
 
   ## ________________________ 4. Find _________________________ ##
 
-  if 1 {
+  if 0 {
     set dir 4.Find
     set win {.alwin.diaPref .alwin.winFind .alwin}
   }
@@ -113,7 +113,7 @@ proc TRANSPOPS_DEMO {} {
 
   if {[file exists [set fname [file normalize [file join $DEMODIR $dir $fname]]]]} {
     #set ::transpops::my::perchars 1.0 ;# for popups to be 12 times longer
-    ::transpops::run $fname {<Alt-t> <Alt-y>} $win
+    ::transpops::run $fname $win
   }
 
 }

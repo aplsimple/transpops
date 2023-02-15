@@ -2,15 +2,19 @@ Here comes alited localized.
 ---
 The colors of Tcl syntax have changed too.
 ---
-And it is "aw" theme by Brad Lanam.
+And it is "aw" theme by Brad Lanam. By the way
+in alited, it's changed, as for scrollbars. 🗩
 
 The color scheme of e_menu has changed too.
 As well as Tkcon's.
 ---
-The default syntax colors can be restored with
-"Default" buttons of "Setup / Editor / Syntax".
+There is a nice set of MildDark color shemes.
 
-And there are a nice set of African color shemes.
+The "Test" checkbutton allows tuning a chosen
+color scheme.
+---
+The syntax colors can be quickly reset with four
+"Default" buttons of "Setup / Editor / Syntax".
 ---
 Welcome to
 
@@ -18,7 +22,7 @@ https://aplsimple.github.io
 
 for further details.
 
-Thanks for your attention.
+Thanks for your attention. 👍
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 

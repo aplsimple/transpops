@@ -1,17 +1,13 @@
 Thus, alited is successfully initialized.
 
 Let's open some files for testing alited.
-
-An efficient way to open Tcl files is
-"Open All Tcl Files" popup menu item
-applied to a directory of the file tree.
 ---
 The files are open in the current project.
 
 The default project refers to alited's source.
 
 The alited can't do without projects.
-"3.Projects" demo is more detailed on this.
+"3.Projects" demo is more detailed on this. 🗩
 ---
 The project files will be open in a next session
 of the project.
@@ -19,6 +15,7 @@ of the project.
 The list of open files and their cursor positions
 are saved from one session to another.
 
-We restart alited to check this. Nothing special.
+We'll restart alited just to check this.
+Nothing special yet. 😕
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG

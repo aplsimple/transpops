@@ -12,9 +12,11 @@
 
 package require Tk
 
-package provide transpops 1.5
+package provide transpops 1.7
 
-# _________________ Common data of transpops namespace __________________ #
+source [file join [file dirname [info script]] drawscreen.tcl]
+
+# _________________ Data of transpops namespace __________________ #
 
 namespace eval ::transpops {
 
@@ -24,9 +26,22 @@ namespace eval ::transpops {
     variable alpha 0.0 alphaincr 0.1
     variable cntwait 0 waitfactor 8.0
     variable geom {}
+    variable draw
+    array set draw {
+      events {}
+      opts {}
+      app no
+    }
   }
 }
 # ______________ Private procedures of transpops namespace ______________ #
+
+proc ::transpops::my::OptionVar {tag} {
+  # Name of variable for transpops options.
+  #   tag - options' tag (common name or message's index)
+
+  return "::transpops::my::_TP_OPTIONS_$tag"
+}
 
 proc ::transpops::my::Show {win evn} {
   # Makes the popup toplevel window and starts popups.
@@ -63,19 +78,19 @@ proc ::transpops::my::Show {win evn} {
   } else {
     set opts {}
   }
-  label $wmsgs.l -padx 30 -pady 30 -foreground $fg -background $bg \
+  label $wmsgs.labtrans -padx 30 -pady 30 -foreground $fg -background $bg \
     -font {-weight bold -size 20 -family Quicksand} \
     -relief solid -text $msg -justify left {*}$opts
   set alpha 0.0
   set alphaincr [expr {abs($alphaincr)}]
-  pack $wmsgs.l -fill both -expand true
+  pack $wmsgs.labtrans -fill both -expand true
   set alpha 0.0
   set alphaincr 0.007
   set cntwait 0
   bind $wmsgs <ButtonPress> {set ::transpops::my::cntwait 0}
   if {[regexp {^http[s]?://\S+$} $msg]} {
     catch {
-      ::apave::obj makeLabelLinked $wmsgs.l \
+      ::apave::obj makeLabelLinked $wmsgs.labtrans \
         "::apave::openDoc $msg@@$msg@@" $fg $bg $fg yellow
     }
   }
@@ -86,7 +101,7 @@ proc ::transpops::my::Show {win evn} {
   after 10 "wm deiconify $wmsgs; wm attributes $wmsgs -alpha 0.0 -topmost 1"
   after 15 "::transpops::my::Popup {$msg}"
 }
-#_____
+#_______________________
 
 proc ::transpops::my::Popup {msg} {
   # Popups a message in the popup window.
@@ -114,45 +129,51 @@ proc ::transpops::my::Popup {msg} {
   }
   after 10 "::transpops::my::Popup {$msg}"
 }
-#_____
+#_______________________
 
-proc ::transpops::my::Run {w ev scrp} {
+proc ::transpops::my::RunMe {w ev scrp} {
   # Binds an event on a window to a script.
   #   w - the window's path
   #   ev - event on the window
   #   scrp - the bound script
   # The binding is made only on an existing window.
-  # If the window doesn't exist, the binding is postponed for next 'after' cycle.
+  # The windows may be created and destroyed, so Run watches if they are available.
 
-  if {[winfo exists $w] && [string first $scrp [bind $w $ev]]==-1} {
-    bind $w $ev "$scrp ; break"
+  variable draw
+  if {[winfo exists $w]} {
+    if {[string first $scrp [bind $w $ev]]==-1} {
+      if {![string match <*> $ev]} {set ev <$ev>}
+      bind $w $ev "$scrp ; break"
+    }
+    ::drawscreen run $w $draw(events) {*}$draw(opts)
   }
-  after 100 [list ::transpops::my::Run $w $ev $scrp]
+  after 200 [list ::transpops::my::RunMe $w $ev $scrp]
 }
-#_____
+#_______________________
 
-proc ::transpops::my::OptionVar {tag} {
-  # Name of variable for transpops options.
-  #   tag - options' tag (common name or message's index)
-
-  return "::transpops::my::_TP_OPTIONS_$tag"
-}
-
-# _____________ Interface procedures of transpops namespace _____________ #
-
-proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
+proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""} args} {
   # Initializes and runs the popup messages.
   #   fname - name of file containing the messages
   #   events - events on the window to run bound popups
-  #   win - the window's path
+  #   wins - the list of parent window pathes
   #   fg1 - foreground of popups
   #   bg1 - background of popups
+  #   events2 - events to start drawing
+  #   args -  options of *drawscreen*
 
-  set ::transpops::my::fg $fg1
-  set ::transpops::my::bg $bg1
+  variable draw
+  variable msgs
+  variable imsgs
+  variable fg
+  variable bg
+  if {$events eq {}} {set events {Alt-t Alt-y}}
+  if {$fg1 eq {}} {set fg1 #000000}
+  if {$bg1 eq {}} {set bg1 #FBFB95}
+  set fg $fg1
+  set bg $bg1
   set chan [open $fname]
   chan configure $chan -encoding utf-8
-  set ::transpops::my::msgs [list]
+  set msgs [list]
   set merge no
   foreach line [split [read $chan] \n] {
     # skip comments
@@ -168,15 +189,15 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
         # then using them:
         #   # TRANSPOP2
         #   # TRANSPOPred
-        set varOPTS [my::OptionVar $o]
+        set varOPTS [OptionVar $o]
         if {$v ne {}} {
           # setting options
           set $varOPTS [lrange $ov 1 end]
         } elseif {[info exists $varOPTS]} {
           # using options
-          set llen [llength $::transpops::my::msgs]
+          set llen [llength $msgs]
           if {!$merge} {incr llen}
-          set [my::OptionVar $llen] [set $varOPTS]
+          set [OptionVar $llen] [set $varOPTS]
         }
       }
       continue
@@ -186,26 +207,45 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
       set i [string first * $line]
       set line [string range $line 0 $i-1]\u2022[string range $line $i+1 end]
     }
-    # if line has "\" at its end, it continues a message
+    # if line has "\\" at its end, it continues a message
     set line2 [string map {{ } {} - {} + {} / {} \\ {} * {} = {}} $line]
     set continued [expr {$line2 ne {} || $line eq {}}]
     if {$continued} {
       if {$merge} {
-        set last [lindex $::transpops::my::msgs end]
+        set last [lindex $msgs end]
         append last \n $line
-        set ::transpops::my::msgs [lreplace $::transpops::my::msgs end end $last]
+        set msgs [lreplace $msgs end end $last]
       } else {
-        lappend ::transpops::my::msgs $line
+        lappend msgs $line
       }
     }
     set merge $continued
   }
   close $chan
-  set ::transpops::my::imsgs 0
-  foreach w $win {
+  set imsgs 0
+  set timo 300
+  set draw(events) $events2
+  set draw(opts) $args
+  foreach w $wins {
     set ei 0
     foreach ev $events {
-      after 300 [list ::transpops::my::Run $w $ev [list ::transpops::my::Show $w [incr ei]]]
+      after $timo [list ::transpops::my::RunMe $w $ev [list ::transpops::my::Show $w [incr ei]]]
+    }
+    if {$draw(app)} {bind $w <Escape> exit}
+  }
+}
+
+# _____________ Interface procedures of transpops namespace _____________ #
+
+proc ::transpops::run {args} {
+  # Runs my::Run and catches errors. Logs errors to a log file.
+  #   args - arguments of my::Run.
+
+  if {[catch {my::Run {*}$args} err]} {
+    catch {
+      set ch [open ~/TMP/transpops.log a]
+      puts $ch $err
+      close $ch
     }
   }
 }
@@ -213,13 +253,17 @@ proc ::transpops::run {fname events win {fg1 #000000} {bg1 #FBFB95}} {
 # ________________________ main _________________________ #
 
 if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info script]]} {
-  pack [label .l -text {Press Alt+t, Alt-t} -padx 50 -pady 70]
-  lassign $::argv fname hotk win
+  lassign $::argv fname hotk fg1 bg1 hotk2 o1 v1 o2 v2 o3 v3 o4 v4
   if {$fname eq {}} {set fname ./.bak/transpops.txt}
-  if {$hotk eq {}} {set hotk {<Alt-t> <Alt-y>}}
-  if {$win eq {}} {set win .}
-  ::transpops::run $fname $hotk $win
+  if {$hotk eq {}} {set hotk {Alt-t Alt-y}}
+  if {$hotk2 eq {}} {set hotk2 {Control-x Control-X}}
+  set hk [string map [list < {} > {} { } {, }] $hotk]
+  set hk2 [string map [list < {} > {} { } {, }] $hotk2]
+  label .labinfo -text \
+    "Press $hk.\n\nPress $hk2, then\ndrag-n-drop... or\nright/double click."
+  pack .labinfo -padx 50 -pady 50
+  set ::transpops::my::draw(app) yes
+  ::transpops::run $fname . $hotk $fg1 $bg1 $hotk2 $o1 $v1 $o2 $v2 $o3 $v3 $o4 $v4
 }
 
 # _________________________________ EOF _________________________________ #
-#RUNF1: ../alited/src/alited.tcl DEBUG

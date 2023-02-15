@@ -1,9 +1,21 @@
+🗰 Note that after changing a theme
+the widgets' geometry would highly likely
+change too.
+
+Pay please attention to "Row" column and
+the scrollbar of the unit tree. 🗩
+
+Though, after your initial customization,
+the internal widgets' geometry would be
+right in all of alited's future sessions.
+No "slow shifting of sizes" or similar.
+---
 The "Setup / Tint" allows you to tint
 a current color scheme.
 
 It's per a session only.
 
-When all of sudden you get a feeling that
+🗰 When all of sudden you get a feeling that
 too much of light / darkness is around,
 this option might help.
 ---
@@ -24,7 +36,7 @@ there are their appropriate color schemes:
   * ForestLight / ForestDark
   * SunValleyLight / SunValleyDark
 
-Still, for any light / dark theme there is
+🗰 Still, for any light / dark theme there is
 a nice appropriate light / dark color scheme.
 ---
 For example, nice dark theme / CS pairs are:

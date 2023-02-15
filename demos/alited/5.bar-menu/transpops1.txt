@@ -3,12 +3,12 @@
 Tools of alited are presented
 by its tool bar and menu.
 
-Thus, they are called "bar/menu" actions.
+Thus, they are called "bar-menu" actions.
 ---
 Some of tools are provided by alited staticly,
 i.e. they cannot be removed.
 
-Other tools are collected in "Tools / bar/menu"
+Other tools are collected in "Tools / bar-menu"
 submenu. These are provided by e_menu and can
 be removed or substituted for other tools.
 ---
@@ -22,33 +22,29 @@ Namely:
 By default, "Run" tries to run an application
 associated with a currently edited file.
 
-For Tcl files, it is "tclsh".
+For Tcl files, it is "tclsh" or an application
+of "Preferences / Tools / tclsh..." setting. 🗩
 ---
-But for a convenience of testing Tcl code,
+Also, for a convenience of testing Tcl code,
 alited recognizes special comments like:
     #RUNF: file.tcl args
-    #RUNF1: file.tcl args
-    #RUNF2: file.tcl args
-    ...
 which mean running "tclsh file.tcl args",
 and comments like:
     #EXEC: tclsh file.tcl args
-    #EXEC1: wish file.tcl args
-    #EXEC2: vanillawish file.tcl args
-    ...
 
-The very first of them is used to run its stuff.
+🗰 You can set several of them in a script, but
+the very first of them is used to run its stuff.
 ---
 "Run" executes Tcl script either of two ways:
 
   * running a file inside a console
   * running a file inside Tkcon
 
-This is customized in "Preferences / Tools".
+This is customized in "Preferences / Tools". 🗩
 ---
 You might prefer to run Tcl scripts inside Tkcon.
 
-In this case you get a profit of introspecting your
+In this case we get a profit of introspecting our
 code in Tkcon.
 
 On the other hand, the console application may be
@@ -60,7 +56,7 @@ It can be selected from "MS Windows shell" combobox.
 "Run" icon uses the default mode customized in
 "Preferences / Tools".
 
-But when a file is run by "Tools / Run..." menu
+🗰 But when a file is run by "Tools / Run..." menu
 item or by F5 key, alited offers to run the file
 either in console or in Tkcon.
 
@@ -70,24 +66,26 @@ pros and contras.
 The most radical way to run applications from alited
 is "Setup / For Run..." forced command.
 
-When setting a command in this dialogue, we overcome
+🗰 At setting a command in this dialogue, we overcome
 all other possibilities to run applications: all these
 file associations, #RUNF:, #EXEC: are totally ignored.
 
 However, calling e_menu and choosing "Run me" item
 (or pressing F4 key twice) will run a current file
-in its associated app - e_menu runs it independently.
+in its associated app: e_menu runs it independently.
 ---
 "Tcl/Tk help" shows Tcl/Tk man page
 for a word the cursor is on.
 
 Or for a selected text.
 
-Details are in "Help / alited" menu item.
+Details of customizing this option
+are in "Help / alited" menu item
+("Tcl/Tk help tool" section). 🗩
 ---
 Some tools, though default, can be changed or removed.
 
-These tools are listed in "Tools / bar/menu" submenu
+These tools are listed in "Tools / bar-menu" submenu
 and are customized in "Setup / Preferences / Tools".
 ---
 New items are added by [+] button.
@@ -104,15 +102,20 @@ To choose a tool, click its button at the right.
 Any non-menu items can be chosen directly
 while navigating through menus.
 
-If you want to choose a whole submenu, just
+If we want to choose a whole submenu, we just
 right click on this submenu and choose "Select"
 from a popup menu.
 
-The main menu is run by "e_menu" tool.
+The main menu is run by "e_menu" tool. 🗩
 ---
 To change a tool's icon, click its drop-down list.
 
 There are available icon-pictures and icon-characters.
+---
+At need, we can move tool items up/down.
+
+And clicking the checkbutton will set a divider or
+restore a previous setting. 🗩
 ---
 Also, we'll change a geometry of
 
@@ -122,9 +125,9 @@ Also, we'll change a geometry of
 One notice more: when calling alited's tools
 (excepting Tcl/Tk help and Tkcon) all of unsaved
 changes are saved according to the setting
-"Preferences/Saving/Save before bar/menu runs".
+"Preferences/Saving/Save before bar-menu runs".
 
-It's good to set it to "All files".
+It's good to set it to "All files". 🗩
 ---
 After changes done, we should save the new
 preferences.

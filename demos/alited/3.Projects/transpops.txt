@@ -1,4 +1,4 @@
-# TRANSPOPS_green -foreground white -background #276727
+# TRANSPOPS_green -background #a7e7a7
 # TRANSPOPS_red -background #ffb8b8
 The alited is a "project oriented" editor,
 not a general purpose one.
@@ -15,7 +15,7 @@ first start of alited. Or passed as the first
 argument to alited.
 
 The name of config directory is shown in the
-title of "Preferences" dialogue.
+title of "Preferences" dialogue. 🗩
 ---
 The "Projects" tab contains options that
 can be set for new projects if the appropriate
@@ -24,12 +24,11 @@ checkbox is set ON.
 If the checkbox is set OFF, options for new
 projects are taken from a current project.
 ---
-The projects are available in "Setup" menu
-and in the tool bar.
+"Projects" dialogue is available in "Setup"
+menu and in the tool bar.
 
 Let's open "Projects" dialogue.
 ---
-# TRANSPOPS_green
 The "default" project refers to alited's
 installation directory, just for a start.
 
@@ -38,7 +37,7 @@ as a source of code snippets viewed at
 their work immediately in the alited!
 
 Especially so, if you use "apave" package
-the alited is based on.
+the alited is based on. 🗩
 ---
 Let's create a new project.
 
@@ -80,7 +79,7 @@ After closing a file, it is unhighlighted.
 A newly open file is placed to
 the beginning of the tab bar.
 
-This is true even when a selected tab
+🗰 This is true even when a selected tab
 isn't visible in the tab bar.
 ---
 The alited provides basic facilities
@@ -90,8 +89,8 @@ for arranging a project's directory:
 These facilities are very basic, e.g.
 directories aren't moved.
 
-All of "file managers" of such type
-help with little things, sometimes.
+The file managers of such type
+help with little things sometimes.
 ---
 Let's try "Create File/Directory"
 actions on the file tree.
@@ -100,7 +99,7 @@ To move files in the file tree,
 we use nearly the same actions
 as in the unit tree.
 
-The alited is rather consistent!
+The alited is rather consistent. 😉
 ---
 When projects are switched,
 the alited saves and restores:
@@ -117,10 +116,10 @@ and open all files of the new project.
 
 If we want some files of the old project
 to remain open, we select their tabs with
-Ctrl+click and switch to a new project.
+Ctrl+click and switch to a new project. 🗩
 ---
 Another way to open files of a project
-inside the current one is the file list
+inside the current one is a file list
 of "Projects / Options" dialogue.
 
 The files to be open are selected with
@@ -133,7 +132,7 @@ This "Projects / Options" dialogue can
 be nicely used for a sort of clearance.
 
 It's when a lot of files need to be
-closed in the project's list, selectively.
+selectively closed in the project.
 ---
 The currently edited files are listed in
 the file list available through:
@@ -148,6 +147,13 @@ just to see:
   * files of currently visible tabs of the bar
   * left "invisible" files
   * right "invisible" files
+---
+The file list can be sorted. For this,
+set the appropriate switch.
+
+And voila: F9 key opens the sorted list.
+It's good to access files open in alited's
+session.
 ---
 The detailed info of files can be switched
 on/off by "Setup/Tip File Info" menu item.
@@ -168,7 +174,7 @@ allowing to keep a list of ideas.
 The "Reminder" is very good for all of projects,
 allowing to keep deadlines of TODOs.
 
-Both "Notes" and "Reminder" are good at
+🗰 Both "Notes" and "Reminder" are good at
 maintaining projects.
 ---
 The reminders are bound to dates (deadlines).
@@ -183,7 +189,7 @@ moved on a day / week with "move" buttons.
 Last few words about another interesting option.
 
 Its default value is set in "Preferences"
-but in "Project" settings it can be reset.
+but in "Project" settings it can be reset. 🗩
 ---
 The "Unit lines per 1 red bar" option means that
 N lines of a unit are considered normal, while
@@ -208,6 +214,6 @@ https://aplsimple.github.io
 
 for further details.
 
-Thanks for your attention.
+Thanks for your attention. 👍
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG

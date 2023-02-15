@@ -10,7 +10,7 @@ field.
 
 If we want some specific commands be highlighted
 (in the same color as Tk), we enter them in "Your
-commands" field.
+commands" field. 🗩
 ---
 Due to msgcat, alited is easily localized, with
 locale .msg files being in data/msgs directory.

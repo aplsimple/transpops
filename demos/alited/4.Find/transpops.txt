@@ -1,4 +1,4 @@
-# TRANSPOPS_green -foreground white -background #276727
+# TRANSPOPS_green -background #a7e7a7
 # TRANSPOPS_red -background #ffb8b8
 Along with the unit facilities, alited provides
 other tools for a navigation around a project.
@@ -8,6 +8,13 @@ One of them is "Find/Replace" tool, called with:
   * "Search / Find/Replace" menu item
   * "Find/Replace" toolbar icon
 ---
+But first of all let's remove the TODO warning.
+
+It occurs due to the time of making this demo,
+late a bit.
+---
+OK.
+
 The "Find/Replace" dialogue contains two sections:
   * Find
   * Replace
@@ -16,20 +23,13 @@ Both contain 3 buttons:
   * do once
   * do in text
   * do in session
-
-The alited has the find and replace functions
-united in this dialogue.
 ---
 The dialogue provides standard options of such type.
 Probably, except for one of them.
 
-The "Replace by blank" option means that you can replace
+The "Replace by blank" option means that we can replace
 the found strings by the blank string which means just
-deleting the found strings!
-
-As the blank replacements are rarely required,
-"Replace by blank" option allows to avoid mistakes.
-Use it accordingly.
+deleting the found strings! 🗩
 ---
 Well, let's find something:
   * once
@@ -38,9 +38,8 @@ Well, let's find something:
 ---
 All of the found instances in text / session
 are presented in the info listbox.
----
-As you see, the info listbox allows
-to enter a found instance's line.
+
+The info listbox allows to enter a found line.
 
 At that, "Find / Replace" dialogue
 may or may not be closed.
@@ -48,31 +47,35 @@ may or may not be closed.
 While "Find / Replace" dialogue is open
 the found strings are highlighted.
 
-When you close the dialogue
+When we close the dialogue
 the highlighting disappears.
 ---
-"Find/Replace" dialogue allows to
-find and replace multiple lines.
+"Find / Replace" dialogue allows to find
+and replace multiple lines.
 
-To set the lines in "Find" field, we
-select them in the text and call
-"Find/Replace" dialogue.
+To set the lines in "Find" field, we select
+them in a text and call "Find / Replace". 🗩
 
-Let's try and do the multiple lines'
-replacements.
+Let's test the multiple lines' replacements.
 ---
-# TRANSPOPS_green
-"Find / Replace" dialogue contains
+🗰 "Find / Replace" dialogue contains
 a checkbox that allows (when it's ON)
-to set default geometry of the dialogue.
+to set a default geometry of the dialogue.
 
-Sometimes you need to use other geometries
-of the dialogue, e.g. to view more of
-of "Find" / "Replace" fields. Or to shrink
-the dialogue.
+Sometimes we need to resize / move the dialogue,
+and its geometry would be temporary being
+active while the dialogue is seen. In other
+cases, the default geometry will be used.
+---
+If, for a wonder 😄, we use mostly "Find" and
+rather rarely "Replace", we might resize the
+dialogue to its minimum sizes, thus saving
+the screen's room.
 
-Those geometries would be temporary, being
-active while the dialogue is seen.
+The "Resize" button allows to show/hide "Replace"
+options at need. 🗩
+
+Another button copies "Find" field to "Replace".
 ---
 Other find facilities of alited are:
   * Find a unit
@@ -81,13 +84,15 @@ Other find facilities of alited are:
   * Find words by a list
   * Find in a directory
 ---
-Press Ctrl+Shift+F or hit "Search / Find Unit" menu item to find
-unit(s) by case insensitive glob patterns.
+We press Ctrl+Shift+F or hit "Search / Find Unit"
+menu item to find unit(s) by case insensitive
+glob patterns.
 
-It's VERY helpful when you remember a part of a unit's name,
-so just enter this part to find the unit.
+It's VERY helpful when we remember a part of
+a unit's name, so we just enter this part to find
+the unit. 🗩
 ---
-To look for a proc/method declaration, you can try:
+To look for a proc/method declaration, we can try:
 
   * Ctrl+click on its name
 
@@ -95,10 +100,13 @@ To look for a proc/method declaration, you can try:
 
   * hit "Search / Look for Declaration" menu item
 ---
-To complete a command, press Tab key while
-the cursor is on initial characters of a command
-- this will offer you to select from a list of
-commands available in alited session's files.
+To complete a command / variable, we press Tab key
+while the caret is on initial characters of a
+command / proc's variable - this will show a list
+of commands / variables to choose.
+
+We enter $ and press Tab to bring only a list
+of variables detected in the proc / method. 🗩
 
 The Tab key of this option may be changed to
 other key(s) in "Setup / Preferences / Keys".
@@ -116,48 +124,45 @@ Double clicking a word would highlight
 all of its occurences (if red) or only one
 otherwise.
 
-This allows, for example, quick overview of
+🗰 This is VERY quick method to check whether
+a word is unique in a text.
+
+Also, this is VERY quick method to view
 a variable's usage in a procedure/method.
-
-If you want to highlight a selection, call
+---
+If we want to highlight a selection, we call
 a context menu and select "Highlight All".
----
-"Highlight" items of the context menu are
-very helpful in many cases.
 
-For example, we need to see which of left
-braces has no its paired right brace. In
-this case we select a first brace and press
-Alt+Right - and next braces are highlighted.
+We can use Alt+Right / Alt+Left to find a
+next / previous instance of a current word.
 
-We use F3 to repeat this search. The F3 key
-goes around: after finding a last occurence
-it finds a first one.
+We use F3 to repeat this search.
 ---
-For a quick search of a word, there is a nice
-Ctrl+Shift+click applied to the word the caret
-is set on.
+For a quick search of a current word in all
+files, there is a nice Ctrl+Shift+click
+applied to the word the caret is set on.
 
 Also, we can SELECT an arbitrary piece of text
 (not just a word) and run the quick search.
 
 It means a search throughout alited's session
-and is VERY helpful in many cases.
+and is VERY helpful in many cases. 🗩
 ---
 Sometimes, a whole list of words
 should be sought in a file.
 
-For example, you have some names
+For example, we have some names
 or tags and want to know where
 they are mentioned and where not.
-At that you want to be able to copy
+
+At that we might want to copy
 the found and the non-found lists
 for further processing.
 
 Let's try this method.
 ---
 To find a word or a selection in a directory
-hit the appropriate button of the toolbar.
+we hit the appropriate button of the toolbar.
 
 The search will be performed by "grep"
 command with options:
@@ -168,15 +173,14 @@ command with options:
 ---
 Other "grep" facilities are available in "e_menu".
 ---
-We can search in selected files.
+We can search in selected files of the session.
 The selection is set by Ctrl+clicking the tabs.
 
-The number of selected files is shown in the status bar.
+🗰 The number of selected files is shown in the status bar.
 
 The search in the selected files is available
 in "Find/Replace" dialogue.
-
-It takes place of "All in Session".
+It takes place of "All in Session". 🗩
 ---
 Welcome to
 
@@ -184,7 +188,7 @@ https://aplsimple.github.io
 
 for further details.
 
-Thanks for your attention.
+Thanks for your attention. 👍
 ---
 #RUNF1: ../../../alited/src/alited.tcl LOG=~/TMP/alited-DEBUG.log DEBUG
 

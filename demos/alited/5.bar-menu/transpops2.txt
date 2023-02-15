@@ -6,9 +6,20 @@ Well, our changes are:
 
     * screenshooter is added
 ---
-These changes are seen in "Tools / bar/menu" item as well.
+These changes are seen in "Tools / bar-menu" item as well.
 
 Let's try and explore these things.
+---
+Last few words about "Templates" dialogue.
+
+The dialogue provides a list of templates
+for testing / debugging Tcl code:
+  - message
+  - puts
+  - puts-level
+  - doctest
+  - info
+  - three profilers
 ---
 Welcome to
 
@@ -16,6 +27,6 @@ https://aplsimple.github.io
 
 for further details.
 
-Thanks for your attention.
+Thanks for your attention. 👍
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG

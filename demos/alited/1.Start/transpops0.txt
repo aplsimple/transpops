@@ -1,32 +1,28 @@
-Welcome to "alited"!
+Welcome to "alited"! 🖐
 
 It's a lite editor to develop Tcl/Tk applications.
 
 At first start, it needs a simple initialization.
 ---
-This starting dialogue means that we can have
+This starting message means that we can have
 as many configuration directories as we want.
-We can pass a config directory's name to alited
-as the first argument, others may be file names.
+We might pass a config directory's name to alited
+as the first argument, others being file names.
 
-Also, this dialogue gives a useful information on
+🗰 This dialogue gives a useful information on
 where alited stores its settings. E.g. in Windows,
 we can redirect them to C:\Users\me\AppData\Local.
 ---
 Please, notice "Help" button at the left bottom corner.
 
 All of alited's essential dialogues are supplied with it,
-some of them show the help at start like "Did you know".
+some show the help at start like "Did you know". 🗩
 
-And all of the tabs of dialogues provide their own helps.
+The tabs of dialogues provide their own helps.
 ---
 If we are not going to have several configurations,
 we use this ~/.config which is in no way harmful.
 
-We change Tcl/Tk core directory chooser's geometry,
-to make sure the geometry is active in next sessions.
-It's applied to Tcl/Tk file chooser at first opening.
-
-Now then, we confirm the offered. It doesn't hurt:)
+Now then, we confirm the offered. It doesn't hurt! 😄
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
