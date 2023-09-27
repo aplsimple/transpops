@@ -8,7 +8,6 @@ the scrollbar of the unit tree. 🗩
 Though, after your initial customization,
 the internal widgets' geometry would be
 right in all of alited's future sessions.
-No "slow shifting of sizes" or similar.
 ---
 The "Setup / Tint" allows you to tint
 a current color scheme.
@@ -23,18 +22,18 @@ All of submenus of alited have "tear-off"
 feature which is quite convenient for
 multiple choices.
 
-For example, we might switch some tips off,
-keeping Projects' and Last Visited's ones
-(still, TODOs are shown all the same).
+For example, we may tear-off "Recent files"
+to open a few of them.
 ---
 Let's return to Preferences again.
 ---
-For aw*, azure, forest, sun-valley themes
+For aw*, azure, forest, sun-valley, *brown themes
 there are their appropriate color schemes:
   * AwLight / AwDark
   * AzureLight / AzureDark
   * ForestLight / ForestDark
   * SunValleyLight / SunValleyDark
+  * LightBrown / DarkBrown
 
 🗰 Still, for any light / dark theme there is
 a nice appropriate light / dark color scheme.
@@ -48,10 +47,10 @@ For example, nice dark theme / CS pairs are:
 Plus, "Tint" option and 4 defaults of Tcl
 syntax... Uff, so much good combinations!
 ---
-Let's try "azure" theme.
+Let's try "darkbrown" theme.
 It needs an appropriate color scheme.
 
-"Azure" is probably a best choice.
+"DarkBrown" is probably a best choice.
 
 But we might try another scheme.
 The difference will be in:

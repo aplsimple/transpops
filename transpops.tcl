@@ -12,16 +12,16 @@
 
 package require Tk
 
-package provide transpops 1.7
+package provide transpops 2.0
 
-source [file join [file dirname [info script]] drawscreen.tcl]
+#source [file join [file dirname [info script]] drawscreen.tcl]
 
 # _________________ Data of transpops namespace __________________ #
 
 namespace eval ::transpops {
 
   namespace eval my {
-    variable msgs [list] imsgs 0 wmsgs .win.transpops omsgs {}
+    variable msgs [list] text {} imsgs 0 wmsgs .win.transpops omsgs {}
     variable fg #000000 bg #FBFB95
     variable alpha 0.0 alphaincr 0.1
     variable cntwait 0 waitfactor 8.0
@@ -32,6 +32,12 @@ namespace eval ::transpops {
       opts {}
       app no
     }
+    variable textTags [list \
+      [list "r" "-foreground red"] \
+      [list "b" "-foreground blue"] \
+      [list "g" "-foreground green"] \
+      [list "link" "::apave::openDoc %t@@https://%l@@"] \
+    ]
   }
 }
 # ______________ Private procedures of transpops namespace ______________ #
@@ -49,6 +55,8 @@ proc ::transpops::my::Show {win evn} {
   #   evn - index of event (2nd sets the geometry)
 
   variable geom
+  variable text
+  variable textTags
   variable msgs
   variable imsgs
   variable wmsgs
@@ -57,12 +65,23 @@ proc ::transpops::my::Show {win evn} {
   variable cntwait
   variable fg
   variable bg
+  set fS red
   set wmsgs [string trimright $win .].transpops
   catch {destroy $wmsgs}
   while {1} {
     if {[incr imsgs]>[llength $msgs]} return
     set msg [string trim [lindex $msgs $imsgs-1]]
     if {$msg ne {}} break
+  }
+  set rows 0
+  set cols 10
+  set text {}
+  foreach row [split $msg \n] {
+    set row [string trim $row]
+    append text $row \n
+    set row [string map [list <r> {} </r> {} <b> {} </b> {} <g> {} </g> {} <link> {} </link> {}] $row]
+    if {[set c [string length $row]]>$cols} {set cols $c}
+    incr rows
   }
   catch {
     # when used within apave theme, disable theming transpops
@@ -78,19 +97,32 @@ proc ::transpops::my::Show {win evn} {
   } else {
     set opts {}
   }
-  label $wmsgs.labtrans -padx 30 -pady 30 -foreground $fg -background $bg \
-    -font {-weight bold -size 20 -family Quicksand} \
-    -relief solid -text $msg -justify left {*}$opts
+  set wtxt $wmsgs.labtrans
+  set font {-weight bold -size 16 -family Mono}
+  if {[catch {
+    set text [string trim $text]
+    text $wtxt -padx 30 -pady 30 -foreground $fg -background $bg \
+      -font $font \
+      -relief solid {*}$opts -width $cols -height $rows -state disabled
+    pack $wtxt
+    ::apave::obj initLinkFont -underline 1 {*}$font -foreground $fg -background $bg
+    ::apave::obj displayTaggedText $wtxt ::transpops::my::text $textTags
+  } e]} then {
+    catch {destroy $wtxt}
+    label $wtxt -padx 30 -pady 30 -foreground $fg -background $bg \
+      -font $font \
+      -relief solid -text $msg -justify left {*}$opts
+    pack $wtxt -fill both -expand true
+  }
   set alpha 0.0
   set alphaincr [expr {abs($alphaincr)}]
-  pack $wmsgs.labtrans -fill both -expand true
   set alpha 0.0
   set alphaincr 0.007
   set cntwait 0
   bind $wmsgs <ButtonPress> {set ::transpops::my::cntwait 0}
   if {[regexp {^http[s]?://\S+$} $msg]} {
     catch {
-      ::apave::obj makeLabelLinked $wmsgs.labtrans \
+      ::apave::obj makeLabelLinked $wtxt \
         "::apave::openDoc $msg@@$msg@@" $fg $bg $fg yellow
     }
   }
@@ -145,7 +177,7 @@ proc ::transpops::my::RunMe {w ev scrp} {
       if {![string match <*> $ev]} {set ev <$ev>}
       bind $w $ev "$scrp ; break"
     }
-    ::drawscreen run $w $draw(events) {*}$draw(opts)
+#    ::drawscreen run $w $draw(events) {*}$draw(opts)
   }
   after 200 [list ::transpops::my::RunMe $w $ev $scrp]
 }
@@ -166,6 +198,7 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
   variable imsgs
   variable fg
   variable bg
+  variable textTags
   if {$events eq {}} {set events {Alt-t Alt-y}}
   if {$fg1 eq {}} {set fg1 #000000}
   if {$bg1 eq {}} {set bg1 #FBFB95}
@@ -179,7 +212,8 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
     # skip comments
     if {[string index $line 0] eq {#}} {
       # comments may be valuable
-      set ov [split [string trim [string range $line 1 end]]]
+      set line [string trim [string range $line 1 end]]
+      set ov [split $line]
       lassign $ov o v
       if {[string match TRANSPOP* $o]} {
         # set/use options of transpops
@@ -189,6 +223,20 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
         # then using them:
         #   # TRANSPOP2
         #   # TRANSPOPred
+        # also to set tags r, b, g:
+        #   TRANSPOP TAG b -font {-weight bold -size 20 -family Mono} -foreground red
+        # and using:
+        #   this is <b>bolded text</b>
+        if {[string match {TRANSPOP TAG *} $line]} {
+          set nam [lindex $line 2]
+          set tag [list $nam [lrange $line 3 end]]
+          if {[set i [lsearch -exact -index 0 $textTags $nam]]>-1} {
+            set textTags [lreplace $textTags $i $i $tag]
+          } else {
+            lappend textTags $tag
+          }
+          continue
+        }
         set varOPTS [OptionVar $o]
         if {$v ne {}} {
           # setting options

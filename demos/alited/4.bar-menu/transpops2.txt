@@ -21,11 +21,8 @@ for testing / debugging Tcl code:
   - info
   - three profilers
 ---
-Welcome to
-
-https://aplsimple.github.io
-
-for further details.
+Next demo is "5.Themes_alited",
+it's about alited's theming stuff.
 
 Thanks for your attention. 👍
 ---

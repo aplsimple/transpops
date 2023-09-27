@@ -27,15 +27,10 @@ projects are taken from a current project.
 "Projects" dialogue is available in "Setup"
 menu and in the tool bar.
 
-Let's open "Projects" dialogue.
----
 The "default" project refers to alited's
 installation directory, just for a start.
 
-Plus, the alited's code may be used
-as a source of code snippets viewed at
-their work immediately in the alited!
-
+Perhaps worth to glance how alited works.
 Especially so, if you use "apave" package
 the alited is based on. 🗩
 ---
@@ -43,7 +38,7 @@ Let's create a new project.
 
 We must fill the appropriate data fields
 - most importantly a project directory.
----
+
 After filling the new project's fields
 we press "Add" button to create it.
 ---
@@ -76,8 +71,9 @@ The open files are highlighted in the file tree.
 
 After closing a file, it is unhighlighted.
 ---
-A newly open file is placed to
-the beginning of the tab bar.
+A newly open file is placed (by default)
+to the beginning of the tab bar.
+(This mode may be switched off.)
 
 🗰 This is true even when a selected tab
 isn't visible in the tab bar.
@@ -89,17 +85,8 @@ for arranging a project's directory:
 These facilities are very basic, e.g.
 directories aren't moved.
 
-The file managers of such type
+Still, the file managers of such type
 help with little things sometimes.
----
-Let's try "Create File/Directory"
-actions on the file tree.
----
-To move files in the file tree,
-we use nearly the same actions
-as in the unit tree.
-
-The alited is rather consistent. 😉
 ---
 When projects are switched,
 the alited saves and restores:
@@ -141,19 +128,15 @@ the file list available through:
   * choosing "Tools/File List" menu item
   * pressing F9 key (it's customizable)
 ---
-Note that the file list has two separators,
-just to see:
-
-  * files of currently visible tabs of the bar
-  * left "invisible" files
-  * right "invisible" files
----
 The file list can be sorted. For this,
 set the appropriate switch.
 
 And voila: F9 key opens the sorted list.
 It's good to access files open in alited's
 session.
+---
+The tabs of the tab bar can be sorted
+by dates, sizes or extensions of files.
 ---
 The detailed info of files can be switched
 on/off by "Setup/Tip File Info" menu item.
@@ -169,17 +152,17 @@ The "Projects" dialogue contains "Notes" and
 
 The "Notes" are very good for projects that
 are developed unsteadily, from time to time,
-allowing to keep a list of ideas.
-
-The "Reminder" is very good for all of projects,
+allowing to keep a list of ideas to do.
+---
+The "Reminder" is very good for all projects,
 allowing to keep deadlines of TODOs.
 
-🗰 Both "Notes" and "Reminder" are good at
-maintaining projects.
+🗰 If all of the sudden you got an idea about
+a project, just save it as a reminder of the
+project, on a date supposedly convenient for
+implementing it.
 ---
-The reminders are bound to dates (deadlines).
-
-When a reminder became out-dated, there will
+If a reminder became out-dated, there will
 be blinkings and whistlings!
 # TRANSPOPS_red
 ---
@@ -208,11 +191,8 @@ This thing is too long, so it's "too red".
 Even not too rosy.
 # TRANSPOPS_red
 ---
-Welcome to
-
-https://aplsimple.github.io
-
-for further details.
+Next demo is "3.Find_alited",
+it's about searching stuff.
 
 Thanks for your attention. 👍
 ---

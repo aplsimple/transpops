@@ -1,5 +1,15 @@
 # TRANSPOPS_green -background #a7e7a7
 # TRANSPOPS_red -background #ffb8b8
+
+Let's open some files for testing alited.
+
+The files are open in the current project.
+
+The default project refers to alited's source.
+
+The alited can't do without projects.
+---
+
 The alited editor is "unit oriented".
 
 This means making a unit tree of Tcl code
@@ -8,19 +18,6 @@ This means making a unit tree of Tcl code
 The branches are created with special comments.
 
 The leaves are Tcl procedures and methods.
----
-🗰 It's the main of alited's profits, because of
-
-  * viewing Tcl/Tk code as a structured stuff
-
-  * navigating the code in the quickest way
-
-  * documenting the code by the structured comments
-
-  * marking the structured units as favorites to
-    be open afterwards
-
-  * saving lists of favorites as tasks / subprojects
 ---
 To add a branch, the key combinations are used:
 
@@ -49,15 +46,11 @@ to arrange the tree.
 
 The Up / Down buttons allow to move unit(s)
 through the tree.
----
+
 A unit can be drag-and-dropped,
 a target being before a drop point.
 
 🗰 A code can be rearranged without Cut / Paste!
-
-Doesn't it often occur to you to change your
-mind about placing your procs & methods? ... and
-to grouse about "how inconsistent my code is"?
 ---
 To move a group of units, they are freely
 selected with Ctrl+click (one by one).
@@ -77,12 +70,6 @@ The group's units are selected without any order.
 
 🗰 They are dropped in the order of their sequence.
 ---
-We can even move selected units from one Tcl file
-to another.
-
-As you've seen, clicks with Ctrl/Shift keys allow
-to select units freely, without any order.
----
 The visited units are highlighted in the unit tree
 by a color (the same as proc / method of Tcl).
 
@@ -94,11 +81,9 @@ a leaf or a branch.
 
 TODO comments begin with #! so that Unix shebangs
 are highlighted in the same manner as TODOs.
----
+
 Alternatively, we can set TODO comments with
 "# TODO <...>".
-
-The TODOs are also seen in the tree's tooltips.
 ---
 🗰 When some lines are commented out
 with Edit/Comment menu item, they are marked
@@ -112,13 +97,6 @@ as TODO comments which is good:
 
 Edit/Uncomment menu item restores the lines.
 ---
-The alited's way of commenting allows
-to comment out a code with braces, so that
-you would not see "strange" Tcl behaviour
-due to the commenting-out.
-
-More details are in "Help/alited" docs. 🗩
----
 At navigating through the unit tree,
 the cursor positions are saved/restored
 in visited units.
@@ -127,25 +105,11 @@ in visited units.
 positions we left them.
 ---
 "Search / To Last Visited" or Alt+Backspace
-allow to switch between 2 last visited units.
+allow to switch between two last visited units.
 
 There is "Last Visited" list of units as well.
 
 Let's see how it is populated.
----
-The following actions fill "Last Visited" list:
-
-  * click on a unit
-  * change a unit's content
-  * switch tabs of edited files
-  * choose the unit tree's item
-  * choose the infobar's item
-  * choose the Favorites/Last Visited's item
-  * press Alt+Backspace ("To Last Visited")
-  * press Alt+B ("To Matched Bracket")
-  * press Ctrl+L ("Look for Declaration")
-  * press F3, Alt+Q, Alt+W, Alt+Left, Alt+Right
-  * undo / redo changes
 
 Nearly all actions with a text lead to updating
 "Last Visited" list excepting a simple navigation
@@ -190,15 +154,17 @@ of braces, brackets and quotes as well as for
 duplicate unit names. Also a whole of the file
 is checked for the consistencies.
 
+At opening "Check Tcl" dialogue, a current file
+is checked automatically.
+
 🗰 VERY useful at getting an obscure Tcl error.
 ---
-The checking for consistencies is executed for
-a current proc / method before "Run the file"
-automatically!
+Also, the checking is executed for a current proc
+or method before "Run the file" automatically!
 
 We don't test this now to avoid auto-saving files.
 
-Details on "Run" tool are in "5. Tools" demo. 🗩
+Details on "Run" tool are in "4. Tools" demo. 🗩
 # TRANSPOPS_red
 ---
 At checking Tcl code, a whole content of a unit
@@ -207,14 +173,6 @@ has to be checked from its start to a next unit's.
 Some "errors" are natural and eliminated by
 "END of namespace" or similar branches which
 are good for documentation / visibility as well.
----
-If a unit contains inconsistent braces,
-it cannot be moved by means of the tree,
-because it is obviously either incomplete
-or somehow related to the unit structure.
-
-In such cases, only the cut-and-paste can
-help with moving units.
 ---
 By the way, did you notice the red bar icons
 at the leaves of the unit tree?
@@ -227,7 +185,7 @@ Beware, this unit needs to be refactored!
 The tree of units and the tree of project files
 are switched to / from by appropriate buttons.
 
-The file tree is detailed in "3. Projects" demo. 🗩
+The file tree is detailed in "2. Projects" demo. 🗩
 ---
 Welcome to
 

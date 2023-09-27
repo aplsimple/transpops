@@ -2,13 +2,13 @@ Here comes alited localized.
 ---
 The colors of Tcl syntax have changed too.
 ---
-And it is "aw" theme by Brad Lanam. By the way
+And it is "awdark" theme by Brad Lanam. By the way
 in alited, it's changed, as for scrollbars. 🗩
 
 The color scheme of e_menu has changed too.
 As well as Tkcon's.
 ---
-There is a nice set of MildDark color shemes.
+There is a nice set of African color shemes.
 
 The "Test" checkbutton allows tuning a chosen
 color scheme.

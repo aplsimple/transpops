@@ -21,8 +21,8 @@ As for flags: alited uses the Stars and Stripes
 instead of the Union Jack just because of the
 origin of computers and words like 'color'.
 ---
-Also, we might try "aw" theme by Brad Lanam
-with the "Aw" appropriate color scheme.
+Also, we might try "awdark" theme by Brad Lanam
+with the "AwDark" appropriate color scheme.
 ---
 At last, we'll change a color scheme of
 

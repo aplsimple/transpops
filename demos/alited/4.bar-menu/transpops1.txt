@@ -1,10 +1,8 @@
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 ---
 Tools of alited are presented
-by its tool bar and menu.
+by its tool bar and menu ("bar-menu" actions).
 
-Thus, they are called "bar-menu" actions.
----
 Some of tools are provided by alited staticly,
 i.e. they cannot be removed.
 
@@ -12,37 +10,20 @@ Other tools are collected in "Tools / bar-menu"
 submenu. These are provided by e_menu and can
 be removed or substituted for other tools.
 ---
-In fact, "Run" and "Tcl/Tk help" are both
-provided by e_menu application.
-
-Namely:
-    "Run" is "Run me..." item of menu.mnu
-    "Tcl/Tk help" is one of "ornamental items"
----
-By default, "Run" tries to run an application
+By default, "Run" tool tries to run an application
 associated with a currently edited file.
 
 For Tcl files, it is "tclsh" or an application
 of "Preferences / Tools / tclsh..." setting. 🗩
----
-Also, for a convenience of testing Tcl code,
-alited recognizes special comments like:
-    #RUNF: file.tcl args
-which mean running "tclsh file.tcl args",
-and comments like:
-    #EXEC: tclsh file.tcl args
-
-🗰 You can set several of them in a script, but
-the very first of them is used to run its stuff.
 ---
 "Run" executes Tcl script either of two ways:
 
   * running a file inside a console
   * running a file inside Tkcon
 
-This is customized in "Preferences / Tools". 🗩
+This is customized in "Tools / Run..." dialogue. 🗩
 ---
-You might prefer to run Tcl scripts inside Tkcon.
+We might prefer to run Tcl scripts inside Tkcon.
 
 In this case we get a profit of introspecting our
 code in Tkcon.
@@ -53,26 +34,26 @@ set for Linux / Windows in "Preferences / Tools".
 In Windows, powershell.exe is probably the best choice.
 It can be selected from "MS Windows shell" combobox.
 ---
-"Run" icon uses the default mode customized in
-"Preferences / Tools".
-
-🗰 But when a file is run by "Tools / Run..." menu
-item or by F5 key, alited offers to run the file
-either in console or in Tkcon.
+When a file is run by "Tools / Run..." menu
+item, alited offers to run the file either in console
+or in Tkcon.
 
 It's good to have both of these modes with their
 pros and contras.
+
+At setting a command in this dialogue, we can enter
+or select a command in the text box. The current
+command is highlighted and fully visible.
 ---
-The most radical way to run applications from alited
-is "Setup / For Run..." forced command.
-
-🗰 At setting a command in this dialogue, we overcome
-all other possibilities to run applications: all these
-file associations, #RUNF:, #EXEC: are totally ignored.
-
-However, calling e_menu and choosing "Run me" item
+Anyhow, calling e_menu and choosing "Run me" item
 (or pressing F4 key twice) will run a current file
 in its associated app: e_menu runs it independently.
+
+The e_menu combines the power of shell scripts
+with the power of Tcl/Tk.
+
+The e_menu's scripts are simple for those knowing both
+the schell and Tcl scripting.
 ---
 "Tcl/Tk help" shows Tcl/Tk man page
 for a word the cursor is on.

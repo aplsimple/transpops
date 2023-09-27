@@ -8,13 +8,6 @@ One of them is "Find/Replace" tool, called with:
   * "Search / Find/Replace" menu item
   * "Find/Replace" toolbar icon
 ---
-But first of all let's remove the TODO warning.
-
-It occurs due to the time of making this demo,
-late a bit.
----
-OK.
-
 The "Find/Replace" dialogue contains two sections:
   * Find
   * Replace
@@ -110,6 +103,8 @@ of variables detected in the proc / method. 🗩
 
 The Tab key of this option may be changed to
 other key(s) in "Setup / Preferences / Keys".
+
+To type Tab character, Ctrl+T is always at hand.
 ---
 At the completion, the commands:
 
@@ -182,11 +177,14 @@ The search in the selected files is available
 in "Find/Replace" dialogue.
 It takes place of "All in Session". 🗩
 ---
-Welcome to
+For best viewing / searching colors, alited provides
+"Edit / Color Values" menu item.
 
-https://aplsimple.github.io
-
-for further details.
+This allows viewing colors throughout a text or its
+current page.
+---
+Next demo is "4.Tools_alited",
+it's about tools of alited.
 
 Thanks for your attention. 👍
 ---

@@ -44,47 +44,38 @@ proc TRANSPOPS_DEMO {} {
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP8
   }
 
-  ## ________________________ 1. Start _________________________ ##
+  ## ________________________ 1. Units _________________________ ##
 
   if 0 {
-    set dir 1.Start
     if {$step1} {
-      set fname transpops0.txt  ;# the very first start
-      set win {.diaalitedObjToDel1 .alwin}
+      set fname transpops1.txt  ;# the very first start
+      set win {.diaalitedObjToDel1 .alwin.diaPref .alwin}
     } elseif {$step2} {
-      set fname transpops1.txt  ;# after creation of ./config/alited
-      set win {.alwin.diaPref .alwin}
-    } elseif {$step4} {
-      set fname transpops2.txt ;# at restart with new settings
+      set fname transpops2.txt
     } else {
-      set fname transpops3.txt ;# just to welcome
+      set fname transpops3.txt
     }
+    set dir 1.Units
   }
 
-  ## ________________________ 2. Units _________________________ ##
+  ## ________________________ 2. Projects _________________________ ##
 
-  if 0 {
-    set dir 2.Units
-  }
-
-  ## ________________________ 3. Projects _________________________ ##
-
-  if 1 {
-    set dir 3.Projects
+  if 01 {
+    set dir 2.Projects
     set win {.alwin.diaPrj .alwin.diaPref .alwin}
   }
 
-  ## ________________________ 4. Find _________________________ ##
+  ## ________________________ 3. Find _________________________ ##
 
   if 0 {
-    set dir 4.Find
+    set dir 3.Find
     set win {.alwin.diaPref .alwin.winFind .alwin}
   }
 
-  ## ________________________ 5. bar-menu _________________________ ##
+  ## ________________________ 4. bar-menu _________________________ ##
 
   if 0 {
-    set dir 5.bar-menu
+    set dir 4.bar-menu
     set win {.alwin.diaPref .alwin}
     if {$step1 || $step2} {
       set fname transpops1.txt  ;# 1st start
@@ -95,10 +86,10 @@ proc TRANSPOPS_DEMO {} {
     }
   }
 
-  ## ________________________ 6. Theme _________________________ ##
+  ## ________________________ 5. Theme _________________________ ##
 
   if 0 {
-    set dir 6.Theme
+    set dir 5.Theme
     set win {.alwin.diaPref .alwin.winFind .alwin.diaPrj .alwin}
     if {$step1 || $step2} {
       set fname transpops1.txt  ;# 1st start
@@ -111,8 +102,27 @@ proc TRANSPOPS_DEMO {} {
     }
   }
 
-  if {[file exists [set fname [file normalize [file join $DEMODIR $dir $fname]]]]} {
-    #set ::transpops::my::perchars 1.0 ;# for popups to be 12 times longer
+  ## ________________________ 6. Paver _________________________ ##
+
+  if 0 {
+    set dir 6.Paver
+    set win {.alwin.paverwin .alwin.winFind .alwin}
+    if {$step1 || $step2} {
+      set fname transpops1.txt  ;# 1st start
+    } elseif {$step4} {
+      set fname transpops2.txt  ;# 2nd start
+    }
+  }
+
+  ## ________________________ 7. Paver mosaic _________________________ ##
+
+  if 0 {
+    set dir 7.Pavermosaic
+    set win {.alwin.paverwin .alwin}
+  }
+
+  set fname [file normalize [file join $DEMODIR $dir $fname]]
+  if {[file exists $fname]} {
     ::transpops::run $fname $win
   }
 
