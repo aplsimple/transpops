@@ -1,14 +1,13 @@
-# TRANSPOP TAG b -foreground blue
 Welcome to <r>alited</r>! 🖐
 
 It's an editor/IDE to develop Tcl/Tk applications.
 
 At first start, it needs a simple initialization.
 
-🗰 This dialogue gives a useful information on
-where <r>alited!</r> stores its settings. E.g. in Windows,
+<r>🗰</r> This dialogue gives a useful information on
+where <r>alited</r> stores its settings. E.g. in Windows,
 we can have them in <b>C:\Users\me\AppData\Local</b>.
 
-Now then, we confirm the offered. It doesn't hurt! <r>😄</r>
+Now then, we confirm the offered. It doesn't hurt! 😄
 ---
 

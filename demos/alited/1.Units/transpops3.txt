@@ -7,55 +7,55 @@ The files are open in the current project.
 
 The default project refers to alited's source.
 
-The alited can't do without projects.
+<r>🗰</r> The alited can't do without projects.
 ---
 
-The alited editor is "unit oriented".
+The alited editor is <r>unit oriented</r>.
 
 This means making a unit tree of Tcl code
 - branches and leaves.
 
-The branches are created with special comments.
+The <b>branches</b> are created with special comments.
 
-The leaves are Tcl procedures and methods.
+The <b>leaves</b> are Tcl procedures and methods.
 ---
-To add a branch, the key combinations are used:
+To add a <r>branch</r>, the key combinations are used:
 
-  * Shift+F1 for 1st level
+  * <b>Shift+F1</b> for 1st level
 
-  * Shift+F2 for 2nd level
+  * <b>Shift+F2</b> for 2nd level
 
-  * Shift+F3 for 3rd level
+  * <b>Shift+F3</b> for 3rd level
 ---
-The keys and comments are customizable.
+The keys and comments are <b>customizable</b>.
 For example, new levels of branches can be added.
 
-🗰 At first presentation, the "List of Templates"
+<r>🗰</r> At first presentation, the "List of Templates"
 dialogue shows its help. Some dialogues of alited
 do the same. These presentations of help are
-cancelled with "Don't show anymore" check button.
+cancelled with <r>Don't show anymore</r> check button.
 ---
-To add a procedure / method, the keys are used:
+To add a procedure/method, the keys are used:
 
-  * Alt+P to add a procedure
+  * <b>Alt+P</b> to add a procedure
 
-  * Alt+M to add a method
+  * <b>Alt+M</b> to add a method
 ---
-The unit tree has its own toolbar allowing
+The unit tree has <r>its own toolbar</r> allowing
 to arrange the tree.
 
-The Up / Down buttons allow to move unit(s)
+The <b>Up/Down</b> buttons allow to move unit(s)
 through the tree.
 
-A unit can be drag-and-dropped,
+A unit can be <b>drag-and-dropped</b>,
 a target being before a drop point.
 
-🗰 A code can be rearranged without Cut / Paste!
+<r>🗰</r> A code can be rearranged without Cut/Paste!
 ---
 To move a group of units, they are freely
-selected with Ctrl+click (one by one).
+selected with <b>Ctrl+click</b> (one by one).
 
-Also, Shift key can be used to select
+Also, <b>Shift key</b> can be used to select
 a range of units, this way:
 
   * click a first unit of the range
@@ -63,29 +63,29 @@ a range of units, this way:
   * press Shift and click a last unit
 ---
 If a selected unit group needs to be moved to
-some far location, "Drop selected..." menu item
+some far location, <r>Drop selected...</r> menu item
 might be helpful.
 
 The group's units are selected without any order.
 
-🗰 They are dropped in the order of their sequence.
+<r>🗰</r> They are dropped in the order of their sequence.
 ---
 The visited units are highlighted in the unit tree
-by a color (the same as proc / method of Tcl).
+by a color (the same as proc/method of Tcl).
 
 This rule doesn't relate to branches.
 ---
-However, if a unit contains "TODO comments",
+However, if a unit contains <r>TODO comments</r>,
 it is highlighted with red color, no matter it's
 a leaf or a branch.
 
-TODO comments begin with #! so that Unix shebangs
+TODO comments begin with <r>#!</r> so that Unix shebangs
 are highlighted in the same manner as TODOs.
 
-Alternatively, we can set TODO comments with
-"# TODO <...>".
+Alternatively, we can set TODO comments in the
+<r># TODO <...></r> form.
 ---
-🗰 When some lines are commented out
+<r>🗰</r> When some lines are commented out
 with Edit/Comment menu item, they are marked
 as TODO comments which is good:
 
@@ -95,58 +95,57 @@ as TODO comments which is good:
 
   * to solve them as they are the real TODOs
 
-Edit/Uncomment menu item restores the lines.
+<r>Edit/Uncomment</r> menu item restores the lines.
 ---
 At navigating through the unit tree,
-the cursor positions are saved/restored
+the cursor positions are <b>saved/restored</b>
 in visited units.
 
-🗰 We can continue with units in the same
+<r>🗰</r> We can continue with units in the same
 positions we left them.
 ---
 "Search / To Last Visited" or Alt+Backspace
-allow to switch between two last visited units.
+allow to switch between <b>two last visited</b> units.
 
-There is "Last Visited" list of units as well.
-
+There is <r>Last Visited</r> list of units as well.
 Let's see how it is populated.
 
 Nearly all actions with a text lead to updating
 "Last Visited" list excepting a simple navigation
-with Up / Down/ PageUp / PageDown keys. 🗩
+with Up / Down / PageUp / PageDown keys. <r>🗩</r>
 ---
-Some of units may be considered as favorite. If so,
+Some of units may be considered as <b>favorite</b>. If so,
 they are appointed favorites with "Favorites" toolbar.
 
-Any current unit (leaf / branch) can be favorite.
+Any current unit (leaf or branch) can be favorite.
 
-The "Favorites" list is per a project.
+The "Favorites" list is <r>per a project</r>.
 ---
 If some favorites' list is considered valuable,
-the list can be saved by its own name.
+the list can be <b>saved by its own name</b>.
 
 Then, the saved lists can be used as a sort of
-"subprojects inside projects" to solve their
+<b>subprojects inside projects</b> to solve their
 appropriate tasks.
 ---
-After pressing Ctrl+Shift+F, "Search Units" bar
+After pressing <b>Ctrl+Shift+F</b>, "Search Units" bar
 is shown, allowing to search units by their case
 insensitive glob patterns.
 
-🗰 VERY useful.
+<r>🗰</r> VERY useful.
 ---
 The info listbox' context menu allows to
-set "Don't focus a text" mode in order to
+set <b>Don't focus a text</b> mode in order to
 scan the found units with keys.
 ---
-After pressing Ctrl+G, "Go to Line" dialogue
+After pressing <b>Ctrl+G</b>, "Go to Line" dialogue
 is shown, allowing to go inside a unit by its
 relative number of line.
 
 Useful at getting a Tcl error message with
-a proc / method name and a line number.
+proc/method name and a line number.
 ---
-The alited provides a tool to check Tcl code
+The alited provides a tool to <b>check Tcl code</b>
 for some consistencies.
 
 Every proc/method is checked for consistencies
@@ -154,42 +153,42 @@ of braces, brackets and quotes as well as for
 duplicate unit names. Also a whole of the file
 is checked for the consistencies.
 
-At opening "Check Tcl" dialogue, a current file
-is checked automatically.
+At opening "Check Tcl" dialogue, <b>a current file
+is checked automatically</b>.
 
-🗰 VERY useful at getting an obscure Tcl error.
+<r>🗰</r> VERY useful at getting an obscure Tcl error.
 ---
 Also, the checking is executed for a current proc
-or method before "Run the file" automatically!
+or method before <r>Run the file</r> automatically!
 
 We don't test this now to avoid auto-saving files.
 
-Details on "Run" tool are in "4. Tools" demo. 🗩
+Details on "Run" tool are in "4. Tools" demo. <r>🗩</r>
 # TRANSPOPS_red
 ---
 At checking Tcl code, a whole content of a unit
 has to be checked from its start to a next unit's.
 
 Some "errors" are natural and eliminated by
-"END of namespace" or similar branches which
+<b>END of namespace</b> or similar branches which
 are good for documentation / visibility as well.
 ---
-By the way, did you notice the red bar icons
+By the way, did you notice the <r>red bar icons</r>
 at the leaves of the unit tree?
 
-🗰 They mean "the more red the more long".
+<r>🗰</r> They mean "the more red the more long".
 
 Thus, the redness is like a message:
 Beware, this unit needs to be refactored!
 ---
-The tree of units and the tree of project files
+The tree of <b>units</b> and the tree of <b>project files</b>
 are switched to / from by appropriate buttons.
 
-The file tree is detailed in "2. Projects" demo. 🗩
+The file tree is detailed in "2. Projects" demo. <r>🗩</r>
 ---
 Welcome to
 
-https://aplsimple.github.io
+<link><g>https://aplsimple.github.io</g></link>
 
 for further details.
 

@@ -6,16 +6,16 @@ We resize the four panes by their sizers.
 A little bit of efforts may be made to size
 "Row" column and scrollbar of the unit tree.
 
-🗰 In particular, this needs some attention
-after changing alited's theme, because at that
+<r>🗰</r> In particular, this needs some attention
+after <b>changing alited's theme</b>, because at that
 the geometries of widgets are affected too.
 ---
 The alited's theme, colors and fonts are set
 by means of "Setup / Preferences" menu item.
 
-In General/View tab, we choose a Ttk theme and
-a color scheme. Also, we can set a size of
-the middle font (of menu, labels, buttons).
+In General/View tab, we choose a Ttk <b>theme</b> and
+a <b>color scheme</b>. Also, we can set a size of
+the middle <b>font</b> (of menu, labels, buttons).
 
 With the new options set, let's save them
 and restart alited.

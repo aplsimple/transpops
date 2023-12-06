@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 2.0
+package provide transpops 2.1
 
 #source [file join [file dirname [info script]] drawscreen.tcl]
 
@@ -22,6 +22,7 @@ namespace eval ::transpops {
 
   namespace eval my {
     variable msgs [list] text {} imsgs 0 wmsgs .win.transpops omsgs {}
+    variable wtxt $wmsgs.labtrans
     variable fg #000000 bg #FBFB95
     variable alpha 0.0 alphaincr 0.1
     variable cntwait 0 waitfactor 8.0
@@ -33,9 +34,9 @@ namespace eval ::transpops {
       app no
     }
     variable textTags [list \
-      [list "r" "-foreground red"] \
-      [list "b" "-foreground blue"] \
-      [list "g" "-foreground green"] \
+      [list "r" "-foreground #930000"] \
+      [list "b" "-foreground #004080"] \
+      [list "g" "-foreground #005700"] \
       [list "link" "::apave::openDoc %t@@https://%l@@"] \
     ]
   }
@@ -60,6 +61,7 @@ proc ::transpops::my::Show {win evn} {
   variable msgs
   variable imsgs
   variable wmsgs
+  variable wtxt
   variable alpha
   variable alphaincr
   variable cntwait
@@ -67,6 +69,8 @@ proc ::transpops::my::Show {win evn} {
   variable bg
   set fS red
   set wmsgs [string trimright $win .].transpops
+  set wtxt $wmsgs.labtrans
+  catch {destroy $wtxt}
   catch {destroy $wmsgs}
   while {1} {
     if {[incr imsgs]>[llength $msgs]} return
@@ -97,7 +101,6 @@ proc ::transpops::my::Show {win evn} {
   } else {
     set opts {}
   }
-  set wtxt $wmsgs.labtrans
   set font {-weight bold -size 16 -family Mono}
   if {[catch {
     set text [string trim $text]
@@ -119,7 +122,7 @@ proc ::transpops::my::Show {win evn} {
   set alpha 0.0
   set alphaincr 0.007
   set cntwait 0
-  bind $wmsgs <ButtonPress> {set ::transpops::my::cntwait 0}
+  bind $wtxt <ButtonPress-1> {set ::transpops::my::cntwait 0; break}
   if {[regexp {^http[s]?://\S+$} $msg]} {
     catch {
       ::apave::obj makeLabelLinked $wtxt \
@@ -140,6 +143,7 @@ proc ::transpops::my::Popup {msg} {
   #   msg - the message
 
   variable wmsgs
+  variable wtxt
   variable alpha
   variable alphaincr
   variable cntwait
@@ -154,6 +158,7 @@ proc ::transpops::my::Popup {msg} {
       set alphaincr [expr {-$alphaincr}]
       set alpha 1.0
     } elseif {$alpha<0.0} {
+      catch {destroy $wtxt}
       catch {destroy $wmsgs}
       return
     }
@@ -291,7 +296,7 @@ proc ::transpops::run {args} {
 
   if {[catch {my::Run {*}$args} err]} {
     catch {
-      set ch [open ~/TMP/transpops.log a]
+      set ch [open /home/apl/TMP/transpops.log a]
       puts $ch $err
       close $ch
     }

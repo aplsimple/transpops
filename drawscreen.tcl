@@ -20,7 +20,7 @@ namespace eval ::drawscreen {
   namespace eval my {
     variable draw
     array set draw {
-      width 6
+      width 5
       fill #ff0000
       length 10
       bell yes
@@ -229,6 +229,7 @@ proc ::drawscreen::configure {args} {
 # _________________________________ main _________________________________ #
 
 if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info script]]} {
+  wm geometry . +0+0
   lassign $::argv hotk
   if {$hotk eq {}} {set hotk {Control-x Control-X}}
   set hk [string map [list < {} > {} { } {, }] $hotk]

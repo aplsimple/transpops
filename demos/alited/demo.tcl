@@ -11,10 +11,10 @@
 
 proc TRANSPOPS_DEMO {} {
 
-  set TRANSPOPS_SRC [file normalize ~/PG/github/transpops/transpops.tcl]
+  set TRANSPOPS_SRC /home/apl/PG/github/transpops/transpops.tcl
   source $TRANSPOPS_SRC
 
-  set DEMODIR [file normalize ~/PG/github/DEMO/alited]
+  set DEMODIR [file normalize /home/apl/PG/github/DEMO/alited]
   set fname transpops.txt  ;# default transpops' data file
   set win .alwin
 
@@ -46,7 +46,7 @@ proc TRANSPOPS_DEMO {} {
 
   ## ________________________ 1. Units _________________________ ##
 
-  if 0 {
+  if 1 {
     if {$step1} {
       set fname transpops1.txt  ;# the very first start
       set win {.diaalitedObjToDel1 .alwin.diaPref .alwin}
@@ -60,7 +60,7 @@ proc TRANSPOPS_DEMO {} {
 
   ## ________________________ 2. Projects _________________________ ##
 
-  if 01 {
+  if 0 {
     set dir 2.Projects
     set win {.alwin.diaPrj .alwin.diaPref .alwin}
   }
@@ -131,4 +131,4 @@ proc TRANSPOPS_DEMO {} {
 catch {TRANSPOPS_DEMO}
 
 #RUNF1: ../../alited/src/alited.tcl DEBUG
-# ~/.config2
+# /home/apl/.config2
