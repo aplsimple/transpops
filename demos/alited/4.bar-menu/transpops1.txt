@@ -1,119 +1,138 @@
-#RUNF1: ../../../alited/src/alited.tcl DEBUG
+#RUNF1: ../../../../alited/src/src/alited.tcl DEBUG
 ---
 Tools of alited are presented
-by its tool bar and menu ("bar-menu" actions).
+by its tool bar and menu (<r>bar-menu</r> actions).
 
 Some of tools are provided by alited staticly,
 i.e. they cannot be removed.
 
-Other tools are collected in "Tools / bar-menu"
-submenu. These are provided by e_menu and can
+Other tools are collected in <r>Tools / bar-menu</r>
+submenu. These are provided by <b>e_menu</b> and can
 be removed or substituted for other tools.
 ---
-By default, "Run" tool tries to run an application
+By default, <r>Run</r> tool tries to run an application
 associated with a currently edited file.
 
-For Tcl files, it is "tclsh" or an application
-of "Preferences / Tools / tclsh..." setting. 🗩
+For Tcl files, it is an application that is set as
+<b>Preferences / Tools / tclsh...</b> setting.
+
+If this setting is empty, Tcl files are run with
+the same Tcl runtime as <b>alited</b> is. <r>🗩 </r>
 ---
-"Run" executes Tcl script either of two ways:
+<r>Run</r> executes Tcl script either of two ways:
 
-  * running a file inside a console
-  * running a file inside Tkcon
-
-This is customized in "Tools / Run..." dialogue. 🗩
----
-We might prefer to run Tcl scripts inside Tkcon.
-
-In this case we get a profit of introspecting our
-code in Tkcon.
-
-On the other hand, the console application may be
-set for Linux / Windows in "Preferences / Tools".
-
-In Windows, powershell.exe is probably the best choice.
-It can be selected from "MS Windows shell" combobox.
----
-When a file is run by "Tools / Run..." menu
-item, alited offers to run the file either in console
-or in Tkcon.
+  * running a file inside a <b>console</b>
+  * running a file inside <b>Tkcon</b>
 
 It's good to have both of these modes with their
 pros and contras.
 
-At setting a command in this dialogue, we can enter
-or select a command in the text box. The current
-command is highlighted and fully visible.
+This is customized in <b>Tools / Run...</b> dialogue.<r> 🗩 </r>
 ---
-Anyhow, calling e_menu and choosing "Run me" item
-(or pressing F4 key twice) will run a current file
-in its associated app: e_menu runs it independently.
+We might prefer to run Tcl scripts inside <r>Tkcon</r>.
 
-The e_menu combines the power of shell scripts
+In this case we get a profit of introspecting our
+code in Tkcon.
+
+On the other hand, a <b>console</b> application may be
+set for Linux / Windows in <r>Preferences / Tools</r>.
+
+In Windows, <b>powershell.exe</b> is probably the best choice.
+It can be selected from <b>MS Windows shell</b> combobox.
+---
+The <r>Tools / Run...</r> dialogue offers a lot of
+choices, all of them can be saved for future uses.
+
+At setting a command in this dialogue, we can enter
+or select a command in the <b>text box</b>. The current
+command is highlighted and fully visible.
+
+There can be as many commands to run as wanted. Each
+command is set in a separate line of the <b>text box</b>,
+and all of them are saved <b>per a project</b>.<r> 🗩 </r>
+---
+The <b>By command RUNF#</b> choice is good with projects
+having granular structure, i.e. when each file is
+tested with its own command(s). <b>RUNF template</b> and this
+<b>By command RUNF#</b> choice will be helpful at that.
+
+Also, a project may require some initialization before
+running the commands to test it. These initializing
+commands can be set with the second <b>text box</b>.
+
+The <b>Run</b> button allows testing a current choice.
+The <b>Save</b> button saves the dialogue's settings.
+---
+Anyhow, calling <r>e_menu</r> and choosing <b>Run me</b> item
+(or pressing <b>F4</b> key twice) will run a current file
+in its associated app: <b>e_menu</b> runs it independently.
+
+The <b>e_menu</b> combines the power of shell scripts
 with the power of Tcl/Tk.
 
-The e_menu's scripts are simple for those knowing both
-the schell and Tcl scripting.
+The <b>e_menu</b>'s scripts are simple for those knowing
+both the schell and Tcl scripting.<r> 🗩 </r>
 ---
-"Tcl/Tk help" shows Tcl/Tk man page
+<r>Tcl/Tk help</r> shows Tcl/Tk man page
 for a word the cursor is on.
 
 Or for a selected text.
 
-Details of customizing this option
-are in "Help / alited" menu item
-("Tcl/Tk help tool" section). 🗩
+This option is easily customized.
+Details are in <b>Help / alited</b> menu
+item (<b>Tcl/Tk help tool</b> section).<r> 🗩 </r>
 ---
 Some tools, though default, can be changed or removed.
 
-These tools are listed in "Tools / bar-menu" submenu
-and are customized in "Setup / Preferences / Tools".
+These tools are listed in <r>Tools / bar-menu</r> submenu
+and are customized in <b>Setup / Preferences / Tools</b>.
+
+Let's try the customization.
 ---
-New items are added by [+] button.
-Or we can use empty rows at the bottom.
+We can use empty rows at the bottom to
+add new items. There are 3 empty items
+for <b>alited's session</b> to add and test,
+maximum 32 for all sessions.
 
-Items are removed by [x] button.
-
-Empty items are ignored.
+Items are removed by <r>[x]</r> button.
 
 The list of items is scrollable.
 ---
-To choose a tool, click its button at the right.
+To choose a tool, we click its button at
+the right.
 
-Any non-menu items can be chosen directly
-while navigating through menus.
+Any <b>non-menu items</b> can be chosen
+directly while navigating through menus.
 
-If we want to choose a whole submenu, we just
-right click on this submenu and choose "Select"
-from a popup menu.
+If we want to choose <b>a submenu</b>,
+we just right click on this submenu and
+choose <b>Select</b> from the context menu.
 
-The main menu is run by "e_menu" tool. 🗩
+The main menu is run by <r>e_menu</r> tool.<r> 🗩 </r>
 ---
-To change a tool's icon, click its drop-down list.
+To change a tool's icon, we click its <r>drop-down list</r>.
 
-There are available icon-pictures and icon-characters.
+There are available icon-<b>pictures</b> and icon-<b>characters</b>.
 ---
 At need, we can move tool items up/down.
 
-And clicking the checkbutton will set a divider or
-restore a previous setting. 🗩
+Clicking the checkbutton will set a divider
+or restore a previous setting.<r> 🗩 </r>
 ---
 Also, we'll change a geometry of
 
-  * e_menu tool
-  * Tkcon tool
+  * <b>e_menu</b> tool
+  * <b>Tkcon</b> tool
 ---
 One notice more: when calling alited's tools
-(excepting Tcl/Tk help and Tkcon) all of unsaved
+(excepting <b>Tcl/Tk help</b> and <b>Tkcon</b>) all unsaved
 changes are saved according to the setting
-"Preferences/Saving/Save before bar-menu runs".
+<r>Preferences/Saving/Save before bar-menu runs</r>.
 
-It's good to set it to "All files". 🗩
+It's good to set it to <b>All files</b>.<r> 🗩 </r>
 ---
 After changes done, we should save the new
 preferences.
 
 This will restart alited.
 ---
-#RUNF1: ../../../alited/src/alited.tcl DEBUG
-

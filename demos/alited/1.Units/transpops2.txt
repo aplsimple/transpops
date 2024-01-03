@@ -6,7 +6,7 @@ We resize the four panes by their sizers.
 A little bit of efforts may be made to size
 "Row" column and scrollbar of the unit tree.
 
-<r>🗰</r> In particular, this needs some attention
+<r>🗰 </r>In particular, this needs some attention
 after <b>changing alited's theme</b>, because at that
 the geometries of widgets are affected too.
 ---

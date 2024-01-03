@@ -1,46 +1,44 @@
 There are a few of theming options for alited.
 
-All are located in Setup menu:
+All are located in <b>Setup</b> menu:
 
   * Setup / Preferences
   * Setup / Tint
 
-Let's try Preferences.
+Let's try <b>Preferences</b>.
 ---
-Two options of General tab work together:
+Two options of <b>General</b> tab work together:
 
   * Ttk theme
   * Color scheme
 
-🗰 It's only for default, clam, classic and alt
+It's only for <b>default, clam, classic</b> and <b>alt</b>
 themes that the color scheme can be chosen freely.
 
-For other themes, a color scheme should be chosen
-according to their dark/light background.
+<r>🗰 </r>For other themes, a color scheme should be
+chosen according to their <b>dark / light</b> background.
 ---
 The standard Ttk themes are:
-
+<b>
   * default
   * clam
   * classic
   * alt
   * awlight
   * awdark
-
-🗰 These themes are most recommended for their stability.
+</b>
+<r>🗰 </r>These themes are most recommended for their stability.
 ---
-The color schemes can be tinted with "Tint" option,
+The color schemes can be tinted with <b>Tint</b> option,
 their colors being darker or lighter.
 
-The negative values mean "darker", the positive values
-mean "lighter", 0 means "original tint at start".
+The negative values mean <b>darker</b>, the positive values
+mean <b>lighter</b>, 0 means <b>original tint at start</b>.
 
 The range of tints is rather wide: -50 through 50,
 though the reasonable one is often -25 through 25.
 ---
-Let's try "clam" theme with a color scheme.
+Let's try <b>clam</b> theme with a <b>color scheme</b>.
 
-Also, let's set a tint.
+Also, let's set a <b>tint</b>.
 ---
-#RUNF1: ../../../alited/src/alited.tcl DEBUG
-

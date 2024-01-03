@@ -1,33 +1,31 @@
-The colors of Tcl syntax can be set as well.
+The colors of <r>Tcl syntax</r> can be set as well.
 
 These settings are located in
-Setup / Preferences / Editor.
+<b>Setup / Preferences / Editor</b>.
 ---
 Let's change some colors.
 
-At that we view and test them in "Code snippet"
+At that we view and test them in <b>Code snippet</b>
 field.
 
 If we want some specific commands be highlighted
-(in the same color as Tk), we enter them in "Your
-commands" field. 🗩
+(in the same color as Tk), we enter them in <b>Your
+commands</b> field. <r>🗩 </r>
 ---
 Due to msgcat, alited is easily localized, with
-locale .msg files being in data/msgs directory.
+locale <b>.msg</b> files being in <b>data/msgs</b> directory.
 
 Let's try this feature.
 
-As for flags: alited uses the Stars and Stripes
+<b>As for flags</b>: alited uses the Stars and Stripes
 instead of the Union Jack just because of the
-origin of computers and words like 'color'.
+origin of computers and words like <b>color</b>.
 ---
-Also, we might try "awdark" theme by Brad Lanam
-with the "AwDark" appropriate color scheme.
+Also, we might try <b>awdark</b> theme by Brad Lanam
+with the <b>AwDark</b> appropriate color scheme.
 ---
 At last, we'll change a color scheme of
-
+<b>
   * e_menu
-  * Tkcon
+  * Tkcon</b>
 ---
-#RUNF1: ../../../alited/src/alited.tcl DEBUG
-

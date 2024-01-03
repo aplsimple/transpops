@@ -16,7 +16,6 @@ proc TRANSPOPS_DEMO {} {
 
   set DEMODIR [file normalize /home/apl/PG/github/DEMO/alited]
   set fname transpops.txt  ;# default transpops' data file
-  set win .alwin
 
   set step1 [set step2 [set step3 [set step4 [set step5 [set step6 0]]]]]
   if       {[set step2 [file exists $DEMODIR/STEP2]]} {
@@ -43,13 +42,14 @@ proc TRANSPOPS_DEMO {} {
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP7
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP8
   }
+  set win {.alwin .win.transpops* .alwin.diaaliteddlg*}
 
   ## ________________________ 1. Units _________________________ ##
 
-  if 1 {
+  if 0 {
+    lappend win .diaalitedObjToDel1 .alwin.diaPref
     if {$step1} {
       set fname transpops1.txt  ;# the very first start
-      set win {.diaalitedObjToDel1 .alwin.diaPref .alwin}
     } elseif {$step2} {
       set fname transpops2.txt
     } else {
@@ -62,21 +62,21 @@ proc TRANSPOPS_DEMO {} {
 
   if 0 {
     set dir 2.Projects
-    set win {.alwin.diaPrj .alwin.diaPref .alwin}
+    lappend win .alwin.diaPrj .alwin.diaPref
   }
 
   ## ________________________ 3. Find _________________________ ##
 
   if 0 {
     set dir 3.Find
-    set win {.alwin.diaPref .alwin.winFind .alwin}
+    lappend win .alwin.diaPref .alwin.winFind
   }
 
   ## ________________________ 4. bar-menu _________________________ ##
 
   if 0 {
     set dir 4.bar-menu
-    set win {.alwin.diaPref .alwin}
+    lappend win .alwin.diaPref .alwin.rundlg
     if {$step1 || $step2} {
       set fname transpops1.txt  ;# 1st start
     } elseif {$step4} {
@@ -90,7 +90,7 @@ proc TRANSPOPS_DEMO {} {
 
   if 0 {
     set dir 5.Theme
-    set win {.alwin.diaPref .alwin.winFind .alwin.diaPrj .alwin}
+    lappend win .alwin.diaPref .alwin.winFind .alwin.diaPrj
     if {$step1 || $step2} {
       set fname transpops1.txt  ;# 1st start
     } elseif {$step4} {
@@ -104,26 +104,10 @@ proc TRANSPOPS_DEMO {} {
 
   ## ________________________ 6. Paver _________________________ ##
 
-  if 0 {
+  if 1 {
     set dir 6.Paver
-    set win {.alwin.paverwin .alwin.winFind .alwin}
-    if {$step1 || $step2} {
-      set fname transpops1.txt  ;# 1st start
-    } elseif {$step4} {
-      set fname transpops2.txt  ;# 2nd start
-    }
-  }
-
-  ## ________________________ 7. Paver mosaic _________________________ ##
-
-  if 0 {
-    set dir 7.Pavermosaic
-    set win {.alwin.paverwin .alwin}
-  }
-
-  set fname [file normalize [file join $DEMODIR $dir $fname]]
-  if {[file exists $fname]} {
-    ::transpops::run $fname $win
+    lappend win .alwin.paverwin .alwin.winFind
+    set fname transpops.txt
   }
 
 }

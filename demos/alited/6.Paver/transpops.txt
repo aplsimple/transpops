@@ -1,0 +1,87 @@
+The <r>paver</r> is a convenient tool for developing GUI
+with <b>apave</b> package the <b>alited</b> is based upon.
+
+In fact, the <r>paver</r> is a sort of "bonus card" or
+"reverence" from <b>alited</b> to <b>apave</b>.
+---
+Let's try the <b>apave</b> examples from its description.
+
+We'll be doing all from scratch.
+---
+We'll test <b>only the widget lists</b>, as
+we are interested in the GUI layouts only.
+
+<r>🗰 </r>The paver disables all of functionality,
+leaving the <b>naked layouts</b>.
+
+So, the example's initial lines are skipped.
+We begin copy-pasting from <b>8-12</b> lines on.
+
+While copy-pasting, we compare the pictures from
+<b>apave</b> description and our <b>pavered</b> widget list.
+---
+Let's make the proposed changes to our widget list
+to get the changed GUI with <b>Stay on top</b> check.
+---
+Let's test the <b>paver</b> with GUI of <b>alited</b>.
+
+The code points where we can find the
+GUI layouts have <b>paveWindow</b> calls. <r>🗩 </r>
+---
+Note, please, that the <b>paver strips</b> the GUI
+of variables / commands used, as it knows
+nothing about them.
+
+For example, in <b>Saved Favorites</b> dialogue
+the <b>Help</b> button is titled through a
+variable (<b>localized Help</b>). And as such,
+only the name of variable is seen.
+
+So, paver can show only a pure layout,
+without any functionality that depends on
+the <b>real employment</b> of the layout.
+---
+In most cases, the <b>paveWindow</b> calls refer
+directly to the appropriate GUI layouts.
+
+Some <b>paveWindow</b> calls refer to main frames
+or notebook tabs so that they include only
+calls of procedures returning the layouts. <r>🗩 </r>
+---
+We could set <b>auto update</b> mode which means
+that after saving a file to the disk the GUI
+will be updated.
+---
+While modifying a layout, we can <b>comment out</b>
+an item or its parts of grid/pack options and
+widget attributes.
+
+To comment out an item, we set <b># at its beginning</b>.
+To comment out options, we set <b># at the first one</b>.
+---
+Some GUI (though stripped of variables / commands
+by the paver) can't be displayed <b>as is</b>.
+
+The appropriate layouts contain Tcl code or
+references to variables / commands containing
+the vital options for the GUI. <r>🗩 </r>
+
+That said, such cases are very rare, e.g. <b>alited</b>
+has only 2 or 3 (with the layouts' total about 30).
+---
+We might call a <b>viewer</b> of the layouts (<b>widget lists</b>).
+
+The <b>viewer</b> allows viewing and modifying the widget
+lists <b>stripped</b> of variables / commands.
+
+With the <b>viewer</b>, we don't modify a current script.
+The modifications are active inside the <b>viewer</b> only.
+---
+Welcome to
+
+<link>https://aplsimple.github.io</link>
+
+for further details.
+
+Thanks for your attention. <g>👍 </g>
+---

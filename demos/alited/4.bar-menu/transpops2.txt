@@ -1,19 +1,19 @@
 Well, our changes are:
 
-    * Git menu is substituted with GoldenDict application
+    * <b>Git menu</b> is substituted with <b>GoldenDict</b> application
 
-    * Test menu is substituted with Misc menu
+    * <b>Test menu</b> is substituted with <b>Misc menu</b>
 
-    * screenshooter is added
+    * <b>screenshooter</b> is added
 ---
-These changes are seen in "Tools / bar-menu" item as well.
+The changes are seen in <r>Tools / bar-menu</r> item as well.
 
 Let's try and explore these things.
 ---
-Last few words about "Templates" dialogue.
+Last few words about <r>Templates</r> dialogue.
 
 The dialogue provides a list of templates
-for testing / debugging Tcl code:
+for <b>testing / debugging</b> Tcl code:
   - message
   - puts
   - puts-level
@@ -21,9 +21,9 @@ for testing / debugging Tcl code:
   - info
   - three profilers
 ---
-Next demo is "5.Themes_alited",
-it's about alited's theming stuff.
+Next demo is <g>5.Themes_alited</g>,
+it's about alited's theming.
 
-Thanks for your attention. 👍
+Thanks for your attention. <g>👍 </g>
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG

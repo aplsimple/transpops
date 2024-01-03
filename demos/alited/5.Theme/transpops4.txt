@@ -1,28 +1,24 @@
-Here comes alited localized.
+Here comes <b>alited localized</b>.
 ---
-The colors of Tcl syntax have changed too.
+The colors of <b>Tcl syntax</b> have changed too.
 ---
-And it is "awdark" theme by Brad Lanam. By the way
-in alited, it's changed, as for scrollbars. 🗩
+And it is <b>awdark</b> theme by Brad Lanam. By the way
+in alited it's changed, as for <b>scrollbars</b>.
 
-The color scheme of e_menu has changed too.
-As well as Tkcon's.
+The color scheme of <b>e_menu</b> has changed too.
+As well as <b>Tkcon</b>'s.
 ---
-There is a nice set of African color shemes.
+There is a nice set of <b>African color shemes</b>.
 
-The "Test" checkbutton allows tuning a chosen
+The <b>Test</b> checkbutton allows tuning a chosen
 color scheme.
 ---
 The syntax colors can be quickly reset with four
-"Default" buttons of "Setup / Editor / Syntax".
+<b>Default</b> buttons of <b>Setup / Editor / Syntax</b>.
 ---
-Welcome to
+Next demo is <g>6.Paver_alited</g>,
+it's about creating GUI by means of
+<b>apave</b> package.
 
-https://aplsimple.github.io
-
-for further details.
-
-Thanks for your attention. 👍
+Thanks for your attention. <g>👍 </g>
 ---
-#RUNF1: ../../../alited/src/alited.tcl DEBUG
-

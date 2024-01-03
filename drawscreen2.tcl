@@ -1,6 +1,6 @@
 #! /usr/bin/env tclsh
 ###########################################################
-# Name:    drawscreen.tcl
+# Name:    drawscreen2.tcl
 # Author:  Alex Plotnikov  (aplsimple@gmail.com)
 # Date:    02/11/2023
 # Brief:   Handles drawing on the screen.
@@ -8,7 +8,6 @@
 ###########################################################
 
 package require Tk
-package require treectrl
 
 # ________________________ Data of drawscreen _________________________ #
 
@@ -18,13 +17,15 @@ namespace eval ::drawscreen {
   namespace ensemble create
 
   namespace eval my {
+    variable windraw wDrwScr_
     variable draw
     array set draw {
-      width 5
-      fill #ff0000
-      length 10
-      bell yes
-      started no X 0 Y 0 img {}
+      width 8
+      fill red
+      length 6
+      dobell yes
+      started no
+      X 0 Y 0
     }
   }
 }
@@ -74,10 +75,13 @@ proc ::drawscreen::my::Bind {w events com} {
 #_______________________
 
 proc ::drawscreen::my::Drawing {rootwin} {
-  # Initializes drawing: creates a canvas holding the screen's content.
+  # Initializes drawing: creates a transparent window covering the screen.
   #   rootwin - a parent window's path
 
   variable draw
+  Bell
+  set draw(grab) [grab current]
+  catch {grab release $draw(grab)}
   set win [string trimright $rootwin .].drawscreen
   if {[winfo exists $win]} return ;# esp. for Windows' lag
   catch {set draw(oldfocus) [focus]}
@@ -86,27 +90,19 @@ proc ::drawscreen::my::Drawing {rootwin} {
   set draw(cnv) $win.canvas
   set w [winfo screenwidth .]
   set h [winfo screenheight .]
-  toplevel $win
+  toplevel $win -height 1 -width 1
   wm withdraw $win
-  wm geometry $win 1x1+0+0
   wm attributes $win -alpha 0.0 -topmost 1
   wm overrideredirect $win 1
-  set draw(img) [image create photo -width $w -height $h]
   canvas $draw(cnv) -width $w -height $h -relief flat -bd 0 -highlightthickness 0
-  $draw(cnv) create image 0 0 -image $draw(img) -anchor nw
   pack $draw(cnv) -expand 1 -fill both -ipady 0 -padx 0 -pady 0 -side top
-  ::drawscreen::my::Loupe $w $h
-  bind $draw(cnv) <ButtonPress-1>   {::drawscreen::my::DrawStart %X %Y; break}
-  bind $draw(cnv) <Motion>          {::drawscreen::my::Draw %X %Y; break}
-  bind $draw(cnv) <ButtonRelease-1> {::drawscreen::my::DrawFinish; break}
-  bind $draw(cnv) <Double-Button-1> {::drawscreen::my::DrawingDone; break}
-  bind $draw(cnv) <ButtonPress-3>   {::drawscreen::my::DrawingDone; break}
+  BindingDraw $draw(cnv)
   # with "after" we avoid Tk shimmering
   after idle [list after 1 [list after 1 [list after 1 [list after 1 " \
+    wm attributes $win -alpha 0.0; \
     wm deiconify $win; \
-    wm geometry $win ${w}x${h}+0+0; \
-    wm attributes $win -alpha 1.0"]]]]
-  Bell
+    wm geometry $win ${w}x${h}+0+0"]]]]
+  set draw(incrwin) 0
 }
 #_______________________
 
@@ -114,11 +110,24 @@ proc ::drawscreen::my::DrawingDone {} {
   # Deletes the drawing stuff.
 
   variable draw
-  Bell
   set draw(started) no
-  image delete $draw(img)
-  destroy $draw(win)
-  catch {focus $draw(oldfocus)}
+  Bell
+  catch {grab set $draw(grab)}
+  after idle "destroy $draw(win); catch {focus $draw(oldfocus)}"
+  after idle ::drawscreen::my::RunDrawingDone
+}
+#_______________________
+
+proc ::drawscreen::my::RunDrawingDone {} {
+  # Destroys drawing windows.
+
+  variable draw
+  variable windraw
+  if {$draw(incrwin)>0} {
+    catch {destroy .$windraw[set draw(incrwin)]}
+    incr draw(incrwin) -1
+    after idle ::drawscreen::my::RunDrawingDone
+  }
 }
 #_______________________
 
@@ -140,33 +149,57 @@ proc ::drawscreen::my::Draw {X Y} {
   #   Y - y-coordinate of mouse pointer
 
   variable draw
+  variable windraw
   if {$draw(started)} {
-    if {abs($X-$draw(X))>$draw(length) || abs($Y-$draw(Y))>$draw(length)} {
-      $draw(cnv) create line $X $Y $draw(X) $draw(Y) -fill $draw(fill) -width $draw(width)
+    set w [expr {abs($X-$draw(X))}]
+    set h [expr {abs($Y-$draw(Y))}]
+    set drawX [expr {$w>$draw(length)}]
+    set drawY [expr {$h>$draw(length)}]
+    if {$drawX || $drawY} {
+      if {$draw(X)<$X} {set x $draw(X)} {set x $X}
+      if {$draw(Y)<$Y} {set y $draw(Y)} {set y $Y}
       set draw(X) $X
       set draw(Y) $Y
+      set wdr .$windraw[incr draw(incrwin)]
+      set cnv $wdr.canvas
+      if {$drawX} {
+        set h $draw(width)
+      } else {
+        set w $draw(width)
+      }
+      toplevel $wdr -height 1 -width 1
+      wm withdraw $wdr
+      wm overrideredirect $wdr 1
+      wm attributes $wdr -topmost 1
+      pack [canvas $cnv -width [incr w 2] -height [incr h 2] -relief flat -bd 0 -highlightthickness 0 -background $draw(fill)]
+      wm geometry $wdr ${w}x${h}+$x+$y
+      wm deiconify $wdr
+      BindingDraw $cnv
     }
   }
 }
 #_______________________
 
-proc ::drawscreen::my::DrawFinish {} {
+proc ::drawscreen::my::DrawFinish {X Y} {
   # Finishes a current drawing.
+  #   X - x-coordinate of mouse pointer
+  #   Y - y-coordinate of mouse pointer
 
   variable draw
+  Draw $X $Y
   set draw(started) no
 }
 #_______________________
 
-proc ::drawscreen::my::Loupe {w h} {
-  # Captures a screen image and pushes it into the canvas.
-  #   w - width of image
-  #   h - height of image
+proc ::drawscreen::my::BindingDraw {win} {
+  # Sets working bindings for drawing.
+  #   win - window's path
 
-  variable draw
-  set loupe_ctr_x [expr {$w / 2}]
-  set loupe_ctr_y [expr {$h / 2}]
-  loupe $draw(img) $loupe_ctr_x $loupe_ctr_y $w $h 1
+  bind $win <ButtonPress-1>   {::drawscreen::my::DrawStart %X %Y; break}
+  bind $win <Motion>          {::drawscreen::my::Draw %X %Y; break}
+  bind $win <ButtonRelease-1> {::drawscreen::my::DrawFinish %X %Y; break}
+  bind $win <Double-Button-1> {::drawscreen::my::DrawingDone; break}
+  bind $win <ButtonPress-3>   {::drawscreen::my::DrawingDone; break}
 }
 #_______________________
 
@@ -174,7 +207,7 @@ proc ::drawscreen::my::Bell {} {
   # Sounds.
 
   variable draw
-  if {$draw(bell)} bell
+  if {$draw(dobell)} bell
 }
 #_______________________
 
@@ -235,7 +268,7 @@ proc ::drawscreen::configure {args} {
   variable my::draw
   foreach {opt val} $args {
     set opt [string trimleft $opt -]
-    if {$opt in {fill width length bell}} {set my::draw($opt) $val}
+    if {$opt in {fill width length dobell}} {set my::draw($opt) $val}
   }
 }
 

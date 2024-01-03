@@ -12,9 +12,9 @@
 
 package require Tk
 
-package provide transpops 2.1
+package provide transpops 2.2
 
-#source [file join [file dirname [info script]] drawscreen.tcl]
+source [file join [file dirname [info script]] drawscreen2.tcl]
 
 # _________________ Data of transpops namespace __________________ #
 
@@ -83,7 +83,10 @@ proc ::transpops::my::Show {win evn} {
   foreach row [split $msg \n] {
     set row [string trim $row]
     append text $row \n
-    set row [string map [list <r> {} </r> {} <b> {} </b> {} <g> {} </g> {} <link> {} </link> {}] $row]
+    set row [string map [list <link> {} </link> {}] $row]
+    foreach c [split rbgABCDEFGHIJKLMNOPRSTUVWXYZ {}] {
+      set row [string map [list <$c> {} </$c> {}] $row]
+    }
     if {[set c [string length $row]]>$cols} {set cols $c}
     incr rows
   }
@@ -168,23 +171,29 @@ proc ::transpops::my::Popup {msg} {
 }
 #_______________________
 
-proc ::transpops::my::RunMe {w ev scrp} {
+proc ::transpops::my::RunMe {win ev scrp} {
   # Binds an event on a window to a script.
-  #   w - the window's path
+  #   win - the window's path
   #   ev - event on the window
   #   scrp - the bound script
   # The binding is made only on an existing window.
   # The windows may be created and destroyed, so Run watches if they are available.
 
   variable draw
+  set w $win
+  catch {
+    # the window's path may be a glob pattern - compare the current toplevel to it
+    set wfoc [winfo toplevel [focus]]
+    if {[string match $w $wfoc]} {set w $wfoc}
+  }
   if {[winfo exists $w]} {
     if {[string first $scrp [bind $w $ev]]==-1} {
       if {![string match <*> $ev]} {set ev <$ev>}
       bind $w $ev "$scrp ; break"
     }
-#    ::drawscreen run $w $draw(events) {*}$draw(opts)
+    catch {::drawscreen run $w $draw(events) {*}$draw(opts)}
   }
-  after 200 [list ::transpops::my::RunMe $w $ev $scrp]
+  after 500 [list ::transpops::my::RunMe $win $ev $scrp]
 }
 #_______________________
 
@@ -204,7 +213,7 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
   variable fg
   variable bg
   variable textTags
-  if {$events eq {}} {set events {Alt-t Alt-y}}
+  if {$events eq {}} {set events {{Alt-t Alt-T} {Alt-y Alt-Y}}}
   if {$fg1 eq {}} {set fg1 #000000}
   if {$bg1 eq {}} {set bg1 #FBFB95}
   set fg $fg1
@@ -281,8 +290,11 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
   set draw(opts) $args
   foreach w $wins {
     set ei 0
-    foreach ev $events {
-      after $timo [list ::transpops::my::RunMe $w $ev [list ::transpops::my::Show $w [incr ei]]]
+    foreach event2 $events {
+      incr ei
+      foreach ev $event2 {  ;# for {Alt-t Alt-T} etc.
+        after $timo [list ::transpops::my::RunMe $w $ev [list ::transpops::my::Show $w $ei]]
+      }
     }
     if {$draw(app)} {bind $w <Escape> exit}
   }
@@ -307,8 +319,8 @@ proc ::transpops::run {args} {
 
 if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info script]]} {
   lassign $::argv fname hotk fg1 bg1 hotk2 o1 v1 o2 v2 o3 v3 o4 v4
-  if {$fname eq {}} {set fname ./.bak/transpops.txt}
-  if {$hotk eq {}} {set hotk {Alt-t Alt-y}}
+  if {$fname eq {}} {set fname [file normalize ./.bak/transpops.txt]}
+  if {$hotk eq {}} {set hotk {{Alt-t Alt-T} {Alt-y Alt-Y}}}
   if {$hotk2 eq {}} {set hotk2 {Control-x Control-X}}
   set hk [string map [list < {} > {} { } {, }] $hotk]
   set hk2 [string map [list < {} > {} { } {, }] $hotk2]

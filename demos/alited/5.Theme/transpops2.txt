@@ -1,33 +1,33 @@
-🗰 Note that after changing a theme
+<r>🗰 </r>Note that after changing a theme
 the widgets' geometry would highly likely
 change too.
 
-Pay please attention to "Row" column and
-the scrollbar of the unit tree. 🗩
+Pay please attention to <b>Row</b> column and
+the scrollbar of the unit tree. <r>🗩 </r>
 
-Though, after your initial customization,
-the internal widgets' geometry would be
-right in all of alited's future sessions.
+Though, after an initial customization,
+the internal widgets' geometry will be
+proper in alited's future sessions.
 ---
-The "Setup / Tint" allows you to tint
+The <b>Setup / Tint</b> allows us to tint
 a current color scheme.
 
 It's per a session only.
 
-🗰 When all of sudden you get a feeling that
-too much of light / darkness is around,
+<r>🗰 </r>When all of sudden we get a feeling
+that too much of light / darkness is around,
 this option might help.
 ---
-All of submenus of alited have "tear-off"
+All of submenus of alited have <b>tear-off</b>
 feature which is quite convenient for
 multiple choices.
 
-For example, we may tear-off "Recent files"
+For example, we may tear-off <b>Recent files</b>
 to open a few of them.
 ---
-Let's return to Preferences again.
+Let's return to <b>Preferences</b> again.
 ---
-For aw*, azure, forest, sun-valley, *brown themes
+For <b>aw*, azure, forest, sun-valley, *brown</b> themes
 there are their appropriate color schemes:
   * AwLight / AwDark
   * AzureLight / AzureDark
@@ -35,28 +35,26 @@ there are their appropriate color schemes:
   * SunValleyLight / SunValleyDark
   * LightBrown / DarkBrown
 
-🗰 Still, for any light / dark theme there is
-a nice appropriate light / dark color scheme.
+<r>🗰 </r>Still, for any light / dark theme there is
+a nice appropriate light / dark <b>color scheme</b>.
 ---
-For example, nice dark theme / CS pairs are:
+For example, nice dark <b>theme / CS pairs</b> are:
   * awdark / MildDark1
   * azure-dark / Quiverly
   * forest-dark / Dusk
   * sun-valley-dark / AwDark (favorite!)
 
-Plus, "Tint" option and 4 defaults of Tcl
-syntax... Uff, so much good combinations!
+Plus, <b>Tint</b> option and 4 defaults of <b>Tcl
+syntax</b>... Uff, so much good combinations!
 ---
-Let's try "darkbrown" theme.
+Let's try <b>darkbrown</b> theme.
 It needs an appropriate color scheme.
 
-"DarkBrown" is probably a best choice.
+<b>DarkBrown</b> is probably a best choice.
 
 But we might try another scheme.
-The difference will be in:
+The difference would be in:
   * color of context menu
   * color of gutter
   * color of line's highlight
 ---
-#RUNF1: ../../../alited/src/alited.tcl DEBUG
-

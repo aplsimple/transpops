@@ -1,89 +1,95 @@
 # TRANSPOPS_green -background #a7e7a7
 # TRANSPOPS_red -background #ffb8b8
-The alited is a "project oriented" editor,
+The alited is a <r>project oriented</r> editor,
 not a general purpose one.
 
 It provides nearly all of the necessary
-to develop Tcl/Tk projects.
+to develop <b>Tcl/Tk projects</b>.
 
-And alited project has been developed
+The alited project has been developed
 by its own version 0.2 since 24 April 2021.
 ---
 The projects seen by alited are stored in
-~/.config or a directory chosen at the very
-first start of alited. Or passed as the first
-argument to alited.
+<b>~/.config</b> or a directory chosen at the very
+first start of alited.
 
-The name of config directory is shown in the
-title of "Preferences" dialogue. 🗩
+The directory name can be passed as <b>first argument</b>
+to alited. The file name arguments can follow it.
+
+Thus, there may be a lot of <b>project types</b>, all are
+configured in their configuration directories. E.g.
+for work, home, education, foreign (fork) projects.
+
+<r>🗰 </r>The configuration directory's name is displayed
+in the title of <b>Preferences</b> dialogue.
 ---
-The "Projects" tab contains options that
+The <r>Projects</r> tab contains options that
 can be set for new projects if the appropriate
 checkbox is set ON.
 
 If the checkbox is set OFF, options for new
-projects are taken from a current project.
+projects are taken <b>from a current project</b>.
 ---
-"Projects" dialogue is available in "Setup"
+<r>Projects</r> dialogue is available in Setup
 menu and in the tool bar.
 
-The "default" project refers to alited's
+The <b>default</b> project refers to alited's
 installation directory, just for a start.
 
 Perhaps worth to glance how alited works.
-Especially so, if you use "apave" package
-the alited is based on. 🗩
+Especially so, if you use <b>apave</b> package
+the alited is based on. <r>🗩 </r>
 ---
 Let's create a new project.
 
 We must fill the appropriate data fields
-- most importantly a project directory.
+- most importantly a <b>project directory</b>.
 
 After filling the new project's fields
-we press "Add" button to create it.
+we press <g>Add</g> button to create it.
 ---
 Another method to create a project is
-"Create a project by template" button.
+<r>Create a project by template</r> button.
 
 This method is based on the template of
-directory / file tree, in Templates tab.
+directory / file tree, in <b>Templates</b> tab.
 ---
-There may be up to 16 templates, all their
+There may be up to <b>16</b> templates, all their
 names being collected in the combobox.
 
-Let's create a template. After its use,
+Let's <g>create a template</g>. After its use,
 it is saved in the combobox's values.
 
-To view the result, we can hit "Project
-directory" button.
+To view the result, we can hit <b>Project
+directory</b> button.
 ---
 Let's open a project.
 
 Just selecting it in the list,
-then hitting "Select" button.
+then hitting <b>Select</b> button.
 ---
 To open existing file(s) of our project
-we can switch to the project file tree.
+we can switch to the project <b>file tree</b>.
 
 Then, with double-clicking a file, we open it.
 
-The open files are highlighted in the file tree.
+The open files are <b>highlighted</b> in the file tree.
 
 After closing a file, it is unhighlighted.
 ---
-A newly open file is placed (by default)
-to the beginning of the tab bar.
+A newly open file is placed by default
+to the <b>beginning of the tab bar</b>.
 (This mode may be switched off.)
 
-🗰 This is true even when a selected tab
-isn't visible in the tab bar.
+<r>🗰 </r>This is true even when a selected
+tab isn't visible in the tab bar.
 ---
 The alited provides basic facilities
 for arranging a project's directory:
-  * create / delete / move files
+  <b>create / delete / move files</b>
 
 These facilities are very basic, e.g.
-directories aren't moved.
+<b>directories aren't moved</b>.
 
 Still, the file managers of such type
 help with little things sometimes.
@@ -97,103 +103,119 @@ the alited saves and restores:
   * a list of favorites
   * a list of favorites' lists
 ---
-So, when we switch to another project,
-alited closes all files of the old project
-and open all files of the new project.
+So, when we switch to another project, alited
+closes all files of the old project and open
+all files of the new project.
 
-If we want some files of the old project
+<r>🗰 </r>If we want some files of the old project
 to remain open, we select their tabs with
-Ctrl+click and switch to a new project. 🗩
+<b>Ctrl+click</b> and switch to a new project.
 ---
 Another way to open files of a project
 inside the current one is a file list
-of "Projects / Options" dialogue.
+of <r>Projects / Files</r> tab.
 
 The files to be open are selected with
 simple clicking them. After that, we
-open them from the list's context menu.
+open them from the list's <b>context menu</b>.
 
-Or we open a file with a double-click.
+Or we open a file with a <b>double-click</b>.
 ---
-This "Projects / Options" dialogue can
-be nicely used for a sort of clearance.
+This <r>Projects / Files</r> tab can be
+nicely used for a sort of clearance.
 
 It's when a lot of files need to be
-selectively closed in the project.
+selectively <b>closed</b> in the project.
 ---
-The currently edited files are listed in
+The <b>currently edited files</b> are listed in
 the file list available through:
 
-  * right-clicking the tab bar of files
-  * choosing "Tools/File List" menu item
-  * pressing F9 key (it's customizable)
----
-The file list can be sorted. For this,
-set the appropriate switch.
+  * right-clicking the <b>tab bar</b> of files
 
-And voila: F9 key opens the sorted list.
-It's good to access files open in alited's
-session.
+  * choosing <b>Tools/File List</b> menu item
+
+  * pressing <b>F9</b> key (it's customizable)
 ---
-The tabs of the tab bar can be sorted
+The file list can be sorted. For this, set
+the <b>appropriate switch</b>.
+
+And voila: <b>F9</b> key opens the sorted list.
+It's good for quick accessing files open in
+alited's session, esp. at <b>freezing</b> the list.
+---
+The tabs of the tab bar can be <b>sorted</b>
 by dates, sizes or extensions of files.
 ---
 The detailed info of files can be switched
-on/off by "Setup/Tip File Info" menu item.
+on/off by <r>Setup / Tip File Info</r> menu item.
 
-The file info is available in:
+The file info tips are available in:
 
   * the tab bar
+
   * the file list
+
   * the file tree
 ---
-The "Projects" dialogue contains "Notes" and
-"Reminder" fields to support a development.
+The <r>Projects</r> dialogue contains <b>Notes</b>
+and <b>Reminder</b> to support a development.
 
-The "Notes" are very good for projects that
+The <b>Notes</b> are very good for projects that
 are developed unsteadily, from time to time,
 allowing to keep a list of ideas to do.
 ---
-The "Reminder" is very good for all projects,
+The <b>Reminder</b> is very good for all projects,
 allowing to keep deadlines of TODOs.
 
-🗰 If all of the sudden you got an idea about
-a project, just save it as a reminder of the
-project, on a date supposedly convenient for
-implementing it.
+<r>🗰 </r>If all of the sudden you got an idea
+about a project, just save it as a reminder of
+the project, <b>on a date</b> supposedly convenient
+for implementing it.
 ---
 If a reminder became out-dated, there will
-be blinkings and whistlings!
+be <r>blinkings and whistlings</r>!
 # TRANSPOPS_red
 ---
 If a TODO needs to be postponed, it can be
-moved on a day / week with "move" buttons.
+moved on a day / week with <b>move</b> buttons.
 ---
-Last few words about another interesting option.
+The <b>Commands</b> tab allows executing some
+commands in a current project's directory.
 
-Its default value is set in "Preferences"
-but in "Project" settings it can be reset. 🗩
+Executing commands in all projects is good,
+for example, for clearance / initiating /
+checking changes etc.
+___________________________________________
+
+By the way, all tabs are supplied with <r>Help</r>
+button describing their content.<r> 🗩 </r>
 ---
-The "Unit lines per 1 red bar" option means that
+Few words about an interesting option.
+
+<r>🗰 </r>Its default value is set in
+<b>Preferences</b> but in <b>Projects/Options</b>
+it can be reset.
+---
+The <r>Unit lines per 1 red bar</r> option means that
 N lines of a unit are considered normal, while
 each N additional lines of a unit would add
-a red bar to its icon at the unit tree, up to 7th bar.
+<b>a red bar to its icon</b> at the unit tree, up to 7th bar.
 
-When the icon becomes fully red, this is like sending
-"too long unit" message, i.e. the unit probably needs
+When the icon becomes <r>fully red</r>, this is like sending
+<b>too long unit</b> message, i.e. the unit probably needs
 some reforming.
 ---
-Let's set this option to 5 which would mean
-a procedure/method of 40 or more lines will be
-fully red marked.
+Let's set this option to <b>5</b> which would mean
+a procedure/method of <b>40</b> or more lines will be
+<r>fully red</r> marked.
 ---
-This thing is too long, so it's "too red".
+This thing is too long, so it's <r>too red</r>.
 Even not too rosy.
 # TRANSPOPS_red
 ---
-Next demo is "3.Find_alited",
-it's about searching stuff.
+Next demo is <g>3.Find_alited</g>,
+it's about searching and navigating.
 
-Thanks for your attention. 👍
+Thanks for your attention. <g>👍 </g>
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG

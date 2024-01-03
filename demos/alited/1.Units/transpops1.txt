@@ -1,13 +1,13 @@
-Welcome to <r>alited</r>! 🖐
+Welcome to <r>alited</r>! <g>🖐 </g>
 
 It's an editor/IDE to develop Tcl/Tk applications.
 
 At first start, it needs a simple initialization.
 
-<r>🗰</r> This dialogue gives a useful information on
+<r>🗰 </r>This dialogue gives a useful information on
 where <r>alited</r> stores its settings. E.g. in Windows,
 we can have them in <b>C:\Users\me\AppData\Local</b>.
 
-Now then, we confirm the offered. It doesn't hurt! 😄
+Now then, we confirm the offered. It doesn't hurt!
 ---
 

@@ -1,14 +1,20 @@
 # TRANSPOPS_green -background #a7e7a7
 # TRANSPOPS_red -background #ffb8b8
+# TRANSPOP TAG A -foreground white -background blue
+# TRANSPOP TAG B -foreground black -background #8fc7ff
+# TRANSPOP TAG G -background #edc89b
+# TRANSPOP TAG H -background #ff6b85
+# TRANSPOP TAG I -background #ffa073
+---
 Along with the unit facilities, alited provides
 other tools for a navigation around a project.
 
-One of them is "Find/Replace" tool, called with:
-  * Ctrl+F keys
-  * "Search / Find/Replace" menu item
-  * "Find/Replace" toolbar icon
+One of them is <r>Find / Replace</r> tool, called with:
+  * <b>Ctrl+F</b> keys
+  * <b>Search / Find/Replace</b> menu item
+  * <b>Find/Replace</b> toolbar icon
 ---
-The "Find/Replace" dialogue contains two sections:
+The <b>Find / Replace</b> dialogue contains two sections:
   * Find
   * Replace
 
@@ -17,12 +23,27 @@ Both contain 3 buttons:
   * do in text
   * do in session
 ---
-The dialogue provides standard options of such type.
-Probably, except for one of them.
+The dialogue provides standard search options.
 
-The "Replace by blank" option means that we can replace
-the found strings by the blank string which means just
-deleting the found strings! 🗩
+Probably, except for some of them.
+
+The <r>Replace by blank</r> option means that we can
+replace the found strings by the blank string
+which means just <b>deleting</b> the found strings!<r> 🗩 </r>
+---
+Another <b>non-standard</b> search option is
+<r>RE2</r> filter.
+
+The <b>RE2</b> button opens a dialog to enter
+RE for including / excluding the found
+strings in / out the result of search.
+
+<b>RE2</b> can greatly simplify the RE which
+would be otherwise too complex if ever
+possible.
+
+Note that the <b>RE2</b> filter is applied to
+<b>Exact</b> and <b>Glob</b> search results as well!
 ---
 Well, let's find something:
   * once
@@ -30,45 +51,45 @@ Well, let's find something:
   * in session
 ---
 All of the found instances in text / session
-are presented in the info listbox.
+are presented in the <r>info listbox</r>.
 
 The info listbox allows to enter a found line.
 
-At that, "Find / Replace" dialogue
-may or may not be closed.
+At that, <b>Find / Replace</b> dialogue may or
+may not be closed.
 ---
-While "Find / Replace" dialogue is open
-the found strings are highlighted.
+While <b>Find / Replace</b> dialogue is open,
+the found strings are highlighted with <A>blue</A>
+or <B>sky blue</B>.
 
-When we close the dialogue
-the highlighting disappears.
+When the dialogue is closed, the highlighting
+disappears.
 ---
-"Find / Replace" dialogue allows to find
-and replace multiple lines.
+<b>Find / Replace</b> dialogue allows to find and
+replace <b>multiple lines</b>.
 
-To set the lines in "Find" field, we select
-them in a text and call "Find / Replace". 🗩
+To set the lines in <b>Find</b> field, we select
+them in a text and call <b>Find / Replace</b>.<r> 🗩 </r>
 
-Let's test the multiple lines' replacements.
+Let's test the <b>multiple lines</b> replacements.
 ---
-🗰 "Find / Replace" dialogue contains
-a checkbox that allows (when it's ON)
-to set a default geometry of the dialogue.
+<b>Find / Replace</b> dialogue contains <r>-geometry</r>
+checkbox that allows (if ON) to set the default
+geometry of the dialogue.
 
 Sometimes we need to resize / move the dialogue,
-and its geometry would be temporary being
-active while the dialogue is seen. In other
-cases, the default geometry will be used.
+and its geometry would be temporary, being
+active while the dialogue is open. In other
+cases, the <b>default geometry</b> will be used.
 ---
-If, for a wonder 😄, we use mostly "Find" and
-rather rarely "Replace", we might resize the
-dialogue to its minimum sizes, thus saving
-the screen's room.
+If we use mostly <b>Find</b> and rather rarely
+<b>Replace</b>, we might resize the dialogue to
+a minimum, thus saving the screen's room.
 
-The "Resize" button allows to show/hide "Replace"
-options at need. 🗩
+The <b>Resize</b> button allows to show/hide
+the bottom options at need. <r>🗩 </r>
 
-Another button copies "Find" field to "Replace".
+Another button copies <b>Find</b> field to <b>Replace</b>.
 ---
 Other find facilities of alited are:
   * Find a unit
@@ -77,34 +98,34 @@ Other find facilities of alited are:
   * Find words by a list
   * Find in a directory
 ---
-We press Ctrl+Shift+F or hit "Search / Find Unit"
+We press <b>Ctrl+Shift+F</b> or hit <b>Search / Find Unit</b>
 menu item to find unit(s) by case insensitive
 glob patterns.
 
-It's VERY helpful when we remember a part of
+<r>🗰 </r>It's VERY helpful when we remember a part of
 a unit's name, so we just enter this part to find
-the unit. 🗩
+the unit.
 ---
-To look for a proc/method declaration, we can try:
+To look for a <r>proc/method declaration</r>, we can try:
 
-  * Ctrl+click on its name
+  * pressing <b>Ctrl+L</b>, when the cursor is on its name
 
-  * press Ctrl+L, when the cursor is on its name
+  * <b>Ctrl+click</b> on its name
 
-  * hit "Search / Look for Declaration" menu item
+  * hitting <b>Search / Look for Declaration</b> menu item
 ---
-To complete a command / variable, we press Tab key
+To <r>complete a command / variable</r>, we press <b>Tab</b> key
 while the caret is on initial characters of a
 command / proc's variable - this will show a list
 of commands / variables to choose.
 
-We enter $ and press Tab to bring only a list
-of variables detected in the proc / method. 🗩
+We enter <b>$</b> and press <b>Tab</b> to bring only a list
+of variables detected in the proc / method.
 
-The Tab key of this option may be changed to
-other key(s) in "Setup / Preferences / Keys".
+The <b>Tab</b> key of this option may be changed to
+other key(s) in <b>Setup / Preferences / Keys</b>.
 
-To type Tab character, Ctrl+T is always at hand.
+To type Tab character, <b>Ctrl+T</b> is always at hand.
 ---
 At the completion, the commands:
 
@@ -113,41 +134,43 @@ At the completion, the commands:
   * are qualified for others
 
 Also, a completed command may be followed by
-its arguments (default ones in braces).
+<b>its arguments</b> (default ones in braces).
 ---
-Double clicking a word would highlight
-all of its occurences (if red) or only one
-otherwise.
+<r>Double clicking a word</r> will highlight
+<I>all</I> of its instances (if <H>red</H>) or
+only <G>one</G> otherwise.
 
-🗰 This is VERY quick method to check whether
-a word is unique in a text.
+<r>🗰 </r>This is VERY quick method to check
+if a word (e.g. variable, proc or
+method name) is <b>unique</b> in a text.
 
 Also, this is VERY quick method to view
-a variable's usage in a procedure/method.
+a <b>variable's usage</b> in a proc/method.
 ---
 If we want to highlight a selection, we call
-a context menu and select "Highlight All".
+a context menu and select <r>Highlight All</r>.
 
-We can use Alt+Right / Alt+Left to find a
+We can use <b>Alt+Right / Alt+Left</b> to find a
 next / previous instance of a current word.
 
-We use F3 to repeat this search.
+We use <b>F3</b> to repeat this search.
 ---
 For a quick search of a current word in all
-files, there is a nice Ctrl+Shift+click
-applied to the word the caret is set on.
+files, there is a nice <b>Ctrl+Shift+L</b> or
+<b>Ctrl+Shift+click</b> applied to the word
+the caret is set on.
 
 Also, we can SELECT an arbitrary piece of text
-(not just a word) and run the quick search.
+(not just a word) and run <b>this quick search.</b>
 
 It means a search throughout alited's session
-and is VERY helpful in many cases. 🗩
+and is VERY helpful in many cases.<r> 🗩 </r>
 ---
-Sometimes, a whole list of words
+Sometimes, a whole <r>list of words</r>
 should be sought in a file.
 
-For example, we have some names
-or tags and want to know where
+For example, we have some <b>names</b>
+or <b>tags</b> and want to know where
 they are mentioned and where not.
 
 At that we might want to copy
@@ -156,37 +179,39 @@ for further processing.
 
 Let's try this method.
 ---
-To find a word or a selection in a directory
+To find a word or a selection <r>in a directory</r>
 we hit the appropriate button of the toolbar.
 
-The search will be performed by "grep"
-command with options:
-
-  * recursively in a chosen directory
+The search will be performed by <b>grep</b> command
+with options:
 
   * case insensible
----
-Other "grep" facilities are available in "e_menu".
----
-We can search in selected files of the session.
-The selection is set by Ctrl+clicking the tabs.
 
-🗰 The number of selected files is shown in the status bar.
+  * recursively in a chosen directory
+---
+Other <b>grep</b> facilities are available in <b>e_menu</b>.
+---
+We can search in <r>selected files</r> of the session.
+The selection is set by <b>Ctrl+clicking</b> the tabs.
+
+<r>🗰 </r>The number of selected files is shown in the
+status bar.
 
 The search in the selected files is available
-in "Find/Replace" dialogue.
-It takes place of "All in Session". 🗩
+in <b>Find / Replace</b> dialogue.
+
+It takes place of <b>All in Session</b>.<r> 🗩 </r>
 ---
 For best viewing / searching colors, alited provides
-"Edit / Color Values" menu item.
+<r>Edit / Color Values</r> menu item.
 
 This allows viewing colors throughout a text or its
 current page.
 ---
-Next demo is "4.Tools_alited",
+Next demo is <g>4.Tools_alited</g>,
 it's about tools of alited.
 
-Thanks for your attention. 👍
+Thanks for your attention. <g>👍 </g>
 ---
 #RUNF1: ../../../alited/src/alited.tcl LOG=~/TMP/alited-DEBUG.log DEBUG
 
