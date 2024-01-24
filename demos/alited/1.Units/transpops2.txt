@@ -1,7 +1,7 @@
-Let's set some basic options of alited,
-mostly dimensions and colors.
+Let's set some basic options of <r>alited</r>,
+mostly dimensions.
 
-We resize the four panes by their sizers.
+The four panes are resized by their sizers.
 ---
 A little bit of efforts may be made to size
 "Row" column and scrollbar of the unit tree.
@@ -10,15 +10,66 @@ A little bit of efforts may be made to size
 after <b>changing alited's theme</b>, because at that
 the geometries of widgets are affected too.
 ---
-The alited's theme, colors and fonts are set
-by means of "Setup / Preferences" menu item.
+Let's open some files for testing alited.
+
+The files are open in the current project.
+
+The <b>default</b> project refers to <r>alited</r>'s source.
+---
+The <r>alited</r> editor is <r>unit oriented</r>.
+
+This means making a unit tree of Tcl code
+- branches and leaves.
+
+The <b>branches</b> are created with special comments.
+
+The <b>leaves</b> are Tcl procedures and methods.
+---
+By default, <r>alited</r> uses Python's way of
+<b>doc-commenting</b> functions/ methods/ procedures
+(<b>leaf units</b> in <r>alited</r>'s terms) which means
+their doc comments are usual Tcl commands
+inserted in a unit's body.
+
+The famous <r>Ruff!</r> Tcl package is oriented
+to this way of commenting.
+---
+If you prefer doc commenting in "non-alited" way
+i.e. placing them above unit declarations, then
+you can easily customize <r>alited</r> so that
+it will see them as the <b>alited leaf units</b>.
+
+Let's try this customization. The appropriate
+settings are in <b>Preferences / Units</b>.
+---
+We enable <b>leaf's regexp</b> which means that
+the following snippet will be <b>myProc</b> leaf:
+
+  # ======== <b>myProc</b> ========
+
+  # Does so and so.
+  #   a - 1st parameter
+  #   b - 2nd parameter
+
+  proc <b>myProc</b> {a b} {
+    command1
+    command2
+    ..
+  }
+---
+Also, we'll change some other options.
+Just to demo them.
 
 In General/View tab, we choose a Ttk <b>theme</b> and
-a <b>color scheme</b>. Also, we can set a size of
-the middle <b>font</b> (of menu, labels, buttons).
+a <b>color scheme</b>.
+---
+We set also a size of the middle <b>font</b>
+(of menu, labels, buttons).
 
+At last, we change the editor's font.
+---
 With the new options set, let's save them
-and restart alited.
+and restart <r>alited</r>.
 ---
 #RUNF1: ../../../alited/src/alited.tcl DEBUG
 

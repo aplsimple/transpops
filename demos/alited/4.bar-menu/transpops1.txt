@@ -64,8 +64,8 @@ The <b>Run</b> button allows testing a current choice.
 The <b>Save</b> button saves the dialogue's settings.
 ---
 Anyhow, calling <r>e_menu</r> and choosing <b>Run me</b> item
-(or pressing <b>F4</b> key twice) will run a current file
-in its associated app: <b>e_menu</b> runs it independently.
+(or pressing <b>F4</b> key twice, or Ctrl+Click-Run) will run
+a current file in its associated app.
 
 The <b>e_menu</b> combines the power of shell scripts
 with the power of Tcl/Tk.
@@ -116,8 +116,8 @@ There are available icon-<b>pictures</b> and icon-<b>characters</b>.
 ---
 At need, we can move tool items up/down.
 
-Clicking the checkbutton will set a divider
-or restore a previous setting.<r> 🗩 </r>
+An empty item sets a divider for alited's menu
+and toolbar. Last empty items are ignored.<r> 🗩 </r>
 ---
 Also, we'll change a geometry of
 

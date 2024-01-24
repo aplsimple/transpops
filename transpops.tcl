@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 2.2
+package provide transpops 2.3
 
 source [file join [file dirname [info script]] drawscreen2.tcl]
 
@@ -67,6 +67,7 @@ proc ::transpops::my::Show {win evn} {
   variable cntwait
   variable fg
   variable bg
+  if {![winfo exists $win]} return
   set fS red
   set wmsgs [string trimright $win .].transpops
   set wtxt $wmsgs.labtrans
@@ -187,9 +188,10 @@ proc ::transpops::my::RunMe {win ev scrp} {
     if {[string match $w $wfoc]} {set w $wfoc}
   }
   if {[winfo exists $w]} {
-    if {[string first $scrp [bind $w $ev]]==-1} {
-      if {![string match <*> $ev]} {set ev <$ev>}
-      bind $w $ev "$scrp ; break"
+    set sc "[string map [list %w $w] $scrp] ; break"
+    if {![string match <*> $ev]} {set ev <$ev>}
+    if {[string first $sc [bind $w $ev]]==-1} {
+      bind $w $ev $sc
     }
     catch {::drawscreen run $w $draw(events) {*}$draw(opts)}
   }
@@ -293,7 +295,7 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
     foreach event2 $events {
       incr ei
       foreach ev $event2 {  ;# for {Alt-t Alt-T} etc.
-        after $timo [list ::transpops::my::RunMe $w $ev [list ::transpops::my::Show $w $ei]]
+        after $timo [list ::transpops::my::RunMe $w $ev [list ::transpops::my::Show %w $ei]]
       }
     }
     if {$draw(app)} {bind $w <Escape> exit}

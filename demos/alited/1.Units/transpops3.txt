@@ -1,200 +1,25 @@
-# TRANSPOPS_green -background #a7e7a7
-# TRANSPOPS_red -background #ffb8b8
+Now we see only branches of the unit tree.
 
-Let's open some files for testing alited.
-
-The files are open in the current project.
-
-The default project refers to alited's source.
-
-<r>🗰 </r>The alited can't do without projects.
+To make <b>leaf units</b> we turn to our
+customized options.
 ---
+Thus, we make <b>leaf units</b> by the
+pattern:
 
-The alited editor is <r>unit oriented</r>.
+  # ========== <b>myProc</b> ==========
 
-This means making a unit tree of Tcl code
-- branches and leaves.
+  # Processes *args*.
+  #   args - optional arguments
 
-The <b>branches</b> are created with special comments.
-
-The <b>leaves</b> are Tcl procedures and methods.
+  proc myProc {args} {...}
 ---
-To add a <r>branch</r>, the key combinations are used:
+<r>Note</r>: <b>Ruff! doc generator</b> does
+not fit to this style of doc comments.
 
-  * <b>Shift+F1</b> for 1st level
-
-  * <b>Shift+F2</b> for 2nd level
-
-  * <b>Shift+F3</b> for 3rd level
+Some <b>alited templates</b> might be
+accordingly modified to mitigate entering
+<b>procedures</b> and <b>methods</b>.
 ---
-The keys and comments are <b>customizable</b>.
-For example, new levels of branches can be added.
-
-<r>🗰 </r>At first presentation, "List of Templates"
-dialogue shows its help. Some dialogues of alited
-do the same. These presentations of help are
-cancelled with <r>Don't show anymore</r> check button.
+Let's restore the standard units
+of <r>alited</r> to continue with the demo.
 ---
-To add a procedure/method, the keys are used:
-
-  * <b>Alt+P</b> to add a procedure
-
-  * <b>Alt+M</b> to add a method
----
-The unit tree has <r>its own toolbar</r> which allows
-arranging the tree.
-
-The <b>Up/Down</b> buttons allow to move unit(s) through
-the tree.
-
-A unit can be <b>drag-and-dropped</b>, a target being
-before a drop point.
-
-<r>🗰 </r>Tcl code can be rearranged without Cut/Paste!
----
-To move a group of units, they are freely
-selected with <b>Ctrl+click</b> (one by one).
-
-Also, <b>Shift key</b> can be used to select
-a range of units, this way:
-
-  * click a first unit of the range
-
-  * press Shift and click a last unit
----
-If a selected unit group needs to be moved to some far
-location, <r>Drop selected...</r> menu item may be helpful.
-
-The group's units are selected without any order.
-
-<r>🗰 </r>They are dropped in the order of their sequence.
----
-The visited units are highlighted in the unit tree
-by a color (the same as <r>proc/method</r> of Tcl).
-
-<r>🗰 </r>This rule doesn't relate to branches.
----
-However, if a unit contains <r>TODO comments</r>,
-it is highlighted with red color, no matter it's
-a leaf or a branch.
-
-TODO comments begin with <r>#!</r> so that Unix shebangs
-are highlighted in the same manner as TODOs.
-
-Alternatively, we can set TODO comments in the
-<r># TODO <...></r> form.
----
-<r>🗰 </r>When some lines are commented out
-with Edit/Comment menu item, they are marked
-as TODO comments which is good:
-
-  * to see the comments as quickly as possible
-
-  * to search them in a session by #! pattern
-
-  * to solve them as they are the real TODOs
-
-<r>Edit/Uncomment</r> menu item restores the lines.
----
-At navigating through the unit tree, the cursor
-positions are <b>saved/restored</b> in visited units.
-
-<r>🗰 </r>We can continue with units in the same
-positions we left them.
----
-<r>Search / To Last Visited</r> or <b>Alt+Backspace</b>
-allow to switch between <b>two last visited</b> units.
-
-There is <r>Last Visited</r> list of units as well.
-Let's see how it is populated.
-
-Nearly all actions with a text lead to updating
-<b>Last Visited</b> list excepting a simple navigation
-with Up / Down / PageUp / PageDown keys. <r>🗩 </r>
----
-Some of units may be considered as <b>favorite</b>.
-
-If so, they are included into <b>Favorites</b> list
-with the appropriate toolbar and menu items.
-
-Any current unit (leaf/branch) can be favorite.
-
-The <b>Favorites</b> list is per a project. <r>🗩 </r>
----
-If some <b>Favorites</b> list is considered valuable,
-the list can be <b>saved</b> by its own name.
-
-Then, the saved lists might be used as a sort
-of <b>subprojects inside projects</b> to solve their
-appropriate tasks.
----
-After pressing <b>Ctrl+Shift+F</b>, <r>Find Unit</r> bar
-is shown, which allows searching units by
-their <b>case insensitive glob</b> patterns.
-
-<r>🗰 </r>VERY useful.
----
-The info listbox' context menu allows setting
-<b>Don't focus a text</b> mode in order to scan
-the found units with arrow keys.
----
-After pressing <b>Ctrl+G</b>, <r>Go to Line</r> dialogue
-is shown, allowing to go inside a unit
-by its relative number of line.
-
-Useful at getting a Tcl error message with
-<b>proc/method</b> name and <b>a line number</b>.
----
-The alited provides a tool to <b>check Tcl code</b>
-for some consistencies.
-
-Every proc/method is checked for consistencies of
-braces, brackets and quotes as well as for duplicate
-unit names. Also a whole of the file is checked for
-the consistencies.
-
-<r>🗰 </r>VERY useful at getting an obscure Tcl error.
-
-At opening <r>Check Tcl</r> dialogue, a current file
-is checked <b>automatically</b>. <r>🗩 </r>
----
-Also, the checking is executed for a current proc
-or method before <r>Run the file</r> automatically!
-
-We don't test this now to avoid auto-saving files.
-
-Details on <b>Run</b> tool are in <b>4. Tools</b> demo. <r>🗩 </r>
-# TRANSPOPS_red
----
-At checking Tcl code, a whole content of a unit
-has to be checked from its start to a next unit's.
-
-Some <b>errors</b> are natural and eliminated by
-<b>END of namespace</b> or similar branches which
-are good for documentation / visibility as well.
----
-By the way, did you notice the <r>red bar icons</r>
-at the leaves of the unit tree?
-
-They mean <r>the more red the more long</r>.
-
-<r>🗰 </r>Thus, the redness is like a message:
-Beware, this unit needs to be refactored!
----
-The tree of <b>units</b> and the tree of <b>project files</b>
-are switched to / from by the appropriate buttons.
-
-The file tree is detailed in <b>2. Projects</b> demo. <r>🗩 </r>
----
-Welcome to
-
-<link>https://aplsimple.github.io</link>
-
-for further details.
-
-Next demo is <g>2.Projects_alited</g>,
-it's about Tcl/Tk projects in alited.
-
-Thanks for your attention. <g>👍 </g>
----
-#RUNF1: ../../../alited/src/alited.tcl DEBUG

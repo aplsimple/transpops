@@ -11,6 +11,7 @@
 
 proc TRANSPOPS_DEMO {} {
 
+  # alited_checked
   set TRANSPOPS_SRC /home/apl/PG/github/transpops/transpops.tcl
   source $TRANSPOPS_SRC
 
@@ -42,18 +43,19 @@ proc TRANSPOPS_DEMO {} {
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP7
     file copy -force $TRANSPOPS_SRC $DEMODIR/STEP8
   }
-  set win {.alwin .win.transpops* .alwin.diaaliteddlg*}
+  set win {.alwin* .win.transpops* .dia*}
 
   ## ________________________ 1. Units _________________________ ##
 
   if 0 {
-    lappend win .diaalitedObjToDel1 .alwin.diaPref
     if {$step1} {
       set fname transpops1.txt  ;# the very first start
     } elseif {$step2} {
       set fname transpops2.txt
+    } elseif {$step4} {
+      set fname transpops3.txt  ;# 3rd start
     } else {
-      set fname transpops3.txt
+      set fname transpops4.txt  ;# 4th start
     }
     set dir 1.Units
   }
@@ -62,21 +64,23 @@ proc TRANSPOPS_DEMO {} {
 
   if 0 {
     set dir 2.Projects
-    lappend win .alwin.diaPrj .alwin.diaPref
+    if {$step1 || $step2} {
+      set fname transpops.txt
+    } else {
+      set fname transpops3.txt  ;# 4th start
+    }
   }
 
   ## ________________________ 3. Find _________________________ ##
 
   if 0 {
     set dir 3.Find
-    lappend win .alwin.diaPref .alwin.winFind
   }
 
   ## ________________________ 4. bar-menu _________________________ ##
 
-  if 0 {
+  if 1 {
     set dir 4.bar-menu
-    lappend win .alwin.diaPref .alwin.rundlg
     if {$step1 || $step2} {
       set fname transpops1.txt  ;# 1st start
     } elseif {$step4} {
@@ -90,7 +94,6 @@ proc TRANSPOPS_DEMO {} {
 
   if 0 {
     set dir 5.Theme
-    lappend win .alwin.diaPref .alwin.winFind .alwin.diaPrj
     if {$step1 || $step2} {
       set fname transpops1.txt  ;# 1st start
     } elseif {$step4} {
@@ -104,14 +107,16 @@ proc TRANSPOPS_DEMO {} {
 
   ## ________________________ 6. Paver _________________________ ##
 
-  if 1 {
+  if 0 {
     set dir 6.Paver
-    lappend win .alwin.paverwin .alwin.winFind
     set fname transpops.txt
   }
 
+  set fname [file normalize [file join $DEMODIR $dir $fname]]
+  if {[file exists $fname]} {
+    ::transpops::run $fname $win
+  }
 }
-
 catch {TRANSPOPS_DEMO}
 
 #RUNF1: ../../alited/src/alited.tcl DEBUG

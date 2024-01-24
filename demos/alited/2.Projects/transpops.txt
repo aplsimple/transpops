@@ -121,6 +121,11 @@ open them from the list's <b>context menu</b>.
 
 Or we open a file with a <b>double-click</b>.
 ---
+With the <b>filter</b> entry we can view all files
+open in all projects, according to the filter.
+
+For example, "/" filter shows all of the files.
+---
 This <r>Projects / Files</r> tab can be
 nicely used for a sort of clearance.
 
@@ -179,43 +184,10 @@ be <r>blinkings and whistlings</r>!
 If a TODO needs to be postponed, it can be
 moved on a day / week with <b>move</b> buttons.
 ---
-The <b>Commands</b> tab allows executing some
-commands in a current project's directory.
+The <b>TODO days ahead</b> field makes the TODOs
+latent, i.e. while nearing to the <b>X day</b> the
+TODOs will be shown yellow at first , then red
+(on the <b>X</b> day).
 
-Executing commands in all projects is good,
-for example, for clearance / initiating /
-checking changes etc.
-___________________________________________
-
-By the way, all tabs are supplied with <r>Help</r>
-button describing their content.<r> 🗩 </r>
+Let's restart <r>alited</r> two times to demo this.
 ---
-Few words about an interesting option.
-
-<r>🗰 </r>Its default value is set in
-<b>Preferences</b> but in <b>Projects/Options</b>
-it can be reset.
----
-The <r>Unit lines per 1 red bar</r> option means that
-N lines of a unit are considered normal, while
-each N additional lines of a unit would add
-<b>a red bar to its icon</b> at the unit tree, up to 7th bar.
-
-When the icon becomes <r>fully red</r>, this is like sending
-<b>too long unit</b> message, i.e. the unit probably needs
-some reforming.
----
-Let's set this option to <b>5</b> which would mean
-a procedure/method of <b>40</b> or more lines will be
-<r>fully red</r> marked.
----
-This thing is too long, so it's <r>too red</r>.
-Even not too rosy.
-# TRANSPOPS_red
----
-Next demo is <g>3.Find_alited</g>,
-it's about searching and navigating.
-
-Thanks for your attention. <g>👍 </g>
----
-#RUNF1: ../../../alited/src/alited.tcl DEBUG
