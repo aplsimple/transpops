@@ -1,4 +1,4 @@
-package ifneeded transpops 2.3 [list source [file join $dir transpops.tcl]]
+package ifneeded transpops 2.4 [list source [file join $dir transpops.tcl]]
 
 # A short intro (for Ruff! docs generator:)
 
@@ -10,7 +10,7 @@ Fit for demos, though may be used otherwise.
 
 The messages are read from a *text file* and after pressing a *hotkey* are
 shown one by one, in transparent mode. The most representative examples of
-the *text files* are in demos/alited/ subdirectories which result in [alited's units demo](https://github.com/aplsimple/alited/releases/download/Demos_of_alited-1.3.5/2.Units_alited-1.3.5.mp4), for example.
+the *text files* are in demos/alited/ subdirectories which result in [demos of alited](https://github.com/aplsimple/alited/releases/tag/Demos_of_alited-1.6).
 
 First called, the popup message is displayed under the mouse pointer. The following messages will be displayed at the same screen coordinates if not reset with an *alternative hotkey*.
 

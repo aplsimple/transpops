@@ -12,9 +12,16 @@
 
 package require Tk
 
-package provide transpops 2.3
+package provide transpops 2.4
 
-source [file join [file dirname [info script]] drawscreen2.tcl]
+set scrdir [file dirname [info script]]
+if {[catch {package require apave}]} {
+  catch {
+    source [file join [file dirname $scrdir] apave apave.tcl]
+  }
+}
+source [file join $scrdir drawscreen2.tcl]
+unset scrdir
 
 # _________________ Data of transpops namespace __________________ #
 
@@ -82,7 +89,7 @@ proc ::transpops::my::Show {win evn} {
   set cols 10
   set text {}
   foreach row [split $msg \n] {
-    set row [string trim $row]
+    set row [string trimright $row]
     append text $row \n
     set row [string map [list <link> {} </link> {}] $row]
     foreach c [split rbgABCDEFGHIJKLMNOPRSTUVWXYZ {}] {
@@ -215,7 +222,7 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
   variable fg
   variable bg
   variable textTags
-  if {$events eq {}} {set events {{Alt-t Alt-T} {Alt-y Alt-Y}}}
+  if {$events eq {}} {set events {{<Alt-t> <Alt-T>} {<Alt-y> <Alt-Y>}}}
   if {$fg1 eq {}} {set fg1 #000000}
   if {$bg1 eq {}} {set bg1 #FBFB95}
   set fg $fg1
@@ -330,6 +337,7 @@ if {[info exist ::argv0] && [file normalize $::argv0] eq [file normalize [info s
     "Press $hk.\n\nPress $hk2, then\ndrag-n-drop... or\nright/double click."
   pack .labinfo -padx 50 -pady 50
   set ::transpops::my::draw(app) yes
+  after idle [list after 333 [list event generate .labinfo <[lindex $hotk 0 0]>]]
   ::transpops::run $fname . $hotk $fg1 $bg1 $hotk2 $o1 $v1 $o2 $v2 $o3 $v3 $o4 $v4
 }
 
