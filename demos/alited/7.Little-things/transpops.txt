@@ -1,0 +1,143 @@
+In this demo, we'll see some modified and new
+features introduced in alited <b>v1.7</b>.
+
+First, we'll deal with the modifications.
+
+Then with the new stuff.
+---
+The <b>rectangular selection</b> had a problem with
+Cut/Copy of selections containing <b>empty lines</b>.
+
+In <g>alited v1.7.0</g> this was fixed.
+
+Let's test it.
+---
+In Linux, <b>date</b> and <b>color</b> pickers were shown
+under the mouse pointer.
+
+Mostly, it was not likable because the edited
+lines were often overlapped by the pickers.
+
+In <g>alited v1.7.0</g> the pickers are open
+<b>under the caret</b>, so that the line with its
+possible date or color value is seen.
+---
+The mapping of <r>Tab key</r> in alited could embarass
+the users who like to use it for the indenting
+as <r>Tab key</r> tried to auto-complete no matter what.
+
+In <g>alited v1.7.0</g> it behaves smarter:
+
+ - if the cursor is over a word/letter,
+   then <r>Tab key</r> <b>auto-completes it</b> (as earlier)
+
+ - if the cursor is at initial spaces or first
+   character of the line, <r>Tab key</r> <b>indents it</b>
+
+ - if the cursor is over non-word inside the line
+   <r>Tab key</r> <b>inserts Tab character</b>
+---
+In <b>Projects/Options</b>, there is <r>leaf's RE</r>
+option that corresponds to the analogue
+option of <b>Preferences/Unit</b>. It's used
+to display units in the unit tree.
+_______________________________________
+
+If it is switched <b>ON</b>, it is active for
+this project.
+
+If it is switched <b>OFF</b>, then <r>leaf's RE</r>
+option of <b>Preferences/Unit</b> is active
+for this project.
+
+If the latter is also <b>OFF</b>, then <b>proc</b>
+and <b>method</b> declaration will mean <r>leaf</r>.
+---
+The <r>leaf's RE</r> option allows placing the
+descriptions (<b>docstrings</b>) of <b>procs</b> and
+<b>methods</b> above (<r>outside</r>) the unit declarations.
+
+This type of docstrings is used by some users
+who prefer also the appropriate doc generators.
+_______________________________________________
+
+The alited project by itself uses the <r>inside</r>
+descriptions and <b>Ruff!</b> doc generator.
+---
+The new feature of alited allows moving
+the docstrings <r>outside</r> and <r>inside</r> the bodies
+of <b>procs</b> and <b>methods</b>.
+
+It can also <b>normalize</b> the docstrings or
+change <b>separator</b> comments separating units.
+
+The feature is located in
+<b>Setup / Move unit descriptions</b> menu item.
+---
+Let's move the alited's docstrings <r>outside</r> its units.
+
+We'll try it on the <b>current</b> .tcl file.
+
+<r>🗰 </r> To enable processing other files, i.e. <b>All open</b>
+mode, we should glance at them (<b>open</b>), at least once.
+---
+Let's play with moving the unit descriptions
+<b>inside</b> and <b>outside</b> the units.
+
+We'll <b>compare</b> the results to the original using
+by the way the novelty of alited - <r>File/Clone</r>.
+_______________________________________________
+
+After that we'll return to <r>inside</r> docstrings.
+---
+Another new feature of alited is <r>Edit/Formats</r>
+menu allowing some standard operation on the texts.
+
+Changing <b>letter case</b> and <b>sorting</b> are most obvious.
+
+The sorting can also result in the <b>unique</b> lines.
+---
+For those users who (like me) use a <r>two language
+keyboard</r>, there occurs often a problem:
+
+ - you <b>think</b> the keyboard layout is English
+   (while it is not) and you type "English" text
+   with non-English keyboard; or vise versa
+
+ - result: abracadabra
+
+To map the abracadabra into a proper text,
+alited provides <b>Formats/Keyboard</b> converters.
+---
+Some of useful alited's <r>tear-off menus</r>
+can be restored through <b>alited sessions</b>, if
+they were open at closing alited.
+
+These are all <b>Edit</b> submenus (excl. <b>Comments</b>),
+<b>Tools/Paver</b> and <b>Setup/Tint</b>.
+
+Let's arrange the following <r>tear-off menus</r>:
+ - Strings
+ - Keyboard
+ - Rectangular selection
+ - Color Values
+---
+Let's restart alited to confirm that
+the <r>tear-off menus</r> will be active through
+<b>alited sessions</b>.
+
+Also, we'll change some settings which
+can be <b>rather useful</b> to some degree.
+---
+It's good to set <b>Save configuration</b> options
+all to <b>ON</b>.
+
+As well as <b>Save before bar-menu runs</b> option.
+
+When <b>Confirm exit</b> is set to <b>"> 1"</b>, it means
+the timeout in seconds before closing alited.
+_____________________________________________
+
+At saving preferences, we will restart alited
+and as such will see all changes to it.
+---

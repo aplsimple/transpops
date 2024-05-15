@@ -189,5 +189,5 @@ latent, i.e. while nearing to the <b>X day</b> the
 TODOs will be shown yellow at first , then red
 (on the <b>X</b> day).
 
-Let's restart <r>alited</r> two times to demo this.
+Let's restart <r>alited</r> to demo this.
 ---

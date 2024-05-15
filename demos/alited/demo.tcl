@@ -28,70 +28,42 @@ proc Transpops_Demo {} {
 
   set CURRENTVIDEO [file join $DEMODIR _CURRENT_VIDEO_]
 
-  set LAST 0
-
   # currently made video
   set video 8
 
-  set test 0
-  # test == 1 means that all video are run one by one
-  # to test alited through all video scenarios
-  #
-  # setting to 0 makes the video of number = $video as set above
-  # (i.e. when the video making may take several attempts)
-
-  set step1 [set step2 [set step4 [set step6 [set step8 0]]]]
+  set step1 [set step2 [set step3 [set step4 [set step5 0]]]]
 
   if       {[set step2 [file exists $DEMODIR/STEP2]]} {
-    file delete $DEMODIR/STEP2
-  } elseif {[file exists $DEMODIR/STEP3]} {
-    file delete $DEMODIR/STEP3
+    if {[winfo exists .alwin]} {file delete $DEMODIR/STEP2}
+  } elseif {[set step3 [file exists $DEMODIR/STEP3]]} {
+    if {[winfo exists .alwin]} {file delete $DEMODIR/STEP3}
   } elseif {[set step4 [file exists $DEMODIR/STEP4]]} {
-    file delete $DEMODIR/STEP4
-  } elseif {[file exists $DEMODIR/STEP5]} {
-    file delete $DEMODIR/STEP5
-  } elseif {[set step6 [file exists $DEMODIR/STEP6]]} {
-    file delete $DEMODIR/STEP6
-  } elseif {[file exists $DEMODIR/STEP7]} {
-    file delete $DEMODIR/STEP7
-  } elseif {[set step8 [file exists $DEMODIR/STEP8]]} {
-    file delete $DEMODIR/STEP8
+    if {[winfo exists .alwin]} {file delete $DEMODIR/STEP4}
+  } elseif {[set step5 [file exists $DEMODIR/STEP5]]} {
+    if {[winfo exists .alwin]} {file delete $DEMODIR/STEP5}
   } else {
     set step1 1
     Transpops_Make_Empty_File $DEMODIR STEP2
     Transpops_Make_Empty_File $DEMODIR STEP3
     Transpops_Make_Empty_File $DEMODIR STEP4
     Transpops_Make_Empty_File $DEMODIR STEP5
-    Transpops_Make_Empty_File $DEMODIR STEP6
-    Transpops_Make_Empty_File $DEMODIR STEP7
-    Transpops_Make_Empty_File $DEMODIR STEP8
   }
   set win {.alwin* .win.transpops* .dia*}
 
-  ## ________________________ Init _________________________ ##
-
-  if {$test} {
-    if {![catch {set curvideo [glob $CURRENTVIDEO*]}]} {
-      set curvideo [lindex [lsort $curvideo] end]
-      set i [string last _ $curvideo]
-      set video [string range $curvideo [incr i] end]
-    }
-  }
-
   ## ________________________ 1. Units _________________________ ##
 
-  set dir 1.Units
-  set fname transpops1.txt
+  set fname transpops.txt
   if {$video==1} {
+    set dir 1.Units
+    set fname transpops1.txt
     if {$step1} {
       # the very first start
     } elseif {$step2} {
       set fname transpops2.txt
-    } elseif {$step4} {
+    } elseif {$step3} {
       set fname transpops3.txt  ;# 3rd start
-    } elseif {$step6} {
+    } elseif {$step4} {
       set fname transpops4.txt  ;# 4th start
-      set LAST 1
     }
   }
 
@@ -99,22 +71,16 @@ proc Transpops_Demo {} {
 
   if {$video==2} {
     set dir 2.Projects
-    if {$step2} {
-      set fname transpops.txt
-    } elseif {$step4} {
+    if {$step3} {
       set fname transpops3.txt  ;# 4th start
-      set LAST 2
     }
   }
 
   ## ________________________ 3. Find _________________________ ##
 
   if {$video==3} {
-    if {$step2} {
-      set dir 3.Find
-      set fname transpops.txt
-      set LAST 3
-    }
+    set dir 3.Find
+    set LAST 1
   }
 
   ## ________________________ 4. bar-menu _________________________ ##
@@ -123,11 +89,8 @@ proc Transpops_Demo {} {
     set dir 4.bar-menu
     if {$step2} {
       set fname transpops1.txt  ;# 1st start
-    } elseif {$step4} {
+    } elseif {$step3} {
       set fname transpops2.txt  ;# 2nd start
-    } elseif {$step6} {
-      set fname transpops3.txt  ;# 3rd start
-      set LAST 4
     }
   }
 
@@ -137,60 +100,40 @@ proc Transpops_Demo {} {
     set dir 5.Theme
     if {$step2} {
       set fname transpops1.txt  ;# 1st start
-    } elseif {$step4} {
+    } elseif {$step3} {
       set fname transpops2.txt  ;# 2nd start
-    } elseif {$step6} {
+    } elseif {$step4} {
       set fname transpops3.txt  ;# 3rd start
-    } elseif {$step8} {
+    } elseif {$step5} {
       set fname transpops4.txt  ;# 4th start
-      set LAST 5
     }
   }
 
   ## ________________________ 6. Paver _________________________ ##
 
   if {$video==6} {
-    if {$step2} {
-      set dir 6.Paver
-      set fname transpops.txt
-      set LAST 6
-    }
+    set dir 6.Paver
   }
 
   ## ________________________ 7. Little things _________________________ ##
 
   if {$video==7} {
     set dir 7.Little-things
-    if {$step2} {
-      set fname transpops.txt
-    } elseif {$step4} {
+    if {$step3} {
       set fname transpops2.txt
-      set LAST 7
     }
   }
 
-  ## ________________________ 8. Project printer _________________________ ##
+  ## ________________________ 8. Little things #2 _________________________ ##
 
   if {$video==8} {
-    set dir 8.Project-printer
-    set fname transpops.txt
-    set LAST 99
+    set dir 8.Little-things2
   }
 
-  ## ________________________ Clear old flags, set new _________________________ ##
+  ## ________________________ 9. Misc _________________________ ##
 
-  if {$LAST} {
-    foreach step [glob -nocomplain $DEMODIR/STEP*] {
-      file delete $step
-    }
-    if {$test} {
-      foreach video [glob -nocomplain $CURRENTVIDEO*] {
-        file delete $video
-      }
-      if {$LAST<99} {
-        Transpops_Make_Empty_File $CURRENTVIDEO[incr LAST]
-      }
-    }
+  if {$video==9} {
+    set dir 9.Misc
   }
 
   ## ________________________ Create the current demo _________________________ ##
@@ -199,6 +142,7 @@ proc Transpops_Demo {} {
   if {[file exists $fname]} {
     ::transpops::run $fname $win
   }
+
 }
 
 # ________________________ Run demo stuff _________________________ #

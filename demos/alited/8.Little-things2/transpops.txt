@@ -1,0 +1,217 @@
+In this demo, we'll consider some <b>new features</b>
+introduced in alited <b>v1.8</b>.
+
+The main are
+
+  - <r>Project printer</r> to create a <b>hard copy</b>
+    of the project
+
+  - <r>Pluginable</r> of Edit / Formats to create
+    pluginable formatters of alited
+---
+The hard copy is a set of <b>.html files</b> that are
+created from selected project files, supplied with
+navigation links (incl. <b>unit trees</b>) and READMEs.
+
+Let's create the <b>hard copy</b> of alited project.
+
+For this, we run "Tools/Project Printer" menu item.
+---
+First, we select a directory where the result
+will be saved to.
+
+Its name may be a concatination of names
+  <b>some directory</b>
+  + <b>alited</b>
+  + <b>project name</b>
+---
+Then we can choose a markdown processor
+to convert <b>.md</b> to <b>.html</b> files
+(as README.md will be included).
+
+The <r>pandoc</r> tool is probably the best
+for converting documents to HTML format.
+
+There is also <r>alited</r>'s own converter.
+Though very basic, it complies with most
+requirements of Tcl/Tk projects' READMEs.
+---
+We can also enter <b>our own command</b> for
+converting md -> html.
+
+The command must include two wildcards:
+  <b>%i</b> - input file name (.md)
+  <b>%o</b> - output file name (.html)
+
+E.g. <b>pandoc -o %o %i</b> is used at
+calling <r>pandoc</r> converter.
+---
+The <r>final processor</r> is just a command to
+be called after processing the selected files
+of the project. The default <r>%D</r> means opening
+the resulting <b>index.html</b>.
+
+To select files, <r>file tree</r> is used, with
+its <b>toolbar</b> and <b>Space</b> key.
+---
+Let's select files and run <b>project printer</b>.
+
+At viewing the result, we will go to and fro
+<b>index.html</b> and project files.
+---
+Instead of <r>%D</r> of final command, we could use
+a specific processor, e.g. to embed the resulting
+<b>hard copy</b> in the project description.
+
+For example, I use the command
+  <b>%E %A/lib/e_menu/e_menu.tcl m=%M/misc ex=7</b>
+
+to embed the result in
+  <link>https://aplsimple.github.io</link>
+---
+In <r>Edit/Formats</r>, new possibilities are:
+
+ - <b>Mode=5</b> to insert the result of commands
+   to the text at the current cursor position
+
+ - <b>Mode=6 (Pluginable menu)</b> to make the
+   formatters be called with hot keys
+---
+The most interesting are the <r>pluginables</r>.
+
+The appropriate formatter files have <b>.tcl</b>
+extensions as they contain the Tcl code block.
+
+The <b>events=</b> line sets a list of events
+that will run the formatter. E.g., it may be
+two key combination like <b><Alt-T>, <Alt-t></b>.
+---
+After first running a formatter from <b>Pluginable</b>
+menu, it is registered to run with hot keys.
+
+Let's run <b>Info</b> and <b>Calendar</b>.
+
+The calendar is of <b>tklib</b> standard Tcl library.
+---
+The call of calendar may be problematic, if you
+had installed <b>alited</b> by its installer: then
+it's run by a stand-alone tclkit having no <b>widget</b>
+package with the calendar.
+
+To solve this, use a bit modified <r>alited.sh</r>:
+just define <b>TCLLIBPATH</b> environment variable
+before alited's call (or use <b>~/.profile</b>).
+
+<r>🗰 </r> It's a universal method to solve problems
+with <b>external packages</b>: install them and
+correct <b>TCLLIBPATH</b> environment variable, then
+run <r>alited</r> by means of <r>alited.sh</r>.
+---
+The <b>pluginable</b> scripts provide additional
+possibilities for extending <b>alited</b>.
+
+Others are provided with <b>e_menu</b>.
+____________________________________________
+
+But unlike <b>e_menu</b>'s items, the <b>pluginables</b>
+can employ the internals of <b>alited</b>:
+
+  - text buffers (current is <b>%W</b> wildcard)
+
+  - alited's procs (documented in <b>Reference</b>)
+
+In fact, they are <b>plugins</b> with very low
+barrier to developing them.
+---
+By the way, <b>alited</b>'s calendars have
+acquired the week numbers, trying to mimic
+the <b>tklib</b>'s calendar.
+
+This option is customized with Setup menu.
+---
+The <r>book-mark</r> bar is the most visible
+of the new <b>alited</b>'s features.
+
+The <b>book-marks</b> are especially useful
+to navigate over documents without much
+of structure.
+
+Though, sometimes even a well structured
+Tcl script may require book-marking.
+---
+To set a book-mark, we click an empty cell
+of the <b>book-mark</b> bar.
+
+To go to a book-marked position, we click
+the <b>color mark</b>.
+
+There are 24 colors to mark. In practice,
+1, 2 .. 10 would be probably used.
+---
+To clear a book-mark, we click it with the
+<b>right</b> mouse button.
+
+After the right-clicking an <b>empty cell</b>
+the popup menu will be shown to
+
+  - clear all book-marks
+
+  - customize the bar width
+---
+Another new feature is the selection to
+the line ends with <b>Rectangular selection</b>.
+
+For this, the caret is set to <r>the same</r>
+final position as at start.
+
+To select to the line beginnings, we set
+the caret's final position to 1st column.
+---
+Another little change deals with the <b>tab bar</b>.
+
+If we move tabs (current or several) <b>behind</b>
+a tab (with the bar's popup menu), the current tab
+<b>doesn't follow</b> the moved tabs. It remains as close
+to the old one as possible.
+
+This is good when we want to view only those tabs
+that are important now. Thus we clear the current
+page of tabs.
+---
+In <r>Templates</r> the changes are:
+
+ - <b>%M</b> wildcard means a path to the <b>user's</b> menus
+   not to <b>alited's</b>
+
+ - <b>Indent</b> checkbutton gone: now, all templates
+   (except for those with <r># TODEL</r> comments!)
+   are indented according to the current or
+   nearest line's indentation.
+---
+The last little thing:
+
+<r>Ctrl+click</r> on <b>Undo</b> / <b>Redo</b> tool of the toolbar
+does all undos / redos made before.
+---
+The <b>Undo all</b> feature can be insidious, when
+important changes are lost, at that being not
+committed nor stashed.
+
+The <b>Preferences / Saving / Back up files</b> option
+can be helpful at that. The <b>Maximum</b> field allows to
+backup a few of file copies, named like: file-1.bak,
+file-2.bak, file-3.bak... They are created at saving
+files.
+
+After setting backup options, we'll restart <b>alited</b>,
+then try to lose "important changes" and find them
+saved to a backup file.
+---
+Welcome to
+
+<link>https://aplsimple.github.io</link>
+
+for further details.
+
+Thanks for your attention. <g>👍 </g>
+---

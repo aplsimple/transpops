@@ -1,0 +1,35 @@
+OK, again about new features of <g>alited v1.7.0</g>.
+______________________________________________
+
+In <b>Saved Lists of Favorites</b>, the <r>Open...</r>
+button can be very useful.
+
+We use favorite lists to open them as a sort
+of <b>subprojects</b> inside a project - very nice.
+
+Still often we need not the favorites by
+themselves, but <b>their files mostly</b>. The <r>Open...</r>
+button is the best tool for this case.
+
+Also, the <r>Open...</r> button makes the open files
+be seen <b>at the beginning</b> of the tab bar.<r> 🗰 </r>
+---
+The last little thing of <g>alited v1.7.0</g>
+is <b>Comment styles</b>, i.e. most usable ones:
+
+ - <b>TODO</b> style (alited's default)
+
+ - <b>classic</b> style (at line's beginning)
+
+ - <b>sticky</b> style (at line's first character)
+
+The thing is <r>really little</r>.
+---
+Welcome to
+
+<link>https://aplsimple.github.io</link>
+
+for further details.
+
+Thanks for your attention. <g>👍 </g>
+---

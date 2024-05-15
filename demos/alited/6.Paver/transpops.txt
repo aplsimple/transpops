@@ -3,6 +3,11 @@ with <b>apave</b> package the <b>alited</b> is based upon.
 
 In fact, the <r>paver</r> is a sort of "bonus card" or
 "reverence" from <b>alited</b> to <b>apave</b>.
+
+Moreover, it is the unique tool in the sense that
+it allows you to develop GUI in <b>textual mode</b>
+remaining inside <b>alited</b>. Not to say about
+sweets of <b>apave</b> package by itself.
 ---
 Let's try the <b>apave</b> examples from its description.
 

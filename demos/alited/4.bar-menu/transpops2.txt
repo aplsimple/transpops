@@ -10,6 +10,13 @@ The changes are seen in <r>Tools / bar-menu</r> item as well.
 
 Let's try and explore these things.
 ---
+By the way, did you notice the <r>Projects/Files'</r> toolbar?
+
+It is very good for executing <b>Tools / bar-menu</b> items
+while scanning projects.
+
+Just select a project and run a <b>Tools / bar-menu</b> item.
+---
 Last few words about <r>Templates</r> dialogue.
 
 The dialogue provides a list of templates
