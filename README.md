@@ -11,7 +11,7 @@ The popup messages will be hidden at clicking them.
 
 Also, you can draw on the screen, by means of [drawscreen](https://chiselapp.com/user/aplsimple/repository/drawscreen).
 
-*Note for apave package*. The apave's showModal method includes a specific bind of Ctrl-Alt-0 keys to hide the transpops messages with these keys (because a modal window captures any clicks).
+*Note*. Alt-Z and/or Ctrl-Alt-Z (if not set otherwise) force hiding the transpops messages.
 
 <hr>
 

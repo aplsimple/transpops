@@ -12,7 +12,7 @@
 
 package require Tk
 
-package provide transpops 2.4
+package provide transpops 2.5
 
 set scrdir [file dirname [info script]]
 if {[catch {package require apave}]} {
@@ -35,6 +35,7 @@ namespace eval ::transpops {
     variable cntwait 0 waitfactor 8.0
     variable geom {}
     variable draw
+    variable islinks 1
     array set draw {
       events {}
       opts {}
@@ -65,6 +66,7 @@ proc ::transpops::my::Show {win evn} {
   variable geom
   variable text
   variable textTags
+  variable islinks
   variable msgs
   variable imsgs
   variable wmsgs
@@ -119,7 +121,9 @@ proc ::transpops::my::Show {win evn} {
       -font $font \
       -relief solid {*}$opts -width $cols -height $rows -state disabled
     pack $wtxt
-    ::apave::obj initLinkFont -underline 1 {*}$font -foreground $fg -background $bg
+    if {$islinks} {
+      ::apave::obj initLinkFont -underline 1 {*}$font -foreground $fg -background $bg
+    }
     ::apave::obj displayTaggedText $wtxt ::transpops::my::text $textTags
   } e]} then {
     catch {destroy $wtxt}
@@ -200,6 +204,12 @@ proc ::transpops::my::RunMe {win ev scrp} {
     if {[string first $sc [bind $w $ev]]==-1} {
       bind $w $ev $sc
     }
+    # Alt+Z and/or Ctrl+Alt+Z (if not set otherwise) force hiding the transpops window
+    foreach k {Alt-Z Alt-z Control-Alt-Z Control-Alt-z} {
+      if {[bind $w <$k>] eq {}} {
+        bind $w <$k> {set ::transpops::my::cntwait 0; break}
+      }
+    }
     catch {::drawscreen run $w $draw(events) {*}$draw(opts)}
   }
   after 500 [list ::transpops::my::RunMe $win $ev $scrp]
@@ -221,7 +231,13 @@ proc ::transpops::my::Run {fname wins {events ""} {fg1 ""} {bg1 ""} {events2 ""}
   variable imsgs
   variable fg
   variable bg
+  variable islinks
   variable textTags
+  if {[set i [string first -nolink $args]]>=0} {
+    set textTags [lrange $textTags 0 end-1] ;# cancel link tags
+    set args [lreplace $args $i $i]
+    set islinks 0
+  }
   if {$events eq {}} {set events {{<Alt-t> <Alt-T>} {<Alt-y> <Alt-Y>}}}
   if {$fg1 eq {}} {set fg1 #000000}
   if {$bg1 eq {}} {set bg1 #FBFB95}

@@ -20,7 +20,7 @@ namespace eval ::drawscreen {
     variable windraw wDrwScr_
     variable draw
     array set draw {
-      width 8
+      width 5
       fill red
       length 6
       dobell yes

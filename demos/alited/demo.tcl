@@ -29,7 +29,7 @@ proc Transpops_Demo {} {
   set CURRENTVIDEO [file join $DEMODIR _CURRENT_VIDEO_]
 
   # currently made video
-  set video 8
+  set video 10
 
   set step1 [set step2 [set step3 [set step4 [set step5 0]]]]
 
@@ -133,7 +133,14 @@ proc Transpops_Demo {} {
   ## ________________________ 9. Misc _________________________ ##
 
   if {$video==9} {
+    set fname transpops.txt
     set dir 9.Misc
+  }
+
+  ## ________________________ 8. Little things 1.8.5-12 _________________________ ##
+
+  if {$video==10} {
+    set dir 8.Little-things-v1.8.5-12
   }
 
   ## ________________________ Create the current demo _________________________ ##
